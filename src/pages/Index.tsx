@@ -170,7 +170,7 @@ function Index() {
             className="max-w-6xl mx-auto"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+              <div className="flex flex-col items-center text-center p-6 rounded-[20px] bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] hover:border-primary/40 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <TrendingUp className="w-6 h-6 text-primary" />
                 </div>
@@ -178,7 +178,7 @@ function Index() {
                 <div className="text-sm text-muted-foreground">Qualified Application Lift</div>
               </div>
               
-              <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 border border-border hover:border-secondary/50 transition-all duration-300 hover:shadow-lg">
+              <div className="flex flex-col items-center text-center p-6 rounded-[20px] bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] hover:border-secondary/40 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-secondary" />
                 </div>
@@ -186,7 +186,7 @@ function Index() {
                 <div className="text-sm text-muted-foreground">Faster Credit Decisioning</div>
               </div>
               
-              <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+              <div className="flex flex-col items-center text-center p-6 rounded-[20px] bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] hover:border-primary/40 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <CheckCircle2 className="w-6 h-6 text-primary" />
                 </div>
@@ -194,7 +194,7 @@ function Index() {
                 <div className="text-sm text-muted-foreground">Audit Trail & Explainability</div>
               </div>
               
-              <div className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 border border-border hover:border-secondary/50 transition-all duration-300 hover:shadow-lg">
+              <div className="flex flex-col items-center text-center p-6 rounded-[20px] bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] hover:border-secondary/40 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-secondary" />
                 </div>
@@ -262,17 +262,17 @@ function Index() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50 relative overflow-hidden">
-                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-${item.color} to-${item.color}/50`}></div>
+                  <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] hover:border-primary/40 rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
                     <CardContent className="pt-8 pb-6">
                       <div className="flex items-center justify-between mb-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                           <Icon className="w-6 h-6 text-primary" />
                         </div>
-                        <div className="text-4xl font-bold text-primary/20">{item.step}</div>
+                        <div className="text-4xl font-bold text-primary/30">{item.step}</div>
                       </div>
                       <h3 className="font-bold text-lg mb-2 text-foreground">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -384,7 +384,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 border-primary/20 hover:border-primary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/40">
                 <CardContent className="pt-8 pb-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                     <FileCheck className="w-8 h-8 text-primary" />
@@ -403,7 +403,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 border-secondary/20 hover:border-secondary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 hover:border-secondary/40">
                 <CardContent className="pt-8 pb-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 flex items-center justify-center">
                     <Brain className="w-8 h-8 text-secondary" />
@@ -422,7 +422,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 border-primary/20 hover:border-primary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/40">
                 <CardContent className="pt-8 pb-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                     <Lock className="w-8 h-8 text-primary" />
@@ -441,7 +441,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 border-secondary/20 hover:border-secondary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 hover:border-secondary/40">
                 <CardContent className="pt-8 pb-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary/10 flex items-center justify-center">
                     <Shield className="w-8 h-8 text-secondary" />
@@ -485,7 +485,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group cursor-pointer border-2 hover:border-primary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 group cursor-pointer hover:border-primary/40">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <BarChart3 className="w-7 h-7 text-primary" />
@@ -505,7 +505,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group cursor-pointer border-2 hover:border-primary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 group cursor-pointer hover:border-primary/40">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
                     <Brain className="w-7 h-7 text-secondary" />
@@ -525,7 +525,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group cursor-pointer border-2 hover:border-primary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 group cursor-pointer hover:border-primary/40">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <Bell className="w-7 h-7 text-primary" />
@@ -545,7 +545,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group cursor-pointer border-2 hover:border-primary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 group cursor-pointer hover:border-primary/40">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
                     <Zap className="w-7 h-7 text-secondary" />
@@ -565,7 +565,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group cursor-pointer border-2 hover:border-primary/50">
+              <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 group cursor-pointer hover:border-primary/40">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <Target className="w-7 h-7 text-primary" />
@@ -611,7 +611,7 @@ function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300">
+                <Card className="h-full bg-[#EEE] dark:bg-[#1D1D1D] border border-[#EEE] dark:border-[#1D1D1D] rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300">
                   <CardContent className="p-0">
                     <div className="aspect-[3/4] bg-gradient-to-br from-muted to-muted/50 rounded-t-lg flex items-center justify-center">
                       <div className="text-center p-6">

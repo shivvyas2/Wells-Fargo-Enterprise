@@ -27,35 +27,6 @@ export default function HowItWorks() {
   return (
     <PageLayout>
       <div className="min-h-screen relative">
-        {/* Sticky Navigation - Outside hero for full-page stickiness */}
-        <div className="sticky top-20 z-40 bg-card/95 dark:bg-card/90 backdrop-blur-xl border-y border-border shadow-lg">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
-            <nav className="flex items-center gap-3 py-4 overflow-x-auto scrollbar-hide">
-              {[
-                { id: 'hero', label: 'Overview' },
-                { id: 'owner-experience', label: 'Business Owner' },
-                { id: 'bank-ops', label: 'Bank Integration' },
-                { id: 'signals', label: 'Signals & Models' },
-                { id: 'decisioning', label: 'Decisioning' },
-                { id: 'governance', label: 'Governance' },
-                { id: 'pilot', label: 'Pilot Timeline' }
-              ].map((item, idx, arr) => (
-                <div key={item.id} className="flex items-center gap-3 shrink-0">
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap font-medium hover:bg-muted/50 px-3 py-1.5 rounded-full"
-                  >
-                    {item.label}
-                  </button>
-                  {idx < arr.length - 1 && (
-                    <span className="text-border">•</span>
-                  )}
-                </div>
-              ))}
-            </nav>
-          </div>
-        </div>
-
         {/* Hero Section */}
         <div className="relative bg-gradient-to-b from-[#C40C0C] via-[#8B0A0A] to-[#4A4A4A] text-white pb-16">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
@@ -98,6 +69,35 @@ export default function HowItWorks() {
               </motion.div>
             </div>
           </section>
+        </div>
+
+        {/* In-page section navigation (below hero, not a second header) */}
+        <div className="bg-background dark:bg-[#070707] border-b border-border">
+          <div className="mx-auto w-full px-5 md:px-[5vw]">
+            <nav className="flex items-center gap-3 py-3 overflow-x-auto scrollbar-hide text-xs sm:text-sm">
+              {[
+                { id: 'hero', label: 'Overview' },
+                { id: 'owner-experience', label: 'Business Owner' },
+                { id: 'bank-ops', label: 'Bank Integration' },
+                { id: 'signals', label: 'Signals & Models' },
+                { id: 'decisioning', label: 'Decisioning' },
+                { id: 'governance', label: 'Governance' },
+                { id: 'pilot', label: 'Pilot Timeline' }
+              ].map((item, idx, arr) => (
+                <div key={item.id} className="flex items-center gap-3 shrink-0">
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap font-medium hover:bg-muted/50 px-3 py-1.5 rounded-full"
+                  >
+                    {item.label}
+                  </button>
+                  {idx < arr.length - 1 && (
+                    <span className="text-border">•</span>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
         </div>
 
         {/* Owner Experience Section */}
