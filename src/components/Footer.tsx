@@ -34,7 +34,7 @@ export function Footer() {
             <p className="text-3xl md:text-4xl font-bold leading-tight max-w-xl">
               Business-credit journeys grounded in proven consumer-scale outcomes.
             </p>
-            <p className="text-xs text-white/50 mt-4 italic">Designed for Wells Fargo Business Banking — Powered by FuteurCredX / LUMIQ AI</p>
+            <p className="text-xs text-white/50 mt-4 italic">Designed for Wells Fargo Business Banking — Powered by FuteurCredX</p>
             <p className="text-white/70 max-w-lg">
               Deploy enterprise-grade underwriting workflows, explainable decisions, and measured uptake across cards,
               LOC, and term lending — without leaving your existing controls.
@@ -42,7 +42,7 @@ export function Footer() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="https://www.linkedin.com/company/lumiqai"
+                href="https://www.linkedin.com/company/futeurcredx"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition"
@@ -51,7 +51,7 @@ export function Footer() {
                 Linkedin
               </a>
               <a
-                href="https://x.com/lumiq"
+                href="https://x.com/futeurcredx"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition"
