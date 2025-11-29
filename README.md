@@ -1,58 +1,14 @@
-# Welcome to your Lovable project
+## Wells Fargo Business Credit Close-Up – FuteurCredX
 
-## Project info
+This repository contains the Wells Fargo Business Credit Close-Up experience, implemented as a modern React single-page application and powered by FuteurCredX.
 
-**URL**: https://lovable.dev/projects/7a5133fe-aba0-4fdc-ae43-f2e7a8016938
+### Production URL
 
-## How can I edit this code?
+The application is hosted at:
 
-There are several ways of editing your application.
+`https://wells-fargo.futeurcredx.com`
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/7a5133fe-aba0-4fdc-ae43-f2e7a8016938) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+### Tech stack
 
 - Vite
 - TypeScript
@@ -60,14 +16,38 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+### Local development
 
-Simply open [Lovable](https://lovable.dev/projects/7a5133fe-aba0-4fdc-ae43-f2e7a8016938) and click on Share -> Publish.
+Prerequisites:
 
-## Can I connect a custom domain to my Lovable project?
+- Node.js (LTS) and npm installed
 
-Yes, you can!
+Steps:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```sh
+# Clone the repository
+git clone https://github.com/shivvyas2/Wells-Fargo-Enterprise.git
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# Change into the project directory
+cd Wells-Fargo-Enterprise
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The app will be available on the port configured in `vite.config.ts` (by default `http://localhost:8080`).
+
+### Building for production
+
+```sh
+npm run build
+```
+
+This will create an optimized production build in the `dist` directory, which is what is deployed to `wells-fargo.futeurcredx.com`.
+
+### Deployment
+
+Deployment is handled via your chosen CI/CD workflow by building the project and publishing the `dist` output to the hosting environment backing `wells-fargo.futeurcredx.com`.
