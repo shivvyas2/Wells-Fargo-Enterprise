@@ -162,7 +162,7 @@ export default function HowItWorks() {
                   }
                 ].map((mockup) => (
                   <div key={mockup.title} className="space-y-4">
-                    <h4 className="text-sm font-semibold text-primary uppercase tracking-wider">
+                    <h4 className="text-base md:text-lg font-semibold text-primary uppercase tracking-wider text-center">
                       {mockup.title}
                     </h4>
                     <div className="relative flex items-center justify-center">

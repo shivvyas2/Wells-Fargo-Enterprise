@@ -115,7 +115,7 @@ export default function CaseStudy() {
                 <AlertTriangle className="w-3 h-3" />
                 Problem Statement
               </div>
-              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-4 text-black leading-[1.15]">
+              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-4 text-black leading-[1.15] text-center">
                 The Missing Link
               </h2>
               <p className="text-lg md:text-xl text-gray-700 max-w-4xl leading-relaxed">
@@ -130,11 +130,11 @@ export default function CaseStudy() {
                     <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
                       <CheckCircle2 className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <CardTitle className="text-2xl">Consumer Success Story</CardTitle>
+                    <CardTitle className="text-3xl md:text-4xl text-center">Consumer Success Story</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
                     <div className="flex items-center justify-center mb-6">
-                      <div className="relative max-w-[200px] w-full">
+                      <div className="relative max-w-[280px] md:max-w-[320px] w-full">
                         <img
                           src="/Phone-Mockups/Consumer Success Story.png"
                           alt="Consumer Success Story"
@@ -234,11 +234,11 @@ export default function CaseStudy() {
                     <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
                       <AlertTriangle className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <CardTitle className="text-2xl">The Business Banking Gap</CardTitle>
+                    <CardTitle className="text-3xl md:text-4xl text-center">The Business Banking Gap</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
                     <div className="flex items-center justify-center mb-6">
-                      <div className="relative max-w-[200px] w-full">
+                      <div className="relative max-w-[280px] md:max-w-[320px] w-full">
                         <img
                           src="/Phone-Mockups/Business Banking Gap.png"
                           alt="Business Banking Gap"
