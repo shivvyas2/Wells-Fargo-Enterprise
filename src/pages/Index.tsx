@@ -415,35 +415,49 @@ function Index() {
               </CardContent>
             </Card>
           </motion.div>
+        </div>
+      </section>
 
+      {/* ==================== PROVEN CONSUMER BEHAVIOR SHIFT SECTION ==================== */}
+      <section className="min-h-screen flex items-center bg-white">
+        <div className="mx-auto w-[95%] max-w-7xl py-16 md:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto mt-12"
+            transition={{ duration: 0.6 }}
+            className="w-full"
           >
-            <Card className="bg-white">
-              <CardContent className="p-6 sm:p-8">
-                <h3 className="text-lg font-bold text-black mb-3 text-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
                   Proven consumer behavior shift—now ready for business credit.
-                </h3>
-                <div className="space-y-3 text-sm text-gray-700">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                </h2>
+                <div className="space-y-4 text-base md:text-lg text-gray-700">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-black mt-1 flex-shrink-0" strokeWidth={2.5} />
                     <p>71% behavior change rate using consumer Credit Close-Up tools (TransUnion study).</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-black mt-1 flex-shrink-0" strokeWidth={2.5} />
                     <p>1 in 5 customers achieved 40+ point score improvements.</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-black mt-1 flex-shrink-0" strokeWidth={2.5} />
                     <p>Wells Fargo can extend the same proven mechanics to its 3.3M+ SMB customers.</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
+                <div className="relative max-w-[280px] md:max-w-[320px] w-full mx-auto lg:mx-0">
+                  <img
+                    src="/Phone-Mockups/Consumer Behaviour.png"
+                    alt="Consumer Behaviour"
+                    className="w-full h-auto drop-shadow-2xl rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

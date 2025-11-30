@@ -1,8 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { to: "/about", label: "About" },
+    { to: "/how-it-works", label: "How It Works" },
+    { to: "/case-study", label: "Case Study" },
+    { to: "/pilot", label: "Pilot" },
+  ];
+
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
       <div className="bg-background/80 dark:bg-card/90 backdrop-blur-2xl rounded-full border border-border/50 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] px-4 md:px-6 py-3 md:py-4 flex justify-between items-center transition-all duration-500 hover:shadow-[0_12px_48px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_48px_rgba(0,0,0,0.6)]">
@@ -18,23 +35,65 @@ export function Header() {
           </div>
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-0.5">
-          <Link to="/about" className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all">
-            About
-          </Link>
-          <Link to="/how-it-works" className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all">
-            How It Works
-          </Link>
-          <Link to="/case-study" className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all">
-            Case Study
-          </Link>
-          <Link to="/pilot" className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all">
-            Pilot
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="flex items-center gap-1.5 md:gap-2.5">
-          <a href="/contact">
+          {/* Mobile Menu Button */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild className="lg:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="lg:hidden text-white hover:text-white"
+                aria-label="Open menu"
+              >
+                <Menu className="h-6 w-6 text-white" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white text-black">
+              <SheetHeader>
+                <SheetTitle className="text-left text-black">Menu</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-4 py-3 text-base font-medium text-black hover:bg-gray-100 rounded-lg transition-all"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <div className="pt-4 border-t border-gray-200">
+                  <a
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="w-full"
+                  >
+                    <Button variant="refined" size="default" className="w-full">
+                      Contact Us
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </a>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
+
+          {/* Desktop Contact Button */}
+          <a href="/contact" className="hidden lg:block">
             <Button variant="refined" size="sm">
               Contact Us
               <ArrowRight className="w-4 h-4 ml-2" />

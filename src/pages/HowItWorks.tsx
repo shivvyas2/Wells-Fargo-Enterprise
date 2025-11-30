@@ -90,25 +90,29 @@ export default function HowItWorks() {
                       step: "1",
                       title: "Sign In",
                       description: "User logs in to Wells Fargo Business Online. LUMIQ AI quietly fetches required signals via SBFE, FICO SBSS, Experian FSR, and consumer bureaus.",
-                      icon: Lock
+                      icon: Lock,
+                      image: "/Phone-Mockups/1.png"
                     },
                   {
                     step: "2",
                     title: "View Credit Health",
                     description: "Owner sees both their personal FICO and their Business Credit Score in a single unified view. Includes alerts, score factors, utilization, and payment insights.",
-                    icon: Activity
+                    icon: Activity,
+                    image: "/Phone-Mockups/2.png"
                   },
                   {
                     step: "3",
                     title: "See Pre-Qualified Wells Fargo Products",
                     description: "Based on underwriting inputs + policy overlays, eligible business products surface with clear 'Why You Qualify' explanations.",
-                    icon: Target
+                    icon: Target,
+                    image: "/Phone-Mockups/3.png"
                   },
                   {
                     step: "4",
                     title: "One-Tap Application",
                     description: "User applies with one tap; the offer converts directly to Wells Fargo's existing workflow.",
-                    icon: Zap
+                    icon: Zap,
+                    image: "/Phone-Mockups/4.png"
                   }
                 ].map((step) => (
                   <Card key={step.step} className="h-full">
@@ -121,6 +125,17 @@ export default function HowItWorks() {
                           <step.icon className="w-7 h-7 text-black" strokeWidth={2.5} />
                         </div>
                       </div>
+                      {step.image && (
+                        <div className="mb-4 flex items-center justify-center">
+                          <div className="relative max-w-[200px] w-full">
+                            <img
+                              src={step.image}
+                              alt={step.title}
+                              className="w-full h-auto drop-shadow-xl rounded-lg"
+                            />
+                          </div>
+                        </div>
+                      )}
                       <h3 className="text-lg font-bold text-black mb-3">
                         {step.title}
                       </h3>
