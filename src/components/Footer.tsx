@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const solutionLinks = [
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Value & Outcomes", href: "/#value" },
-  { label: "Security & Compliance", href: "/#security" },
-  { label: "Integration", href: "/#security" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "How It Works", href: "/how-it-works" },
 ];
 
 const resourceLinks = [
   { label: "Case Study", href: "/case-study" },
-  { label: "Demo", href: "/demo" },
   { label: "Pilot", href: "/pilot" },
-  { label: "USS Framework", href: "/uss" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const policyLinks = [
@@ -34,32 +32,10 @@ export function Footer() {
             <p className="text-3xl md:text-4xl font-bold leading-tight max-w-xl">
               Business-credit journeys grounded in proven consumer-scale outcomes.
             </p>
-            <p className="text-xs text-white/50 mt-4 italic">Designed for Wells Fargo Business Banking — Powered by FuteurCredX</p>
+            <p className="text-xs text-white/50 mt-4 italic">Designed for Wells Fargo Business Banking — Powered by FuteurCredX / LUMIQ AI</p>
             <p className="text-white/70 max-w-lg">
-              Deploy enterprise-grade underwriting workflows, explainable decisions, and measured uptake across cards,
-              LOC, and term lending — without leaving your existing controls.
+              Designed for Wells Fargo Business Banking—deploy enterprise-grade underwriting workflows, explainable decisions, and measured uptake across cards, LOC, and term lending without leaving your existing controls.
             </p>
-
-            <div className="flex flex-wrap items-center gap-4">
-              <a
-                href="https://www.linkedin.com/company/futeurcredx"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition"
-              >
-                <Linkedin className="w-4 h-4" />
-                Linkedin
-              </a>
-              <a
-                href="https://x.com/futeurcredx"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition"
-              >
-                <Twitter className="w-4 h-4" />
-                X / Twitter
-              </a>
-            </div>
           </div>
 
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -68,9 +44,9 @@ export function Footer() {
               <ul className="space-y-3 text-white/70 text-sm">
                 {solutionLinks.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="hover:text-white transition">
+                    <Link to={item.href} className="hover:text-white transition">
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -97,15 +73,15 @@ export function Footer() {
             <p className="text-lg font-semibold">Start a 6-week pilot with pre-agreed success metrics.</p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <a href="/#cta">
+            <a href="/contact">
               <Button variant="solverSecondary" className="gap-3">
                 Book Pilot Review
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </a>
-            <Link to="/demo">
+            <Link to="/pilot">
               <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                Watch Demo
+                Learn About Pilot
               </Button>
             </Link>
           </div>

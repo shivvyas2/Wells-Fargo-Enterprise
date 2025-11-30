@@ -12,7 +12,7 @@ export default function HeroBackground({ children, component }: HeroBackgroundPr
         <div className="absolute left-[-20%] md:left-[5%] bottom-[100px] w-[600px] h-[600px] bg-[#D22030]/40 blur-[100px] rounded-full" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/10" />
       </div>
-      <div className="px-[20px] pb-[48px] pt-[150px] md:px-[72px] md:pb-[80px] lg:pt-[240px] relative z-10">
+      <div className="px-5 pb-[48px] pt-[150px] md:px-8 lg:px-12 xl:px-16 2xl:px-24 md:pb-[80px] lg:pt-[200px] relative z-10">
         {children}
       </div>
       {/* Smooth gradient fade to next section */}

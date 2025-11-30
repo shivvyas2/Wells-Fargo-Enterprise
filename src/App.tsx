@@ -11,6 +11,11 @@ import Pilot from "./pages/Pilot";
 import USS from "./pages/USS";
 import HowItWorks from "./pages/HowItWorks";
 import CaseStudy from "./pages/CaseStudy";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Security from "./pages/Security";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import { Navigate } from "react-router-dom";
 
@@ -25,6 +30,11 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/security" element={<Security />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="/revolution" element={<Revolution />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/demo" element={<Navigate to="/pilot" replace />} />
