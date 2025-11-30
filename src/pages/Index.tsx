@@ -313,8 +313,8 @@ function Index() {
       </section>
 
       {/* ==================== WHY NOW SECTION ==================== */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
+      <section className="min-h-screen bg-white">
+        <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-16 md:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -322,15 +322,25 @@ function Index() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6">
-              Market Context
-            </div>
             <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-black">
               Why This Matters Now
             </h2>
-            <p className="text-lg text-gray-800 max-w-3xl mx-auto">
-              The competitive landscape, regulatory environment, and SMB expectations have fundamentally shifted.
-            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full flex items-center justify-center mb-12"
+          >
+            <div className="w-full max-w-full">
+              <img
+                src="/mockups/iMac.png"
+                alt="Why This Matters Now"
+                className="w-full h-auto object-contain rounded-lg"
+              />
+            </div>
           </motion.div>
 
           <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-full mx-auto grid md:grid-cols-2 gap-8 mb-12">
