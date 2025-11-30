@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Shield, TrendingUp, BarChart3, Bell, CreditCard, Brain, CheckCircle2, Lock, FileCheck, ArrowRight, Target, Zap, Award, Database, Clock, Users } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
@@ -88,12 +89,12 @@ function Index() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mb-8 sm:mb-10"
             >
-              <a href="/contact">
+              <Link to="/contact">
                 <Button size="lg" className="bg-[#FFB81C] hover:bg-[#FFB81C]/90 text-[#2B2B2B] font-semibold text-base sm:text-lg px-6 py-5 sm:px-10 sm:py-7 h-auto shadow-xl hover:shadow-2xl transition-all duration-300">
                   See Your Portfolio Through LUMIQ AI
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Key Metrics */}
@@ -860,12 +861,12 @@ function Index() {
               20-minute executive review. Sample output on your SMB segments. Integration, security, and pilot structure covered in one session.
             </p>
             
-            <a href="/contact">
+            <Link to="/contact">
               <Button size="lg" className="bg-white hover:bg-white/90 text-primary font-bold text-xl px-12 py-8 h-auto mb-6 shadow-xl">
                 Request Executive Demo
                 <ArrowRight className="ml-3 w-6 h-6" />
               </Button>
-            </a>
+            </Link>
 
             <p className="text-sm text-white/70 max-w-2xl mx-auto">
               Vendor-ready integration. No disruption to existing underwriting pipeline. Data stays fully encrypted. 6–8 week pilot timeline from kickoff to live deployment.

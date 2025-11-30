@@ -77,8 +77,8 @@ export function Header() {
                   </Link>
                 ))}
                 <div className="pt-4 border-t border-gray-200">
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
                     onClick={() => setMobileMenuOpen(false)}
                     className="w-full"
                   >
@@ -86,19 +86,19 @@ export function Header() {
                       Contact Us
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </nav>
             </SheetContent>
           </Sheet>
 
           {/* Desktop Contact Button */}
-          <a href="/contact" className="hidden lg:block">
+          <Link to="/contact" className="hidden lg:block">
             <Button variant="refined" size="sm">
               Contact Us
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </header>

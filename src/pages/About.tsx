@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -464,10 +465,10 @@ function About() {
             </p>
             
             <Button size="lg" className="bg-white hover:bg-white/90 text-primary font-bold text-xl px-12 py-8 h-auto shadow-xl" asChild>
-              <a href="/contact">
+              <Link to="/contact">
                 Get in Touch
                 <ArrowRight className="ml-3 w-6 h-6" strokeWidth={2.5} />
-              </a>
+              </Link>
             </Button>
           </motion.div>
         </div>

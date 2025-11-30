@@ -73,12 +73,12 @@ export function Footer() {
             <p className="text-lg font-semibold text-white">Start a 6-week pilot with pre-agreed success metrics.</p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <a href="/contact">
+            <Link to="/contact">
               <Button variant="solverSecondary" className="gap-3">
                 Book Pilot Review
                 <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
               </Button>
-            </a>
+            </Link>
             <Link to="/pilot">
               <Button variant="outline" className="border-gray-700 hover:bg-gray-900 text-white">
                 Learn About Pilot
