@@ -127,7 +127,7 @@ export default function CaseStudy() {
               <motion.div {...fadeInUp} className="h-full flex">
                 <Card className="h-full w-full flex flex-col">
                   <CardHeader className="flex-shrink-0">
-                    <div className="flex justify-center mb-6">
+                    <div className="flex justify-center mb-4">
                       <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
                         <CheckCircle2 className="w-7 h-7 text-black" strokeWidth={2.5} />
                       </div>
@@ -294,7 +294,7 @@ export default function CaseStudy() {
                       </li>
                       <li className="flex items-start gap-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
-                        <span className="text-sm text-gray-700"><strong className="text-black">Competitive risk:</strong> Fintechs offering faster, transparent credit decisions are capturing SMB market share</span>
+                        <span className="text-sm text-gray-700"><strong className="text-black">Competitive risk:</strong> Fintechs with faster credit decisions capturing SMB market share</span>
                       </li>
                     </ul>
 
@@ -1001,3 +1001,4 @@ export default function CaseStudy() {
     </PageLayout>
   );
 }
+
