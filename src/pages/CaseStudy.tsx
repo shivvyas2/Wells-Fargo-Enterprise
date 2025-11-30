@@ -127,8 +127,10 @@ export default function CaseStudy() {
               <motion.div {...fadeInUp}>
                 <Card className="h-full">
                   <CardHeader>
-                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
-                      <CheckCircle2 className="w-7 h-7 text-black" strokeWidth={2.5} />
+                    <div className="flex justify-center mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                        <CheckCircle2 className="w-7 h-7 text-black" strokeWidth={2.5} />
+                      </div>
                     </div>
                     <CardTitle className="text-3xl md:text-4xl text-center">Consumer Success Story</CardTitle>
                   </CardHeader>
@@ -231,8 +233,10 @@ export default function CaseStudy() {
               <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
                 <Card className="h-full">
                   <CardHeader>
-                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
-                      <AlertTriangle className="w-7 h-7 text-black" strokeWidth={2.5} />
+                    <div className="flex justify-center mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                        <AlertTriangle className="w-7 h-7 text-black" strokeWidth={2.5} />
+                      </div>
                     </div>
                     <CardTitle className="text-3xl md:text-4xl text-center">The Business Banking Gap</CardTitle>
                   </CardHeader>

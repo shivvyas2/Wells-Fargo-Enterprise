@@ -113,12 +113,12 @@ function Pilot() {
               className="w-full"
             >
               {/* Urgent scarcity banner */}
-              <div className="mb-6 inline-flex items-center gap-3 px-6 py-3 bg-secondary text-black rounded-full font-bold animate-pulse">
-                <AlertCircle className="w-5 h-5" />
+              <div className="mb-6 inline-flex items-center gap-3 px-6 py-3 border border-white text-white rounded-full font-medium text-sm">
+                <AlertCircle className="w-4 h-4" />
                 <span>Only 3 Pilot Slots Left for Q1 2026 • First-Come Basis</span>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1146F2] text-white text-sm font-medium mb-6">
+              <div className="mb-6 inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white text-white text-sm font-medium">
                 <Shield className="w-4 h-4" />
                 Designed for Institutional Finance & Model-Risk Governance
               </div>

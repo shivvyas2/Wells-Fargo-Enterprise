@@ -32,7 +32,7 @@ export default function HowItWorks() {
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
           {/* Hero Content */}
-          <section id="hero" className="pt-20 pb-24">
+          <section id="hero" className="pt-28 md:pt-32 pb-24">
             <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24 relative z-10">
               <motion.div {...fadeInUp} className="max-w-5xl space-y-8">
                 <div className="inline-block bg-secondary text-black px-4 py-2 rounded-full text-sm font-semibold">
@@ -49,7 +49,7 @@ export default function HowItWorks() {
                 </p>
 
                 <div className="flex items-center gap-3 pt-4">
-                  <span className="text-sm text-gray-700">Supports:</span>
+                  <span className="text-sm text-white font-bold">Supports:</span>
                   <div className="flex flex-wrap gap-2">
                     {["SBFE Business Data", "FICO SBSS", "Experian FSR", "Consumer FICO®"].map((model) => (
                       <Badge key={model} className="bg-white/10 text-white border-white/20 font-normal">
@@ -72,7 +72,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Owner Experience Section */}
-        <section id="owner-experience" className="py-16 md:py-24 bg-white">
+        <section id="owner-experience" className="pt-24 md:pt-32 pb-16 md:pb-24 bg-white">
           <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
             <motion.div {...fadeInUp} className="space-y-16">
               <div className="text-center max-w-4xl mx-auto space-y-4">
@@ -675,21 +675,24 @@ export default function HowItWorks() {
                     <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
                       <LineChart className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <h3 className="text-xl font-bold text-black mb-4">
+                    <h3 className="text-xl font-bold text-black mb-6">
                       Key Performance Indicators
                     </h3>
-                    <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
                       {[
-                        { metric: "+10–15%", label: "Increase in qualified SMB applications" },
-                        { metric: "+20–35%", label: "Faster time-to-decision" },
-                        { metric: "100%", label: "Audit-trail coverage" },
-                        { metric: "–18–25%", label: "Reduced manual reviews" }
+                        { metric: "+10–15%", label: "Increase in qualified SMB applications", icon: TrendingUp },
+                        { metric: "+20–35%", label: "Faster time-to-decision", icon: Zap },
+                        { metric: "100%", label: "Audit-trail coverage", icon: Shield },
+                        { metric: "–18–25%", label: "Reduced manual reviews", icon: CheckCircle2 }
                       ].map((kpi) => (
-                        <div key={kpi.label} className="flex items-center gap-3">
-                          <div className="text-2xl font-bold text-primary">
+                        <div key={kpi.label} className="flex flex-col items-center text-center p-5 rounded-xl bg-gray-50 border border-black/10 hover:border-black/30 hover:shadow-md transition-all">
+                          <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center mb-3">
+                            <kpi.icon className="w-6 h-6 text-black" strokeWidth={2.5} />
+                          </div>
+                          <div className="text-2xl md:text-3xl font-bold text-black mb-2">
                             {kpi.metric}
                           </div>
-                          <p className="text-sm text-gray-700">
+                          <p className="text-xs md:text-sm text-gray-700 leading-tight">
                             {kpi.label}
                           </p>
                         </div>
