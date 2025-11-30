@@ -123,10 +123,10 @@ export default function CaseStudy() {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-8 mb-12">
-              <motion.div {...fadeInUp}>
-                <Card className="h-full">
-                  <CardHeader>
+            <div className="grid lg:grid-cols-2 gap-8 mb-12 items-start">
+              <motion.div {...fadeInUp} className="h-full flex">
+                <Card className="h-full w-full flex flex-col">
+                  <CardHeader className="flex-shrink-0">
                     <div className="flex justify-center mb-6">
                       <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
                         <CheckCircle2 className="w-7 h-7 text-black" strokeWidth={2.5} />
@@ -134,7 +134,7 @@ export default function CaseStudy() {
                     </div>
                     <CardTitle className="text-3xl md:text-4xl text-center">Consumer Success Story</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
+                  <CardContent className="p-6 sm:p-8 pt-0 space-y-6 flex-grow">
                     <div className="flex items-center justify-center mb-6">
                       <div className="relative max-w-[280px] md:max-w-[320px] w-full">
                         <img
@@ -193,35 +193,35 @@ export default function CaseStudy() {
                     </ul>
 
                     {/* Post-Deployment Results */}
-                    <div className="pt-4 border-t border-border space-y-4">
-                      <p className="text-sm font-semibold text-black">Post-Deployment Results (12-24 Months)</p>
+                    <div className="pt-6 border-t border-border space-y-4">
+                      <p className="text-sm font-semibold text-black mb-4">Post-Deployment Results (12-24 Months)</p>
                       <div className="grid grid-cols-1 gap-3">
-                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
-                          <TrendingUp className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                          <div>
-                            <p className="text-sm font-semibold text-black">+18% Credit Card Application Rate</p>
-                            <p className="text-xs text-gray-700">Users with Credit Close-Up access converted 18% more on Wells Fargo credit card offers</p>
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-4 border-2 border-black min-h-[80px]">
+                          <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-black mb-1">+18% Credit Card Application Rate</p>
+                            <p className="text-xs text-gray-700 leading-relaxed">Users with Credit Close-Up access converted 18% more on Wells Fargo credit card offers</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
-                          <Percent className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                          <div>
-                            <p className="text-sm font-semibold text-black">+12% Personal Loan Conversion</p>
-                            <p className="text-xs text-gray-700">Higher qualification rates and faster decisioning for personal loans</p>
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-4 border-2 border-black min-h-[80px]">
+                          <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-black mb-1">+12% Personal Loan Conversion</p>
+                            <p className="text-xs text-gray-700 leading-relaxed">Higher qualification rates and faster decisioning for personal loans</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
-                          <Users className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                          <div>
-                            <p className="text-sm font-semibold text-black">78% Monthly Active User Rate</p>
-                            <p className="text-xs text-gray-700">Sustained engagement with credit monitoring features</p>
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-4 border-2 border-black min-h-[80px]">
+                          <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-black mb-1">78% Monthly Active User Rate</p>
+                            <p className="text-xs text-gray-700 leading-relaxed">Sustained engagement with credit monitoring features</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
-                          <Award className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                          <div>
-                            <p className="text-sm font-semibold text-black">+22% Net Promoter Score Lift</p>
-                            <p className="text-xs text-gray-700">Significantly improved customer satisfaction and loyalty metrics</p>
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-4 border-2 border-black min-h-[80px]">
+                          <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-black mb-1">+22% Net Promoter Score Lift</p>
+                            <p className="text-xs text-gray-700 leading-relaxed">Significantly improved customer satisfaction and loyalty metrics</p>
                           </div>
                         </div>
                       </div>
@@ -230,9 +230,9 @@ export default function CaseStudy() {
                 </Card>
               </motion.div>
 
-              <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                <Card className="h-full">
-                  <CardHeader>
+              <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="h-full flex">
+                <Card className="h-full w-full flex flex-col">
+                  <CardHeader className="flex-shrink-0">
                     <div className="flex justify-center mb-6">
                       <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
                         <AlertTriangle className="w-7 h-7 text-black" strokeWidth={2.5} />
@@ -240,7 +240,7 @@ export default function CaseStudy() {
                     </div>
                     <CardTitle className="text-3xl md:text-4xl text-center">The Business Banking Gap</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
+                  <CardContent className="p-6 sm:p-8 pt-0 space-y-6 flex-grow">
                     <div className="flex items-center justify-center mb-6">
                       <div className="relative max-w-[280px] md:max-w-[320px] w-full">
                         <img
@@ -286,7 +286,7 @@ export default function CaseStudy() {
                       </li>
                       <li className="flex items-start gap-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
-                        <span className="text-sm text-gray-700"><strong className="text-black">Fragmented data sources:</strong> Must piece together personal + business credit from disparate vendors</span>
+                        <span className="text-sm text-gray-700"><strong className="text-black">Fragmented data sources:</strong> Combine personal + business credit</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
@@ -299,35 +299,35 @@ export default function CaseStudy() {
                     </ul>
 
                     {/* Current Impact & Lost Opportunities */}
-                    <div className="pt-4 border-t border-border space-y-4">
-                      <p className="text-sm font-semibold text-black">Current Impact & Lost Opportunities</p>
+                    <div className="pt-6 border-t border-border space-y-4">
+                      <p className="text-sm font-semibold text-black mb-4">Current Impact & Lost Opportunities</p>
                       <div className="grid grid-cols-1 gap-3">
-                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
-                          <TrendingUp className="w-5 h-5 text-black flex-shrink-0 mt-0.5 rotate-180" strokeWidth={2.5} />
-                          <div>
-                            <p className="text-sm font-semibold text-black">Suboptimal Conversion Rates</p>
-                            <p className="text-xs text-gray-700">SMBs abandon applications due to uncertainty about creditworthiness and eligibility</p>
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-4 border-2 border-black min-h-[80px]">
+                          <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-black mb-1">Suboptimal Conversion Rates</p>
+                            <p className="text-xs text-gray-700 leading-relaxed">SMBs abandon applications due to uncertainty about creditworthiness and eligibility</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
-                          <DollarSign className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                          <div>
-                            <p className="text-sm font-semibold text-black">Higher Customer Acquisition Costs</p>
-                            <p className="text-xs text-gray-700">Manual outreach and re-engagement campaigns drive up CAC by 25-40%</p>
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-4 border-2 border-black min-h-[80px]">
+                          <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-black mb-1">Higher Customer Acquisition Costs</p>
+                            <p className="text-xs text-gray-700 leading-relaxed">Manual outreach and re-engagement campaigns drive up CAC by 25-40%</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
-                          <Users className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                          <div>
-                            <p className="text-sm font-semibold text-black">Market Share Erosion</p>
-                            <p className="text-xs text-gray-700">Fintech competitors with transparent pre-qualification capturing digitally-savvy SMBs</p>
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-4 border-2 border-black min-h-[80px]">
+                          <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-black mb-1">Market Share Erosion</p>
+                            <p className="text-xs text-gray-700 leading-relaxed">Fintech competitors with transparent pre-qualification capturing digitally-savvy SMBs</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
-                          <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
-                          <div>
-                            <p className="text-sm font-semibold text-black">Missed Cross-Sell Opportunities</p>
-                            <p className="text-xs text-gray-700">No proactive product recommendations = untapped revenue from qualified customers</p>
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-4 border-2 border-black min-h-[80px]">
+                          <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-black mb-1">Missed Cross-Sell Opportunities</p>
+                            <p className="text-xs text-gray-700 leading-relaxed">No proactive product recommendations = untapped revenue from qualified customers</p>
                           </div>
                         </div>
                       </div>
