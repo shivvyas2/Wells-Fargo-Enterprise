@@ -67,6 +67,9 @@ All colors MUST be HSL.
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 17%;
+    
+    /* Force light theme */
+    color-scheme: light;
 
     --card: 0 0% 95%;
     --card-foreground: 0 0% 17%;
@@ -81,7 +84,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 17%;
 
     --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 40%;
 
     --accent: 42 100% 56%;
     --accent-foreground: 0 0% 17%;
@@ -136,12 +139,13 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-foreground;
     font-family: "Manrope", sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
+    @apply bg-white;
   }
 
   /* Hide scrollbar but keep functionality */

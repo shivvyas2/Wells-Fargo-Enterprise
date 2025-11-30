@@ -11,7 +11,7 @@ export function PageLayout({ children }: PageLayoutProps) {
   const { scrollYProgress } = useScroll();
 
   return (
-    <div className="bg-white dark:bg-[#070707] min-h-screen text-[#070707] dark:text-white font-sans relative antialiased transition-colors duration-500">
+    <div className="bg-white min-h-screen text-[#070707] font-sans relative antialiased">
       {/* Scroll progress indicator */}
       <motion.div
         className="fixed left-0 top-0 right-0 h-0.5 z-50 origin-left"

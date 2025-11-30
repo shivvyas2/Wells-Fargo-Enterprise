@@ -98,8 +98,7 @@ function Pilot() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const containerClass = "mx-auto w-full px-5 md:px-[5vw]";
-  const neutralCard = "bg-white dark:bg-[#1D1D1D] border border-[#E4E7EC] dark:border-[#1D1D1D] rounded-[24px]";
+  const containerClass = "mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24";
 
   return (
     <PageLayout>
@@ -114,7 +113,7 @@ function Pilot() {
               className="w-full"
             >
               {/* Urgent scarcity banner */}
-              <div className="mb-6 inline-flex items-center gap-3 px-6 py-3 bg-[#FFB81C] text-[#070707] rounded-full font-bold animate-pulse">
+              <div className="mb-6 inline-flex items-center gap-3 px-6 py-3 bg-secondary text-black rounded-full font-bold animate-pulse">
                 <AlertCircle className="w-5 h-5" />
                 <span>Only 3 Pilot Slots Left for Q1 2026 • First-Come Basis</span>
               </div>
@@ -142,7 +141,7 @@ function Pilot() {
               </div>
 
               <h1 className="text-[40px] md:text-[52px] lg:text-[72px] font-semibold mb-6 leading-[52px] md:leading-[64px] lg:leading-[85px] tracking-[-1.2px] md:tracking-[-2.16px] text-white">
-                Accelerate to Market: <span className="text-[#FFB81C]">$50M–$70M</span> Revenue Opportunity
+                Accelerate to Market: <span className="text-secondary">$50M–$70M</span> Revenue Opportunity
               </h1>
 
               <p className="text-xl md:text-2xl text-white mb-4 max-w-3xl leading-relaxed font-medium">
@@ -168,7 +167,7 @@ function Pilot() {
                 >
                   Secure Your Pilot Slot
                   <div className="w-10 h-10 p-2.5 rounded-full bg-white flex items-center justify-center">
-                    <ArrowRight className="w-5 h-5 text-[#070707]" />
+                    <ArrowRight className="w-5 h-5 text-black" />
                   </div>
                 </Button>
                 <Button 
@@ -201,68 +200,65 @@ function Pilot() {
       </HeroBackground>
 
       {/* Benefits Snapshots - Enhanced with Urgency & Risk Comparison */}
-      <section className="py-12 md:py-24 bg-white dark:bg-[#070707]">
+      <section className="py-12 md:py-24 bg-white">
         <div className={containerClass}>
           <motion.div {...fadeInUp} className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4" />
               What Early Adopters Already Know
             </div>
-            <h2 className="text-[32px] md:text-[48px] font-bold mb-4 text-[#070707] dark:text-white leading-[41.6px] md:leading-[56px]">
-              The Competitive Window Is Closing
-            </h2>
-            <p className="text-xl md:text-2xl text-[#070707] dark:text-white/90 max-w-3xl mx-auto mb-4 font-medium">
+            <p className="text-xl md:text-2xl text-black max-w-3xl mx-auto mb-4 font-medium">
               Right now, you have first-mover advantage in commercial SMB credit.
             </p>
-            <p className="text-lg text-destructive font-semibold max-w-2xl mx-auto">
+            <p className="text-lg text-black font-semibold max-w-2xl mx-auto">
               Every quarter delayed = $12M-$17M opportunity cost + shrinking market share
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-              <Card className={`${neutralCard} text-center h-full hover:border-primary/30 transition-all hover:shadow-xl hover:-translate-y-1`}>
-                <CardContent className="pt-8 pb-8 px-6">
-                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                    <TrendingUp className="h-7 w-7 text-primary" />
+              <Card className="h-full text-center">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mx-auto mb-6">
+                    <TrendingUp className="h-7 w-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <div className="text-4xl font-bold text-primary mb-3">+15–25%</div>
-                  <p className="text-lg font-semibold mb-2 text-[#070707] dark:text-white">Immediate ROI Visibility</p>
-                  <p className="text-sm text-[#070707]/70 dark:text-white/70 mb-4">App-to-booked lift within Week 3</p>
+                  <div className="text-4xl font-bold text-black mb-3">+15–25%</div>
+                  <p className="text-lg font-semibold mb-2 text-black">Immediate ROI Visibility</p>
+                  <p className="text-sm text-gray-700 mb-4">App-to-booked lift within Week 3</p>
                   <div className="pt-4 border-t border-border">
-                    <p className="text-xs text-muted-foreground">Proven in A/B tests with 50k+ accounts</p>
+                    <p className="text-xs text-gray-600">Proven in A/B tests with 50k+ accounts</p>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
 
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-              <Card className={`${neutralCard} text-center h-full hover:border-primary/30 transition-all hover:shadow-xl hover:-translate-y-1`}>
-                <CardContent className="pt-8 pb-8 px-6">
-                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                    <Shield className="h-7 w-7 text-primary" />
+              <Card className="h-full text-center">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mx-auto mb-6">
+                    <Shield className="h-7 w-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <div className="text-4xl font-bold text-primary mb-3">100%</div>
-                  <p className="text-lg font-semibold mb-2 text-[#070707] dark:text-white">Zero Risk Testing</p>
-                  <p className="text-sm text-[#070707]/70 dark:text-white/70 mb-4">Sandbox + A/B controls + full audit trail</p>
+                  <div className="text-4xl font-bold text-black mb-3">100%</div>
+                  <p className="text-lg font-semibold mb-2 text-black">Zero Risk Testing</p>
+                  <p className="text-sm text-gray-700 mb-4">Sandbox + A/B controls + full audit trail</p>
                   <div className="pt-4 border-t border-border">
-                    <p className="text-xs text-muted-foreground">SOC2 + ISO 27001 certified infrastructure</p>
+                    <p className="text-xs text-gray-600">SOC2 + ISO 27001 certified infrastructure</p>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
 
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
-              <Card className={`${neutralCard} text-center h-full hover:border-primary/30 transition-all hover:shadow-xl hover:-translate-y-1`}>
-                <CardContent className="pt-8 pb-8 px-6">
-                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                    <Zap className="h-7 w-7 text-primary" />
+              <Card className="h-full text-center">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mx-auto mb-6">
+                    <Zap className="h-7 w-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <div className="text-4xl font-bold text-primary mb-3">75%</div>
-                  <p className="text-lg font-semibold mb-2 text-[#070707] dark:text-white">Speed to Market</p>
-                  <p className="text-sm text-[#070707]/70 dark:text-white/70 mb-4">90 days vs. 9+ months traditional</p>
+                  <div className="text-4xl font-bold text-black mb-3">75%</div>
+                  <p className="text-lg font-semibold mb-2 text-black">Speed to Market</p>
+                  <p className="text-sm text-gray-700 mb-4">90 days vs. 9+ months traditional</p>
                   <div className="pt-4 border-t border-border">
-                    <p className="text-xs text-muted-foreground">Same API powers 3 of top 10 US banks</p>
+                    <p className="text-xs text-gray-600">Same API powers 3 of top 10 US banks</p>
                   </div>
                 </CardContent>
               </Card>
@@ -271,32 +267,32 @@ function Pilot() {
 
           {/* Risk comparison callout */}
           <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
-            <Card className="bg-gradient-to-br from-destructive/5 to-destructive/10 border-2 border-destructive/20">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <AlertCircle className="w-8 h-8 text-destructive flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4 text-[#070707] dark:text-white">What's Actually Risky?</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <div className="font-semibold text-destructive mb-3">❌ Waiting to "see what happens"</div>
-                        <ul className="space-y-2 text-[#070707]/70 dark:text-white/70 text-sm">
-                          <li>• Fintech competitors capture your SMB customers</li>
-                          <li>• 9-12 month procurement cycles</li>
-                          <li>• No data, no learning, no advantage</li>
-                          <li>• $50M+ annual opportunity cost</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <div className="font-semibold text-primary mb-3">✓ Running a controlled 90-day pilot</div>
-                        <ul className="space-y-2 text-[#070707]/70 dark:text-white/70 text-sm">
-                          <li>• Real market data in 3 weeks</li>
-                          <li>• Full sandbox isolation + A/B testing</li>
-                          <li>• First-mover advantage locked in</li>
-                          <li>• Clear go/no-go decision with proof</li>
-                        </ul>
-                      </div>
-                    </div>
+            <Card className="bg-white">
+              <CardContent className="p-6 sm:p-8">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mx-auto mb-6">
+                    <AlertCircle className="w-7 h-7 text-black" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-6 text-black">What's Actually Risky?</h3>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white rounded-lg p-6 border-2 border-black h-full flex flex-col">
+                    <div className="font-semibold text-black mb-4 text-lg">Waiting to "see what happens"</div>
+                    <ul className="space-y-2 text-gray-700 text-sm flex-1">
+                      <li>• Fintech competitors capture your SMB customers</li>
+                      <li>• 9-12 month procurement cycles</li>
+                      <li>• No data, no learning, no advantage</li>
+                      <li>• $50M+ annual opportunity cost</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white rounded-lg p-6 border-2 border-black h-full flex flex-col">
+                    <div className="font-semibold text-black mb-4 text-lg">Running a controlled 90-day pilot</div>
+                    <ul className="space-y-2 text-gray-700 text-sm flex-1">
+                      <li>• Real market data in 3 weeks</li>
+                      <li>• Full sandbox isolation + A/B testing</li>
+                      <li>• First-mover advantage locked in</li>
+                      <li>• Clear go/no-go decision with proof</li>
+                    </ul>
                   </div>
                 </div>
               </CardContent>
@@ -306,55 +302,55 @@ function Pilot() {
       </section>
 
       {/* 90-Day Timeline */}
-      <section className="py-12 md:py-24 bg-white dark:bg-[#070707]">
+      <section className="py-12 md:py-24 bg-white">
         <div className={containerClass}>
           <motion.div {...fadeInUp} className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-6">
               <Clock className="w-4 h-4" />
               Proven 3-Phase Framework
             </div>
-            <h2 className="text-[32px] md:text-[48px] font-bold mb-4 text-[#070707] dark:text-white leading-[41.6px] md:leading-[56px]">
+            <h2 className="text-[32px] md:text-[48px] font-bold mb-4 text-black leading-[41.6px] md:leading-[56px]">
               90 Days to $50M Revenue
             </h2>
-            <p className="text-xl md:text-2xl text-[#070707] dark:text-white/90 max-w-3xl mx-auto mb-4 font-medium">
+            <p className="text-xl md:text-2xl text-black/90 max-w-3xl mx-auto mb-4 font-medium">
               The same playbook that helped 3 of the top 10 US banks unlock 8-figure revenue in a single quarter.
             </p>
-            <div className="inline-flex items-center gap-2 text-sm text-primary font-semibold">
-              <TrendingUp className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 text-sm text-black font-semibold">
+              <TrendingUp className="w-4 h-4" strokeWidth={2.5} />
               <span>Average pilot-to-production: 97 days | Success rate: 100%</span>
             </div>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-              <Card className={`${neutralCard} h-full hover:border-primary/30 transition-all`}>
-                <CardContent className="pt-8 pb-8 px-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Plug className="h-6 w-6 text-primary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                      <Plug className="h-7 w-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">
+                    <div className="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold">
                       1
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-[#070707] dark:text-white">Weeks 0–2: Plug It In</h3>
-                  <p className="text-base font-semibold mb-3 text-primary">Setup & Testing</p>
-                  <ul className="text-sm text-[#070707]/70 dark:text-white/70 leading-relaxed space-y-2">
+                  <h3 className="text-xl font-bold mb-2 text-black">Weeks 0–2: Plug It In</h3>
+                  <p className="text-base font-semibold mb-3 text-black">Setup & Testing</p>
+                  <ul className="text-sm text-gray-700 leading-relaxed space-y-2">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>Connect our API to Wells Fargo's business banking system</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>Run quick security and data flow checks in a sandbox</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>Make sure credit scores (FICO + business scores) load correctly</span>
                     </li>
                   </ul>
-                  <div className="mt-4 pt-4 border-t border-[#070707]/10 dark:border-white/10">
-                    <p className="text-xs text-[#070707]/60 dark:text-white/60 italic">
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <p className="text-xs text-gray-600 italic">
                       Think: Plugging in a new gadget. Quick setup, everything's encrypted and secure.
                     </p>
                   </div>
@@ -363,34 +359,34 @@ function Pilot() {
             </motion.div>
 
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-              <Card className={`${neutralCard} h-full hover:border-primary/30 transition-all`}>
-                <CardContent className="pt-8 pb-8 px-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <BarChart3 className="h-6 w-6 text-primary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                      <BarChart3 className="h-7 w-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">
+                    <div className="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold">
                       2
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-[#070707] dark:text-white">Weeks 3–8: Test With Real Users</h3>
-                  <p className="text-base font-semibold mb-3 text-primary">Live A/B Testing</p>
-                  <ul className="text-sm text-[#070707]/70 dark:text-white/70 leading-relaxed space-y-2">
+                  <h3 className="text-xl font-bold mb-2 text-black">Weeks 3–8: Test With Real Users</h3>
+                  <p className="text-base font-semibold mb-3 text-black">Live A/B Testing</p>
+                  <ul className="text-sm text-gray-700 leading-relaxed space-y-2">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>Show the feature to half your business customers</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>Compare who applies for credit cards: users with vs. without the tool</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>Track results: How many more applications? Better approvals?</span>
                     </li>
                   </ul>
-                  <div className="mt-4 pt-4 border-t border-[#070707]/10 dark:border-white/10">
-                    <p className="text-xs text-[#070707]/60 dark:text-white/60 italic">
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <p className="text-xs text-gray-600 italic">
                       Think: Split testing a new website button—but for $50M in revenue potential.
                     </p>
                   </div>
@@ -399,34 +395,34 @@ function Pilot() {
             </motion.div>
 
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
-              <Card className={`${neutralCard} h-full hover:border-primary/30 transition-all`}>
-                <CardContent className="pt-8 pb-8 px-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Layers className="h-6 w-6 text-primary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                      <Layers className="h-7 w-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">
+                    <div className="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold">
                       3
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-[#070707] dark:text-white">Weeks 9–12: Go or No-Go</h3>
-                  <p className="text-base font-semibold mb-3 text-primary">Review & Scale Decision</p>
-                  <ul className="text-sm text-[#070707]/70 dark:text-white/70 leading-relaxed space-y-2">
+                  <h3 className="text-xl font-bold mb-2 text-black">Weeks 9–12: Go or No-Go</h3>
+                  <p className="text-base font-semibold mb-3 text-black">Review & Scale Decision</p>
+                  <ul className="text-sm text-gray-700 leading-relaxed space-y-2">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>Review the data with your credit, risk, and product teams</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>If results hit targets, roll out to ALL eligible business customers</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       <span>Get full audit trail, compliance docs, and model governance files</span>
                     </li>
                   </ul>
-                  <div className="mt-4 pt-4 border-t border-[#070707]/10 dark:border-white/10">
-                    <p className="text-xs text-[#070707]/60 dark:text-white/60 italic">
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <p className="text-xs text-gray-600 italic">
                       Think: The green light moment—from pilot to production, fully compliant.
                     </p>
                   </div>
@@ -437,18 +433,18 @@ function Pilot() {
 
           {/* Real pilot success story */}
           <motion.div {...fadeInUp} transition={{ delay: 0.5 }}>
-            <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/20">
-              <CardContent className="p-8 md:p-12">
+            <Card className="bg-white">
+              <CardContent className="p-6 sm:p-8">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <Sparkles className="w-6 h-6 text-primary" />
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center flex-shrink-0">
+                    <Sparkles className="w-7 h-7 text-black" strokeWidth={2.5} />
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm font-semibold text-primary mb-2">Real Pilot Results</div>
-                    <h3 className="text-2xl font-bold text-[#070707] dark:text-white mb-3">
+                    <div className="text-sm font-semibold text-black mb-2">Real Pilot Results</div>
+                    <h3 className="text-2xl font-bold text-black mb-3">
                       Top 5 US Regional Bank • Q3 2024 Pilot
                     </h3>
-                    <p className="text-xs text-[#070707]/60 dark:text-white/60 italic">
+                    <p className="text-xs text-gray-600 italic">
                       *Institution name and executive identity redacted per NCNDA (Non-Circumvention Non-Disclosure Agreement) obligations
                     </p>
                   </div>
@@ -461,20 +457,20 @@ function Pilot() {
                     { label: "Conversion Lift", value: "+14.2%", icon: TrendingUp },
                     { label: "Revenue Impact", value: "$52M/year", icon: DollarSign },
                   ].map((metric, i) => (
-                    <div key={i} className="p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border">
-                      <metric.icon className="w-5 h-5 text-primary mb-2" />
-                      <div className="text-2xl font-bold text-[#070707] dark:text-white mb-1">{metric.value}</div>
-                      <div className="text-sm text-[#070707]/70 dark:text-white/70">{metric.label}</div>
+                    <div key={i} className="p-4 rounded-xl bg-white border-2 border-black">
+                      <metric.icon className="w-5 h-5 text-black mb-2" strokeWidth={2.5} />
+                      <div className="text-2xl font-bold text-black mb-1">{metric.value}</div>
+                      <div className="text-sm text-gray-700">{metric.label}</div>
                     </div>
                   ))}
                 </div>
 
                 <div className="pt-6 border-t border-border">
-                  <p className="text-[#070707]/70 dark:text-white/70 italic mb-3">
+                  <p className="text-black/70 text-white/70 italic mb-3">
                     "We were initially skeptical about the proposed timeline and integration complexity. However, LUMIQ demonstrated full API integration within 11 business days, achieved live A/B testing deployment by Week 3, and provided comprehensive ROI analytics with complete audit documentation by Week 9. Based on measurable performance data, our executive committee authorized full-scale production deployment."
                   </p>
-                  <p className="text-sm text-[#070707]/70 dark:text-white/70 not-italic">
-                    <span className="font-semibold text-[#070707] dark:text-white">— Senior Vice President, Digital Banking & Innovation</span>
+                  <p className="text-sm text-gray-700 not-italic">
+                    <span className="font-semibold text-black">— Senior Vice President, Digital Banking & Innovation</span>
                     <span className="block mt-1 text-xs italic">Name and institution redacted in compliance with mutual NCNDA provisions</span>
                   </p>
                 </div>
@@ -485,11 +481,11 @@ function Pilot() {
       </section>
 
       {/* How It Works */}
-      <section className="py-12 md:py-24 bg-white dark:bg-[#070707]">
+      <section className="py-12 md:py-24 bg-white">
         <div className={containerClass}>
           <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-[32px] md:text-[48px] font-bold mb-4 text-[#070707] dark:text-white leading-[41.6px] md:leading-[56px]">How It Works</h2>
-            <p className="text-lg md:text-xl text-[#070707]/70 dark:text-white/70 max-w-2xl mx-auto">
+            <h2 className="text-[32px] md:text-[48px] font-bold mb-4 text-black leading-[41.6px] md:leading-[56px]">How It Works</h2>
+            <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
               Four simple steps to embed Business Credit Journey into your digital banking experience.
             </p>
           </motion.div>
@@ -499,19 +495,19 @@ function Pilot() {
               <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Card className={`${neutralCard} h-full hover:border-primary/30 transition-all cursor-help`}>
+                    <Card className="h-full cursor-help">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <span className="text-primary font-bold text-lg">1</span>
+                          <div className="h-10 w-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-black font-bold text-lg">1</span>
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-bold mb-2 text-[#070707] dark:text-white">Connect Signals</h3>
-                            <p className="text-sm text-[#070707]/70 dark:text-white/70">
+                            <h3 className="font-bold mb-2 text-black">Connect Signals</h3>
+                            <p className="text-sm text-gray-700">
                               Securely connect business + owner credit signals (FICO, Intelliscore, FSR)
                             </p>
                           </div>
-                          <Info className="h-4 w-4 text-[#070707]/50 dark:text-white/50 flex-shrink-0" />
+                          <Info className="h-4 w-4 text-black/50 flex-shrink-0" strokeWidth={2.5} />
                         </div>
                       </CardContent>
                     </Card>
@@ -525,19 +521,19 @@ function Pilot() {
               <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Card className={`${neutralCard} h-full hover:border-primary/30 transition-all cursor-help`}>
+                    <Card className="h-full cursor-help">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <span className="text-primary font-bold text-lg">2</span>
+                          <div className="h-10 w-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-black font-bold text-lg">2</span>
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-bold mb-2 text-[#070707] dark:text-white">Run Model</h3>
-                            <p className="text-sm text-[#070707]/70 dark:text-white/70">
+                            <h3 className="font-bold mb-2 text-black">Run Model</h3>
+                            <p className="text-sm text-gray-700">
                               Run our model in your stack—aligned to your risk appetite
                             </p>
                           </div>
-                          <Info className="h-4 w-4 text-[#070707]/50 dark:text-white/50 flex-shrink-0" />
+                          <Info className="h-4 w-4 text-black/50 flex-shrink-0" strokeWidth={2.5} />
                         </div>
                       </CardContent>
                     </Card>
@@ -551,19 +547,19 @@ function Pilot() {
               <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Card className={`${neutralCard} h-full hover:border-primary/30 transition-all cursor-help`}>
+                    <Card className="h-full cursor-help">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <span className="text-primary font-bold text-lg">3</span>
+                          <div className="h-10 w-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-black font-bold text-lg">3</span>
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-bold mb-2 text-[#070707] dark:text-white">Route Offers</h3>
-                            <p className="text-sm text-[#070707]/70 dark:text-white/70">
+                            <h3 className="font-bold mb-2 text-black">Route Offers</h3>
+                            <p className="text-sm text-gray-700">
                               Route eligible SMBs to right products (Ink Business cards first)
                             </p>
                           </div>
-                          <Info className="h-4 w-4 text-[#070707]/50 dark:text-white/50 flex-shrink-0" />
+                          <Info className="h-4 w-4 text-black/50 flex-shrink-0" strokeWidth={2.5} />
                         </div>
                       </CardContent>
                     </Card>
@@ -577,19 +573,19 @@ function Pilot() {
               <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Card className={`${neutralCard} h-full hover:border-primary/30 transition-all cursor-help`}>
+                    <Card className="h-full cursor-help">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <span className="text-primary font-bold text-lg">4</span>
+                          <div className="h-10 w-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-black font-bold text-lg">4</span>
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-bold mb-2 text-[#070707] dark:text-white">Measure & Scale</h3>
-                            <p className="text-sm text-[#070707]/70 dark:text-white/70">
+                            <h3 className="font-bold mb-2 text-black">Measure & Scale</h3>
+                            <p className="text-sm text-gray-700">
                               Measure lift, track metrics, and scale based on results
                             </p>
                           </div>
-                          <Info className="h-4 w-4 text-[#070707]/50 dark:text-white/50 flex-shrink-0" />
+                          <Info className="h-4 w-4 text-black/50 flex-shrink-0" strokeWidth={2.5} />
                         </div>
                       </CardContent>
                     </Card>
@@ -605,43 +601,43 @@ function Pilot() {
       </section>
 
       {/* Governance Callout */}
-      <section className="py-12 md:py-24 bg-white dark:bg-[#070707]">
+      <section className="py-12 md:py-24 bg-white">
         <div className={containerClass}>
           <motion.div {...fadeInUp}>
-            <Card className={`${neutralCard} rounded-[32px]`}>
+            <Card className="rounded-[32px]">
               <CardContent className="p-8 md:p-12">
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-primary/10 mb-4">
-                    <Lock className="h-7 w-7 text-primary" />
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mx-auto mb-6">
+                    <Lock className="h-7 w-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#070707] dark:text-white">Built with Model-Risk Governance in Mind</h2>
-                  <p className="text-[#070707]/70 dark:text-white/70 max-w-2xl mx-auto">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black">Built with Model-Risk Governance in Mind</h2>
+                  <p className="text-gray-700 max-w-2xl mx-auto">
                     Built with model-risk governance, audit-ready logs, and SBC compliance in mind.
                   </p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 mt-12">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="h-6 w-6 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                     <div>
-                      <p className="font-semibold mb-1 text-[#070707] dark:text-white">ECOA/FCRA/GLBA Compliant</p>
-                      <p className="text-sm text-[#070707]/70 dark:text-white/70">Full regulatory compliance built into every decision path</p>
+                      <p className="font-semibold mb-1 text-black">ECOA/FCRA/GLBA Compliant</p>
+                      <p className="text-sm text-gray-700">Full regulatory compliance built into every decision path</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="h-6 w-6 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                     <div>
-                      <p className="font-semibold mb-1 text-[#070707] dark:text-white">100% Data Lineage & Decision Logging</p>
-                      <p className="text-sm text-[#070707]/70 dark:text-white/70">Complete audit trail for model risk and compliance teams</p>
+                      <p className="font-semibold mb-1 text-black">100% Data Lineage & Decision Logging</p>
+                      <p className="text-sm text-gray-700">Complete audit trail for model risk and compliance teams</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="h-6 w-6 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                     <div>
-                      <p className="font-semibold mb-1 text-[#070707] dark:text-white">Parallel A/B Pilot—Non-Disruptive</p>
-                      <p className="text-sm text-[#070707]/70 dark:text-white/70">Test safely alongside existing systems with zero downtime</p>
+                      <p className="font-semibold mb-1 text-black">Parallel A/B Pilot—Non-Disruptive</p>
+                      <p className="text-sm text-gray-700">Test safely alongside existing systems with zero downtime</p>
                     </div>
                   </div>
                 </div>
@@ -651,124 +647,93 @@ function Pilot() {
         </div>
       </section>
 
-      {/* CTA Repeat - Enhanced with Urgency */}
-      <section className="py-12 md:py-16 sticky top-20 z-10 backdrop-blur-sm border-b-2 bg-gradient-to-r from-primary/95 to-destructive/95 shadow-2xl">
-        <div className={containerClass}>
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left flex-1">
-              <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
-                <AlertCircle className="w-5 h-5 text-white animate-pulse" />
-                <div className="text-base font-bold text-white">Only 3 Q1 2026 Pilot Slots Remaining</div>
-              </div>
-              <div className="text-2xl font-bold text-white mb-1">Secure Your Spot Before Competitors Do</div>
-              <div className="text-sm text-white/80">Next available slot: Q2 2026 (4-month wait)</div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="hidden md:block text-right">
-                <div className="text-xs text-white/80">Typical pilot-to-production</div>
-                <div className="text-sm font-bold text-white">97 days | $50M+ revenue</div>
-              </div>
-              <Button 
-                size="lg"
-                variant="solver"
-                className="bg-white text-primary hover:bg-white/90 shadow-xl hover:scale-105 transition-all"
-                onClick={() => document.getElementById('pilot-form')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Claim Your Pilot Slot
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Sign-Up Form */}
-      <section id="pilot-form" className="py-12 md:py-24 bg-white dark:bg-[#070707] scroll-mt-32">
+      <section id="pilot-form" className="py-12 md:py-24 bg-white scroll-mt-32">
         <div className={containerClass}>
           <motion.div {...fadeInUp} className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-[32px] md:text-[48px] font-bold mb-4 text-[#070707] dark:text-white leading-[41.6px] md:leading-[56px]">Apply for the 90-Day Pilot Program</h2>
-              <p className="text-lg text-[#070707]/70 dark:text-white/70">
+              <h2 className="text-[32px] md:text-[48px] font-bold mb-4 text-black leading-[41.6px] md:leading-[56px]">Apply for the 90-Day Pilot Program</h2>
+              <p className="text-lg text-gray-700">
                 Join leading financial institutions in transforming SMB credit experiences
               </p>
             </div>
 
             {!isSubmitted ? (
-              <Card className={`${neutralCard}`}>
+              <Card>
                 <CardContent className="p-8 md:p-12">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="name" className="text-[#070707] dark:text-white">Full Name *</Label>
+                        <Label htmlFor="name" className="text-black">Full Name *</Label>
                         <Input
                           id="name"
                           value={formData.name}
                           onChange={(e) => handleInputChange('name', e.target.value)}
                           placeholder="John Smith"
-                          className="bg-white dark:bg-[#0F0F0F] border-[#E4E7EC] dark:border-[#1C1C1C]"
+                          className="bg-white border-border"
                           required
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="title" className="text-[#070707] dark:text-white">Title *</Label>
+                        <Label htmlFor="title" className="text-black">Title *</Label>
                         <Input
                           id="title"
                           value={formData.title}
                           onChange={(e) => handleInputChange('title', e.target.value)}
                           placeholder="VP of Digital Banking"
-                          className="bg-white dark:bg-[#0F0F0F] border-[#E4E7EC] dark:border-[#1C1C1C]"
+                          className="bg-white border-border"
                           required
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="company" className="text-[#070707] dark:text-white">Company *</Label>
+                      <Label htmlFor="company" className="text-black">Company *</Label>
                       <Input
                         id="company"
                         value={formData.company}
                         onChange={(e) => handleInputChange('company', e.target.value)}
                         placeholder="Your Financial Institution"
-                        className="bg-white dark:bg-[#0F0F0F] border-[#E4E7EC] dark:border-[#1C1C1C]"
+                        className="bg-white border-border"
                         required
                       />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="email" className="text-[#070707] dark:text-white">Work Email *</Label>
+                        <Label htmlFor="email" className="text-black">Work Email *</Label>
                         <Input
                           id="email"
                           type="email"
                           value={formData.email}
                           onChange={(e) => handleInputChange('email', e.target.value)}
                           placeholder="john@bank.com"
-                          className="bg-white dark:bg-[#0F0F0F] border-[#E4E7EC] dark:border-[#1C1C1C]"
+                          className="bg-white border-border"
                           required
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="phone" className="text-[#070707] dark:text-white">Phone (Optional)</Label>
+                        <Label htmlFor="phone" className="text-black">Phone (Optional)</Label>
                         <Input
                           id="phone"
                           type="tel"
                           value={formData.phone}
                           onChange={(e) => handleInputChange('phone', e.target.value)}
                           placeholder="+1 (555) 000-0000"
-                          className="bg-white dark:bg-[#0F0F0F] border-[#E4E7EC] dark:border-[#1C1C1C]"
+                          className="bg-white border-border"
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="smbCount" className="text-[#070707] dark:text-white">How many SMBs do you serve?</Label>
+                      <Label htmlFor="smbCount" className="text-black">How many SMBs do you serve?</Label>
                       <Select 
                         value={formData.smbCount} 
                         onValueChange={(value) => handleInputChange('smbCount', value)}
                       >
-                        <SelectTrigger className="bg-white dark:bg-[#0F0F0F] border-[#E4E7EC] dark:border-[#1C1C1C]">
+                        <SelectTrigger className="bg-white bg-[#0F0F0F] border-[#E4E7EC] border-[#1C1C1C]">
                           <SelectValue placeholder="Select range" />
                         </SelectTrigger>
                         <SelectContent>
@@ -787,16 +752,16 @@ function Pilot() {
                         checked={formData.consent}
                         onCheckedChange={(checked) => handleInputChange('consent', checked)}
                       />
-                      <Label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer text-[#070707] dark:text-white">
+                      <Label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer text-black">
                         I understand this is a pilot program for evaluation purposes and agree to provide feedback on the integration experience.
                       </Label>
                     </div>
 
-                    <div className="bg-white dark:bg-[#0F0F0F] p-4 rounded-lg border border-[#E4E7EC] dark:border-[#1C1C1C]">
+                    <div className="bg-white p-4 rounded-lg border border-border">
                       <div className="flex items-start gap-2">
-                        <FileCheck className="h-5 w-5 text-[#070707]/50 dark:text-white/50 flex-shrink-0 mt-0.5" />
-                        <p className="text-sm text-[#070707]/70 dark:text-white/70">
-                          <strong className="text-[#070707] dark:text-white">Privacy & Security:</strong> Data will be handled per SOC 2 / ISO 27001 controls. 
+                        <FileCheck className="h-5 w-5 text-black/50 text-white/50 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-gray-700">
+                          <strong className="text-black">Privacy & Security:</strong> Data will be handled per SOC 2 / ISO 27001 controls. 
                           We never share your information with third parties.
                         </p>
                       </div>
@@ -816,35 +781,35 @@ function Pilot() {
                 </CardContent>
               </Card>
             ) : (
-              <Card className={`${neutralCard} rounded-[32px]`}>
+              <Card className="rounded-[32px]">
                 <CardContent className="p-12 text-center">
-                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-primary/10 mb-6">
-                    <CheckCircle2 className="h-7 w-7 text-primary" />
+                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-secondary/10 mb-6">
+                    <CheckCircle2 className="h-7 w-7 text-black" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-[#070707] dark:text-white">Application Received!</h3>
-                  <p className="text-[#070707]/70 dark:text-white/70 mb-8 max-w-md mx-auto">
+                  <h3 className="text-2xl font-bold mb-4 text-black">Application Received!</h3>
+                  <p className="text-black/70 text-white/70 mb-8 max-w-md mx-auto">
                     Thank you for your interest. Our team will review your application and contact you within 24 hours to schedule your pilot review session.
                   </p>
                   <div className="space-y-4">
-                    <p className="text-sm font-medium text-[#070707] dark:text-white">Next Steps:</p>
+                    <p className="text-sm font-medium text-black">Next Steps:</p>
                     <div className="grid gap-3 text-left max-w-md mx-auto">
                       <div className="flex items-start gap-3 text-sm">
-                        <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-primary">1</span>
+                        <div className="h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                          <span className="text-xs font-bold text-black">1</span>
                         </div>
-                        <p className="text-[#070707]/70 dark:text-white/70">Pilot kickoff call within 3 business days</p>
+                        <p className="text-black/70 text-white/70">Pilot kickoff call within 3 business days</p>
                       </div>
                       <div className="flex items-start gap-3 text-sm">
-                        <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-primary">2</span>
+                        <div className="h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                          <span className="text-xs font-bold text-black">2</span>
                         </div>
-                        <p className="text-[#070707]/70 dark:text-white/70">Technical integration review & sandbox setup</p>
+                        <p className="text-black/70 text-white/70">Technical integration review & sandbox setup</p>
                       </div>
                       <div className="flex items-start gap-3 text-sm">
-                        <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-primary">3</span>
+                        <div className="h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                          <span className="text-xs font-bold text-black">3</span>
                         </div>
-                        <p className="text-[#070707]/70 dark:text-white/70">90-day pilot launch with dedicated support</p>
+                        <p className="text-black/70 text-white/70">90-day pilot launch with dedicated support</p>
                       </div>
                     </div>
                   </div>
@@ -856,29 +821,60 @@ function Pilot() {
       </section>
 
       {/* Trust Bar */}
-      <section className="py-12 md:py-16 bg-white dark:bg-[#070707] border-t border-[#E4E7EC] dark:border-[#1D1D1D]">
+      <section className="py-12 md:py-16 bg-white border-t border-border">
         <div className={containerClass}>
           <motion.div {...fadeInUp} className="text-center">
-            <p className="text-sm text-[#070707]/70 dark:text-white/70 mb-8">Trusted by forward-thinking financial institutions</p>
+            <p className="text-sm text-gray-700 mb-8">Trusted by forward-thinking financial institutions</p>
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
               <div className="flex items-center gap-2">
-                <Shield className="h-8 w-8 text-[#070707] dark:text-white" />
-                <span className="font-semibold text-[#070707] dark:text-white">SOC 2 Type II</span>
+                <Shield className="h-8 w-8 text-black" />
+                <span className="font-semibold text-black">SOC 2 Type II</span>
               </div>
               <div className="flex items-center gap-2">
-                <Lock className="h-8 w-8 text-[#070707] dark:text-white" />
-                <span className="font-semibold text-[#070707] dark:text-white">ISO 27001</span>
+                <Lock className="h-8 w-8 text-black" />
+                <span className="font-semibold text-black">ISO 27001</span>
               </div>
               <div className="flex items-center gap-2">
-                <FileCheck className="h-8 w-8 text-[#070707] dark:text-white" />
-                <span className="font-semibold text-[#070707] dark:text-white">ECOA Compliant</span>
+                <FileCheck className="h-8 w-8 text-black" />
+                <span className="font-semibold text-black">ECOA Compliant</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-8 w-8 text-[#070707] dark:text-white" />
-                <span className="font-semibold text-[#070707] dark:text-white">Model Risk Ready</span>
+                <CheckCircle2 className="h-8 w-8 text-black" />
+                <span className="font-semibold text-black">Model Risk Ready</span>
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Repeat - Enhanced with Urgency */}
+      <section className="py-12 md:py-16 sticky top-20 z-10 backdrop-blur-sm border-b-2 bg-gradient-to-br from-primary via-primary to-secondary shadow-2xl">
+        <div className={containerClass}>
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left flex-1">
+              <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
+                <AlertCircle className="w-5 h-5 text-white animate-pulse" />
+                <div className="text-base font-bold text-white">Only 3 Q1 2026 Pilot Slots Remaining</div>
+              </div>
+              <div className="text-2xl font-bold text-white mb-1">Secure Your Spot Before Competitors Do</div>
+              <div className="text-sm text-white/80">Next available slot: Q2 2026 (4-month wait)</div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="hidden md:block text-right">
+                <div className="text-xs text-white/80">Typical pilot-to-production</div>
+                <div className="text-sm font-bold text-white">97 days | $50M+ revenue</div>
+              </div>
+              <Button 
+                size="lg"
+                variant="solver"
+                className="bg-white text-black hover:bg-white/90 shadow-xl hover:scale-105 transition-all"
+                onClick={() => document.getElementById('pilot-form')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Claim Your Pilot Slot
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </PageLayout>

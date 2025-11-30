@@ -27,44 +27,15 @@ export default function HowItWorks() {
   return (
     <PageLayout>
       <div className="min-h-screen relative">
-        {/* Sticky Navigation - Outside hero for full-page stickiness */}
-        <div className="sticky top-20 z-40 bg-card/95 dark:bg-card/90 backdrop-blur-xl border-y border-border shadow-lg">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
-            <nav className="flex items-center gap-3 py-4 overflow-x-auto scrollbar-hide">
-              {[
-                { id: 'hero', label: 'Overview' },
-                { id: 'owner-experience', label: 'Business Owner' },
-                { id: 'bank-ops', label: 'Bank Integration' },
-                { id: 'signals', label: 'Signals & Models' },
-                { id: 'decisioning', label: 'Decisioning' },
-                { id: 'governance', label: 'Governance' },
-                { id: 'pilot', label: 'Pilot Timeline' }
-              ].map((item, idx, arr) => (
-                <div key={item.id} className="flex items-center gap-3 shrink-0">
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap font-medium hover:bg-muted/50 px-3 py-1.5 rounded-full"
-                  >
-                    {item.label}
-                  </button>
-                  {idx < arr.length - 1 && (
-                    <span className="text-border">•</span>
-                  )}
-                </div>
-              ))}
-            </nav>
-          </div>
-        </div>
-
         {/* Hero Section */}
         <div className="relative bg-gradient-to-b from-[#C40C0C] via-[#8B0A0A] to-[#4A4A4A] text-white pb-16">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
           {/* Hero Content */}
           <section id="hero" className="pt-20 pb-24">
-            <div className="mx-auto w-full px-5 md:px-[5vw] relative z-10">
+            <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24 relative z-10">
               <motion.div {...fadeInUp} className="max-w-5xl space-y-8">
-                <div className="inline-block bg-[#F2C75C] text-[#4A4A4A] px-4 py-2 rounded-full text-sm font-semibold">
+                <div className="inline-block bg-secondary text-black px-4 py-2 rounded-full text-sm font-semibold">
                   How It Works
                 </div>
                 
@@ -78,7 +49,7 @@ export default function HowItWorks() {
                 </p>
 
                 <div className="flex items-center gap-3 pt-4">
-                  <span className="text-sm text-white/70">Supports:</span>
+                  <span className="text-sm text-gray-700">Supports:</span>
                   <div className="flex flex-wrap gap-2">
                     {["SBFE Business Data", "FICO SBSS", "Experian FSR", "Consumer FICO®"].map((model) => (
                       <Badge key={model} className="bg-white/10 text-white border-white/20 font-normal">
@@ -90,7 +61,7 @@ export default function HowItWorks() {
 
                 <Button 
                   size="lg"
-                  className="bg-[#F2C75C] text-[#4A4A4A] hover:bg-[#F2C75C]/90 rounded-full font-semibold text-lg px-8 mt-4"
+                  className="bg-secondary text-black hover:bg-secondary/90 rounded-full font-semibold text-lg px-8 mt-4"
                 >
                   Request a 20-minute Pilot Review
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -101,17 +72,14 @@ export default function HowItWorks() {
         </div>
 
         {/* Owner Experience Section */}
-        <section id="owner-experience" className="py-24 bg-white dark:bg-[#070707]">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
+        <section id="owner-experience" className="py-16 md:py-24 bg-white">
+          <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
             <motion.div {...fadeInUp} className="space-y-16">
               <div className="text-center max-w-4xl mx-auto space-y-4">
-                <Badge className="bg-[#C40C0C]/10 text-[#C40C0C] border-[#C40C0C]/20">
+                <Badge className="bg-primary/10 text-primary border-[#C40C0C]/20">
                   Business Owner Experience
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#4A4A4A] dark:text-white">
-                  Business Owner Experience
-                </h2>
-                <p className="text-lg text-[#4A4A4A]/70 dark:text-white/70">
+                <p className="text-lg text-gray-700">
                   Four simple steps from login to pre-qualified offer — all inside Wells Fargo Business Online.
                 </p>
               </div>
@@ -143,20 +111,20 @@ export default function HowItWorks() {
                     icon: Zap
                   }
                 ].map((step) => (
-                  <Card key={step.step} className="bg-[#FAFAFA] dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6 space-y-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-[#C40C0C] text-white flex items-center justify-center text-xl font-bold">
+                  <Card key={step.step} className="h-full">
+                    <CardContent className="p-6 sm:p-8">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold">
                           {step.step}
                         </div>
-                        <div className="w-10 h-10 rounded-full bg-[#F2C75C]/20 flex items-center justify-center">
-                          <step.icon className="w-5 h-5 text-[#C40C0C]" />
+                        <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                          <step.icon className="w-7 h-7 text-black" strokeWidth={2.5} />
                         </div>
                       </div>
-                      <h3 className="text-lg font-bold text-[#4A4A4A] dark:text-white">
+                      <h3 className="text-lg font-bold text-black mb-3">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-[#4A4A4A]/70 dark:text-white/70 leading-relaxed">
+                      <p className="text-sm text-gray-700 leading-relaxed">
                         {step.description}
                       </p>
                     </CardContent>
@@ -169,21 +137,20 @@ export default function HowItWorks() {
                 {[
                   {
                     title: "Credit Dashboard View",
-                    image: "/mockups/businessmockup.png",
+                    image: "/Phone-Mockups/Credit-Dashboard.png",
                     label: "Dual-score visibility: Personal FICO + Business Credit"
                   },
                   {
                     title: "Pre-Qualified Offers",
-                    image: "/mockups/businessmockup1.png",
+                    image: "/Phone-Mockups/pre qual offer.png",
                     label: "Wells Fargo business cards with eligibility explanations"
                   }
                 ].map((mockup) => (
                   <div key={mockup.title} className="space-y-4">
-                    <h4 className="text-sm font-semibold text-[#C40C0C] uppercase tracking-wider">
+                    <h4 className="text-sm font-semibold text-primary uppercase tracking-wider">
                       {mockup.title}
                     </h4>
                     <div className="relative flex items-center justify-center">
-                      <div className="absolute inset-0 blur-[100px] bg-[#C40C0C]/20 rounded-[40px]" />
                       <div className="relative max-w-sm w-full">
                         <img
                           src={mockup.image}
@@ -192,7 +159,7 @@ export default function HowItWorks() {
                         />
                       </div>
                     </div>
-                    <p className="text-sm text-center text-[#4A4A4A]/70 dark:text-white/70">
+                    <p className="text-sm text-center text-gray-700">
                       {mockup.label}
                     </p>
                   </div>
@@ -203,23 +170,23 @@ export default function HowItWorks() {
         </section>
 
         {/* Bank Ops & Integration Section */}
-        <section id="bank-ops" className="py-24 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
+        <section id="bank-ops" className="py-16 md:py-24 bg-white">
+          <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
             <motion.div {...fadeInUp} className="space-y-16">
               <div className="text-center max-w-4xl mx-auto space-y-4">
-                <Badge className="bg-[#C40C0C]/10 text-[#C40C0C] border-[#C40C0C]/20">
+                <Badge className="bg-primary/10 text-primary border-[#C40C0C]/20">
                   Bank Operations & Integration
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#4A4A4A] dark:text-white">
+                <h2 className="text-4xl md:text-5xl font-bold text-black">
                   How LUMIQ AI Integrates with Wells Fargo
                 </h2>
-                <p className="text-lg text-[#4A4A4A]/70 dark:text-white/70">
+                <p className="text-lg text-gray-700">
                   Seamless API integration with no disruption to existing systems.
                 </p>
               </div>
 
               {/* Architecture Diagram */}
-              <div className="bg-white dark:bg-[#1C1C1C] rounded-3xl p-8 md:p-12 border border-[#E4E7EC] dark:border-[#2C2C2C] shadow-lg">
+              <div className="bg-white bg-white rounded-3xl p-8 md:p-12 border border-border border-border shadow-lg">
                 <div className="grid md:grid-cols-4 gap-6">
                   {[
                     {
@@ -243,7 +210,7 @@ export default function HowItWorks() {
                         "Risk overlays",
                         "Explainability"
                       ],
-                      color: "bg-[#C40C0C]"
+                      color: "bg-primary"
                     },
                     {
                       title: "WF Product Routing",
@@ -254,7 +221,7 @@ export default function HowItWorks() {
                         "Term Loans (Phase 2)",
                         "Policy alignment"
                       ],
-                      color: "bg-[#F2C75C]"
+                      color: "bg-secondary"
                     },
                     {
                       title: "WF Dashboards",
@@ -269,18 +236,18 @@ export default function HowItWorks() {
                     }
                   ].map((block, idx, arr) => (
                     <div key={block.title} className="relative">
-                      <Card className="bg-[#FAFAFA] dark:bg-[#0F0F0F] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl h-full">
-                        <CardContent className="p-6 space-y-4">
-                          <div className={`w-12 h-12 rounded-full ${block.color} flex items-center justify-center`}>
-                            <block.icon className="w-6 h-6 text-white" />
+                      <Card className="h-full">
+                        <CardContent className="p-6 sm:p-8">
+                          <div className={`w-16 h-16 rounded-2xl ${block.color} flex items-center justify-center mb-6`}>
+                            <block.icon className="w-7 h-7 text-white" strokeWidth={2.5} />
                           </div>
-                          <h3 className="font-bold text-[#4A4A4A] dark:text-white">
+                          <h3 className="font-bold text-black mb-4">
                             {block.title}
                           </h3>
                           <ul className="space-y-2">
                             {block.items.map((item) => (
-                              <li key={item} className="text-sm text-[#4A4A4A]/70 dark:text-white/70 flex items-start gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-[#C40C0C] shrink-0 mt-0.5" />
+                              <li key={item} className="text-sm text-gray-700 flex items-start gap-2">
+                                <CheckCircle2 className="w-4 h-4 text-black shrink-0 mt-0.5" strokeWidth={2.5} />
                                 {item}
                               </li>
                             ))}
@@ -289,7 +256,7 @@ export default function HowItWorks() {
                       </Card>
                       {idx < arr.length - 1 && (
                         <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-                          <ArrowRight className="w-6 h-6 text-[#C40C0C]" />
+                          <ArrowRight className="w-6 h-6 text-primary" />
                         </div>
                       )}
                     </div>
@@ -307,12 +274,12 @@ export default function HowItWorks() {
                   { label: "Role-based access", icon: Users },
                   { label: "Audit-ready data lineage", icon: FileText }
                 ].map((feature) => (
-                  <Card key={feature.label} className="bg-white dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-xl">
+                  <Card key={feature.label} className="h-full">
                     <CardContent className="p-4 text-center space-y-2">
-                      <div className="w-10 h-10 rounded-full bg-[#C40C0C]/10 flex items-center justify-center mx-auto">
-                        <feature.icon className="w-5 h-5 text-[#C40C0C]" />
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mx-auto mb-3">
+                        <feature.icon className="w-6 h-6 text-black" strokeWidth={2.5} />
                       </div>
-                      <p className="text-xs font-medium text-[#4A4A4A] dark:text-white leading-tight">
+                      <p className="text-xs font-medium text-gray-700 leading-tight">
                         {feature.label}
                       </p>
                     </CardContent>
@@ -324,17 +291,17 @@ export default function HowItWorks() {
         </section>
 
         {/* Signals & Models Section */}
-        <section id="signals" className="py-24 bg-white dark:bg-[#070707]">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
+        <section id="signals" className="py-16 md:py-24 bg-white">
+          <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
             <motion.div {...fadeInUp} className="space-y-12">
               <div className="text-center max-w-4xl mx-auto space-y-4">
-                <Badge className="bg-[#C40C0C]/10 text-[#C40C0C] border-[#C40C0C]/20">
+                <Badge className="bg-primary/10 text-primary border-[#C40C0C]/20">
                   Credit Signals & Models
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#4A4A4A] dark:text-white">
+                <h2 className="text-4xl md:text-5xl font-bold text-black">
                   Credit Signals & Models Used
                 </h2>
-                <p className="text-lg text-[#4A4A4A]/70 dark:text-white/70">
+                <p className="text-lg text-gray-700">
                   Explicit, validated credit signals for Risk and Compliance comfort.
                 </p>
               </div>
@@ -342,8 +309,8 @@ export default function HowItWorks() {
               <div className="space-y-12">
                 {/* Individual/Guarantor Section */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-[#4A4A4A] dark:text-white flex items-center gap-3">
-                    <Users className="w-6 h-6 text-[#C40C0C]" />
+                  <h3 className="text-2xl font-bold text-black flex items-center gap-3">
+                    <Users className="w-6 h-6 text-black" strokeWidth={2.5} />
                     Individual / Guarantor (Personal)
                   </h3>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -361,20 +328,20 @@ export default function HowItWorks() {
                         icon: FileText
                       }
                     ].map((signal) => (
-                      <Card key={signal.name} className="bg-[#FAFAFA] dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl hover:shadow-lg transition-shadow">
-                        <CardContent className="p-6 space-y-4">
-                          <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-full bg-[#C40C0C]/10 flex items-center justify-center">
-                              <signal.icon className="w-6 h-6 text-[#C40C0C]" />
+                      <Card key={signal.name} className="h-full">
+                        <CardContent className="p-6 sm:p-8">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                              <signal.icon className="w-7 h-7 text-black" strokeWidth={2.5} />
                             </div>
-                            <Badge className="bg-[#F2C75C]/20 text-[#4A4A4A] dark:text-white border-[#F2C75C]/30 font-normal">
+                            <Badge className="bg-secondary/10 text-black border-secondary/20 font-normal">
                               {signal.type}
                             </Badge>
                           </div>
-                          <h4 className="font-bold text-[#4A4A4A] dark:text-white">
+                          <h4 className="font-bold text-black mb-3">
                             {signal.name}
                           </h4>
-                          <p className="text-sm text-[#4A4A4A]/70 dark:text-white/70 leading-relaxed">
+                          <p className="text-sm text-gray-700 leading-relaxed">
                             {signal.description}
                           </p>
                         </CardContent>
@@ -385,8 +352,8 @@ export default function HowItWorks() {
 
                 {/* Company/Business Section */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-[#4A4A4A] dark:text-white flex items-center gap-3">
-                    <TrendingUp className="w-6 h-6 text-[#C40C0C]" />
+                  <h3 className="text-2xl font-bold text-black flex items-center gap-3">
+                    <TrendingUp className="w-6 h-6 text-black" strokeWidth={2.5} />
                     Company / Business
                   </h3>
                   <div className="grid md:grid-cols-3 gap-6">
@@ -410,20 +377,20 @@ export default function HowItWorks() {
                         icon: Activity
                       }
                     ].map((signal) => (
-                      <Card key={signal.name} className="bg-[#FAFAFA] dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl hover:shadow-lg transition-shadow">
-                        <CardContent className="p-6 space-y-4">
-                          <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-full bg-[#C40C0C]/10 flex items-center justify-center">
-                              <signal.icon className="w-6 h-6 text-[#C40C0C]" />
+                      <Card key={signal.name} className="h-full">
+                        <CardContent className="p-6 sm:p-8">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                              <signal.icon className="w-7 h-7 text-black" strokeWidth={2.5} />
                             </div>
-                            <Badge className="bg-[#F2C75C]/20 text-[#4A4A4A] dark:text-white border-[#F2C75C]/30 font-normal">
+                            <Badge className="bg-secondary/10 text-black border-secondary/20 font-normal">
                               {signal.type}
                             </Badge>
                           </div>
-                          <h4 className="font-bold text-[#4A4A4A] dark:text-white">
+                          <h4 className="font-bold text-black mb-3">
                             {signal.name}
                           </h4>
-                          <p className="text-sm text-[#4A4A4A]/70 dark:text-white/70 leading-relaxed">
+                          <p className="text-sm text-gray-700 leading-relaxed">
                             {signal.description}
                           </p>
                         </CardContent>
@@ -434,8 +401,8 @@ export default function HowItWorks() {
 
                 {/* Application/Relationship Section */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-[#4A4A4A] dark:text-white flex items-center gap-3">
-                    <Shield className="w-6 h-6 text-[#C40C0C]" />
+                  <h3 className="text-2xl font-bold text-black flex items-center gap-3">
+                    <Shield className="w-6 h-6 text-black" strokeWidth={2.5} />
                     Application / Relationship Data
                   </h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -465,20 +432,20 @@ export default function HowItWorks() {
                         icon: Lock
                       }
                     ].map((signal) => (
-                      <Card key={signal.name} className="bg-[#FAFAFA] dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl hover:shadow-lg transition-shadow">
-                        <CardContent className="p-6 space-y-4">
-                          <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-full bg-[#C40C0C]/10 flex items-center justify-center">
-                              <signal.icon className="w-6 h-6 text-[#C40C0C]" />
+                      <Card key={signal.name} className="h-full">
+                        <CardContent className="p-6 sm:p-8">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                              <signal.icon className="w-7 h-7 text-black" strokeWidth={2.5} />
                             </div>
-                            <Badge className="bg-[#F2C75C]/20 text-[#4A4A4A] dark:text-white border-[#F2C75C]/30 font-normal">
+                            <Badge className="bg-secondary/10 text-black border-secondary/20 font-normal">
                               {signal.type}
                             </Badge>
                           </div>
-                          <h4 className="font-bold text-[#4A4A4A] dark:text-white">
+                          <h4 className="font-bold text-black mb-3">
                             {signal.name}
                           </h4>
-                          <p className="text-sm text-[#4A4A4A]/70 dark:text-white/70 leading-relaxed">
+                          <p className="text-sm text-gray-700 leading-relaxed">
                             {signal.description}
                           </p>
                         </CardContent>
@@ -488,15 +455,17 @@ export default function HowItWorks() {
                 </div>
               </div>
 
-              <Card className="bg-gradient-to-r from-[#C40C0C]/5 to-[#F2C75C]/5 border-[#C40C0C]/20 rounded-2xl">
-                <CardContent className="p-8 space-y-4">
+              <Card className="bg-white">
+                <CardContent className="p-6 sm:p-8">
                   <div className="flex items-start gap-3">
-                    <AlertCircle className="w-6 h-6 text-[#C40C0C] shrink-0 mt-1" />
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center flex-shrink-0">
+                      <AlertCircle className="w-6 h-6 text-black shrink-0" strokeWidth={2.5} />
+                    </div>
                     <div className="space-y-2">
-                      <h3 className="font-bold text-[#4A4A4A] dark:text-white text-lg">
+                      <h3 className="font-bold text-black text-lg">
                         Score Refresh & Audit Trail
                       </h3>
-                      <p className="text-sm text-[#4A4A4A]/70 dark:text-white/70 leading-relaxed">
+                      <p className="text-sm text-gray-700 leading-relaxed">
                         Scores are refreshed per login or scheduled intervals set by Wells Fargo. 
                         All signals stored with full audit trail and explanation metadata for compliance and governance.
                       </p>
@@ -509,23 +478,23 @@ export default function HowItWorks() {
         </section>
 
         {/* Decisioning & Product Routing Section */}
-        <section id="decisioning" className="py-24 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
+        <section id="decisioning" className="py-16 md:py-24 bg-white">
+          <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
             <motion.div {...fadeInUp} className="space-y-12">
               <div className="text-center max-w-4xl mx-auto space-y-4">
-                <Badge className="bg-[#C40C0C]/10 text-[#C40C0C] border-[#C40C0C]/20">
+                <Badge className="bg-primary/10 text-primary border-[#C40C0C]/20">
                   Policy-Aligned Decisioning
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#4A4A4A] dark:text-white">
+                <h2 className="text-4xl md:text-5xl font-bold text-black">
                   Policy-Aligned Decisioning & Product Routing
                 </h2>
-                <p className="text-lg text-[#4A4A4A]/70 dark:text-white/70">
+                <p className="text-lg text-gray-700">
                   Every recommendation within Wells Fargo's risk appetite. No automated approvals.
                 </p>
               </div>
 
               {/* Decision Flow Diagram */}
-              <div className="bg-white dark:bg-[#1C1C1C] rounded-3xl p-8 md:p-12 border border-[#E4E7EC] dark:border-[#2C2C2C] shadow-lg">
+              <div className="bg-white bg-white rounded-3xl p-8 md:p-12 border border-border border-border shadow-lg">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                   {[
                     { label: "Inputs", sublabel: "Scores + Attributes", icon: Database },
@@ -540,16 +509,16 @@ export default function HowItWorks() {
                           <step.icon className="w-8 h-8 text-white" />
                         </div>
                         <div className="text-center">
-                          <p className="font-bold text-[#4A4A4A] dark:text-white text-sm">
+                          <p className="font-bold text-black text-sm">
                             {step.label}
                           </p>
-                          <p className="text-xs text-[#4A4A4A]/60 dark:text-white/60">
+                          <p className="text-xs text-gray-600">
                             {step.sublabel}
                           </p>
                         </div>
                       </div>
                       {idx < arr.length - 1 && (
-                        <ArrowRight className="w-6 h-6 text-[#C40C0C] hidden md:block" />
+                        <ArrowRight className="w-6 h-6 text-primary hidden md:block" />
                       )}
                     </div>
                   ))}
@@ -558,10 +527,12 @@ export default function HowItWorks() {
 
               {/* Key Principles */}
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="bg-white dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl">
-                  <CardContent className="p-8 space-y-4">
-                    <h3 className="text-xl font-bold text-[#4A4A4A] dark:text-white flex items-center gap-2">
-                      <Shield className="w-6 h-6 text-[#C40C0C]" />
+                <Card className="h-full">
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                      <Shield className="w-7 h-7 text-black" strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-xl font-bold text-black mb-4">
                       Decision Principles
                     </h3>
                     <ul className="space-y-3">
@@ -572,36 +543,38 @@ export default function HowItWorks() {
                         "Adverse-action rationale provided if declined"
                       ].map((item) => (
                         <li key={item} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-5 h-5 text-[#C40C0C] shrink-0 mt-0.5" />
-                          <span className="text-sm text-[#4A4A4A]/70 dark:text-white/70">{item}</span>
+                          <CheckCircle2 className="w-5 h-5 text-black shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <span className="text-sm text-gray-700">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl">
-                  <CardContent className="p-8 space-y-4">
-                    <h3 className="text-xl font-bold text-[#4A4A4A] dark:text-white flex items-center gap-2">
-                      <Target className="w-6 h-6 text-[#C40C0C]" />
+                <Card className="h-full">
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                      <Target className="w-7 h-7 text-black" strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-xl font-bold text-black mb-4">
                       Product Roadmap
                     </h3>
                     <div className="space-y-4">
                       <div>
-                        <Badge className="bg-[#C40C0C] text-white border-none mb-2">Stage 1</Badge>
-                        <p className="text-sm text-[#4A4A4A] dark:text-white font-semibold">
+                        <Badge className="bg-primary text-white border-none mb-2">Stage 1</Badge>
+                        <p className="text-sm text-black font-semibold">
                           Business Credit Cards
                         </p>
-                        <p className="text-xs text-[#4A4A4A]/60 dark:text-white/60">
+                        <p className="text-xs text-gray-600">
                           Primary focus for pilot and initial rollout
                         </p>
                       </div>
                       <div>
-                        <Badge className="bg-[#F2C75C] text-[#4A4A4A] border-none mb-2">Stage 2</Badge>
-                        <p className="text-sm text-[#4A4A4A] dark:text-white font-semibold">
+                        <Badge className="bg-secondary text-black border-none mb-2">Stage 2</Badge>
+                        <p className="text-sm text-black font-semibold">
                           Business LOC, Term Loans, CRE
                         </p>
-                        <p className="text-xs text-[#4A4A4A]/60 dark:text-white/60">
+                        <p className="text-xs text-gray-600">
                           Expansion to additional commercial products
                         </p>
                       </div>
@@ -614,29 +587,29 @@ export default function HowItWorks() {
         </section>
 
         {/* Monitoring, Insights & Governance Section */}
-        <section id="governance" className="py-24 bg-white dark:bg-[#070707]">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
+        <section id="governance" className="py-16 md:py-24 bg-white">
+          <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
             <motion.div {...fadeInUp} className="space-y-12">
               <div className="text-center max-w-4xl mx-auto space-y-4">
-                <Badge className="bg-[#C40C0C]/10 text-[#C40C0C] border-[#C40C0C]/20">
+                <Badge className="bg-primary/10 text-primary border-[#C40C0C]/20">
                   Governance & Portfolio Monitoring
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#4A4A4A] dark:text-white">
+                <h2 className="text-4xl md:text-5xl font-bold text-black">
                   Governance & Portfolio Monitoring
                 </h2>
-                <p className="text-lg text-[#4A4A4A]/70 dark:text-white/70">
+                <p className="text-lg text-gray-700">
                   Complete transparency, audit trails, and actionable insights for internal teams.
                 </p>
               </div>
 
               <div className="grid lg:grid-cols-3 gap-6">
                 {/* Column 1: Banker Dashboard */}
-                <Card className="bg-[#FAFAFA] dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl">
-                  <CardContent className="p-8 space-y-6">
-                    <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center">
-                      <Eye className="w-7 h-7 text-blue-500" />
+                <Card className="h-full">
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                      <Eye className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <h3 className="text-xl font-bold text-[#4A4A4A] dark:text-white">
+                    <h3 className="text-xl font-bold text-black mb-4">
                       Banker Dashboard
                     </h3>
                     <ul className="space-y-3">
@@ -647,8 +620,8 @@ export default function HowItWorks() {
                         "Conversion lift vs control"
                       ].map((item) => (
                         <li key={item} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-5 h-5 text-[#C40C0C] shrink-0 mt-0.5" />
-                          <span className="text-sm text-[#4A4A4A]/70 dark:text-white/70">{item}</span>
+                          <CheckCircle2 className="w-5 h-5 text-black shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <span className="text-sm text-gray-700">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -656,12 +629,12 @@ export default function HowItWorks() {
                 </Card>
 
                 {/* Column 2: Compliance Controls */}
-                <Card className="bg-[#FAFAFA] dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl">
-                  <CardContent className="p-8 space-y-6">
-                    <div className="w-14 h-14 rounded-full bg-[#C40C0C]/10 flex items-center justify-center">
-                      <Shield className="w-7 h-7 text-[#C40C0C]" />
+                <Card className="h-full">
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                      <Shield className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <h3 className="text-xl font-bold text-[#4A4A4A] dark:text-white">
+                    <h3 className="text-xl font-bold text-black mb-4">
                       Compliance Controls
                     </h3>
                     <ul className="space-y-3">
@@ -673,8 +646,8 @@ export default function HowItWorks() {
                         "PII minimization"
                       ].map((item) => (
                         <li key={item} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-5 h-5 text-[#C40C0C] shrink-0 mt-0.5" />
-                          <span className="text-sm text-[#4A4A4A]/70 dark:text-white/70">{item}</span>
+                          <CheckCircle2 className="w-5 h-5 text-black shrink-0 mt-0.5" strokeWidth={2.5} />
+                          <span className="text-sm text-gray-700">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -682,12 +655,12 @@ export default function HowItWorks() {
                 </Card>
 
                 {/* Column 3: KPIs */}
-                <Card className="bg-[#FAFAFA] dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl">
-                  <CardContent className="p-8 space-y-6">
-                    <div className="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center">
-                      <LineChart className="w-7 h-7 text-green-500" />
+                <Card className="h-full">
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                      <LineChart className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <h3 className="text-xl font-bold text-[#4A4A4A] dark:text-white">
+                    <h3 className="text-xl font-bold text-black mb-4">
                       Key Performance Indicators
                     </h3>
                     <div className="space-y-4">
@@ -698,10 +671,10 @@ export default function HowItWorks() {
                         { metric: "–18–25%", label: "Reduced manual reviews" }
                       ].map((kpi) => (
                         <div key={kpi.label} className="flex items-center gap-3">
-                          <div className="text-2xl font-bold text-[#C40C0C]">
+                          <div className="text-2xl font-bold text-primary">
                             {kpi.metric}
                           </div>
-                          <p className="text-sm text-[#4A4A4A]/70 dark:text-white/70">
+                          <p className="text-sm text-gray-700">
                             {kpi.label}
                           </p>
                         </div>
@@ -715,17 +688,17 @@ export default function HowItWorks() {
         </section>
 
         {/* Pilot Rollout Timeline Section */}
-        <section id="pilot" className="py-24 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
+        <section id="pilot" className="py-16 md:py-24 bg-white">
+          <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
             <motion.div {...fadeInUp} className="space-y-12">
               <div className="text-center max-w-4xl mx-auto space-y-4">
-                <Badge className="bg-[#C40C0C]/10 text-[#C40C0C] border-[#C40C0C]/20">
+                <Badge className="bg-primary/10 text-primary border-[#C40C0C]/20">
                   Pilot Timeline
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#4A4A4A] dark:text-white">
+                <h2 className="text-4xl md:text-5xl font-bold text-black">
                   Pilot Rollout Timeline
                 </h2>
-                <p className="text-lg text-[#4A4A4A]/70 dark:text-white/70">
+                <p className="text-lg text-gray-700">
                   90-day controlled experiment with clear milestones and success criteria.
                 </p>
               </div>
@@ -733,14 +706,14 @@ export default function HowItWorks() {
               {/* Timeline */}
               <div className="relative">
                 {/* Timeline Line */}
-                <div className="absolute top-12 left-8 right-8 h-1 bg-gradient-to-r from-[#C40C0C] via-[#F2C75C] to-green-500 hidden lg:block" />
+                <div className="absolute top-12 left-8 right-8 h-1 bg-gradient-to-r from-primary via-secondary to-green-500 hidden lg:block" />
                 
                 <div className="grid lg:grid-cols-3 gap-8">
                   {[
                     {
                       phase: "Weeks 0–2",
                       title: "Integration + Sandbox",
-                      color: "from-[#C40C0C] to-[#8B0A0A]",
+                      color: "from-primary to-primary/80",
                       icon: Settings,
                       items: [
                         "API integration & credential setup",
@@ -752,7 +725,7 @@ export default function HowItWorks() {
                     {
                       phase: "Weeks 3–8",
                       title: "Live A/B Traffic",
-                      color: "from-[#F2C75C] to-[#D4A942]",
+                      color: "from-secondary to-secondary/80",
                       icon: Activity,
                       items: [
                         "Controlled A/B test with live traffic",
@@ -774,27 +747,26 @@ export default function HowItWorks() {
                       ]
                     }
                   ].map((phase, idx) => (
-                    <Card key={phase.phase} className="bg-white dark:bg-[#1C1C1C] border-[#E4E7EC] dark:border-[#2C2C2C] rounded-2xl relative">
-                      <CardContent className="p-8 space-y-6">
-                        <div className="relative">
-                          <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg relative z-10`}>
-                            <phase.icon className="w-8 h-8 text-white" />
+                    <Card key={phase.phase} className="h-full relative">
+                      <CardContent className="p-6 sm:p-8">
+                        <div className="relative mb-6">
+                          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg relative z-10`}>
+                            <phase.icon className="w-7 h-7 text-white" strokeWidth={2.5} />
                           </div>
-                          <div className="absolute -top-2 -left-2 w-20 h-20 rounded-full bg-gradient-to-br ${phase.color} opacity-20 animate-pulse" />
                         </div>
-                        <div>
-                          <Badge className="bg-[#C40C0C]/10 text-[#C40C0C] border-none mb-2">
+                        <div className="mb-4">
+                          <Badge className="bg-primary/10 text-primary border-none mb-2">
                             {phase.phase}
                           </Badge>
-                          <h3 className="text-xl font-bold text-[#4A4A4A] dark:text-white">
+                          <h3 className="text-xl font-bold text-black">
                             {phase.title}
                           </h3>
                         </div>
                         <ul className="space-y-2">
                           {phase.items.map((item) => (
                             <li key={item} className="flex items-start gap-2">
-                              <CheckCircle2 className="w-4 h-4 text-[#C40C0C] shrink-0 mt-1" />
-                              <span className="text-sm text-[#4A4A4A]/70 dark:text-white/70">{item}</span>
+                              <CheckCircle2 className="w-4 h-4 text-black shrink-0 mt-1" strokeWidth={2.5} />
+                              <span className="text-sm text-gray-700">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -805,10 +777,12 @@ export default function HowItWorks() {
               </div>
 
               {/* Outputs */}
-              <Card className="bg-gradient-to-r from-[#C40C0C]/5 to-[#F2C75C]/5 border-[#C40C0C]/20 rounded-2xl">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-[#4A4A4A] dark:text-white mb-4 flex items-center gap-2">
-                    <FileText className="w-6 h-6 text-[#C40C0C]" />
+              <Card className="bg-white">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <FileText className="w-7 h-7 text-black" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-black mb-4">
                     Pilot Outputs & Deliverables
                   </h3>
                   <div className="grid md:grid-cols-4 gap-4">
@@ -819,8 +793,8 @@ export default function HowItWorks() {
                       "Scale recommendation & ROI forecast"
                     ].map((output) => (
                       <div key={output} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-5 h-5 text-[#C40C0C] shrink-0 mt-0.5" />
-                        <span className="text-sm text-[#4A4A4A]/70 dark:text-white/70">{output}</span>
+                        <CheckCircle2 className="w-5 h-5 text-black shrink-0 mt-0.5" strokeWidth={2.5} />
+                        <span className="text-sm text-gray-700">{output}</span>
                       </div>
                     ))}
                   </div>
@@ -832,7 +806,7 @@ export default function HowItWorks() {
 
         {/* CTA Footer Section */}
         <section className="py-20 bg-gradient-to-r from-[#C40C0C] to-[#8B0A0A] text-white">
-          <div className="mx-auto w-full px-5 md:px-[5vw]">
+          <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
             <motion.div {...fadeInUp} className="text-center space-y-8 max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-5xl font-bold">
                 See how LUMIQ AI increases pre-qualified applications by 10–15% within Wells Fargo's risk appetite
@@ -843,7 +817,7 @@ export default function HowItWorks() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <Button 
                   size="lg"
-                  className="bg-[#F2C75C] text-[#4A4A4A] hover:bg-[#F2C75C]/90 rounded-full font-semibold text-lg px-8"
+                  className="bg-white text-primary hover:bg-white/90 rounded-full font-semibold text-lg px-8"
                 >
                   Request Pilot Review
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -851,7 +825,7 @@ export default function HowItWorks() {
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="bg-transparent text-white border-white hover:bg-white hover:text-[#C40C0C] rounded-full font-semibold text-lg px-8"
+                  className="bg-transparent text-white border-white hover:bg-white hover:text-primary rounded-full font-semibold text-lg px-8"
                 >
                   Download Model Governance Framework
                   <FileText className="ml-2 h-5 w-5" />

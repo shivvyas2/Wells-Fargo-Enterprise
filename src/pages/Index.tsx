@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Shield, TrendingUp, BarChart3, Bell, CreditCard, Brain, CheckCircle2, Lock, FileCheck, ArrowRight, Target, Zap, Award, AlertTriangle, Database, Clock, Users } from "lucide-react";
+import { Shield, TrendingUp, BarChart3, Bell, CreditCard, Brain, CheckCircle2, Lock, FileCheck, ArrowRight, Target, Zap, Award, Database, Clock, Users } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -61,7 +61,7 @@ function Index() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white text-xs sm:text-sm font-medium mb-5 sm:mb-6"
             >
-              <Shield className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Shield className="w-3 h-3 sm:w-4 sm:h-4" strokeWidth={2.5} />
               Enterprise Credit Intelligence • Powered by LUMIQ AI
             </motion.div>
 
@@ -128,7 +128,7 @@ function Index() {
       </HeroBackground>
 
       {/* ==================== VALUE & BENEFITS SECTION ==================== */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -137,10 +137,10 @@ function Index() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
+            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-black">
               What This Delivers for Wells Fargo
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-gray-800 max-w-3xl mx-auto">
               Operational, regulatory, and revenue outcomes built specifically for Wells Fargo's SMB portfolio.
             </p>
           </motion.div>
@@ -152,19 +152,19 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="h-full border-l-4 border-primary">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                    <Clock className="w-6 h-6 text-primary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <Clock className="w-7 h-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Faster Underwriting</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <h3 className="text-lg font-semibold text-black mb-3">Faster Underwriting</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">
                     Reduce manual review time by 35%. Automated risk scoring accelerates pre-qualification from days to minutes.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic mb-2">
+                  <p className="text-xs text-gray-600 italic mb-2">
                     From 3–5 days → 10 minutes (based on A/B pilot results in comparable regional banks).
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic">
+                  <p className="text-xs text-gray-600 italic">
                     +20% uplift in decision accuracy.
                   </p>
                 </CardContent>
@@ -177,19 +177,19 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Card className="h-full border-l-4 border-primary">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                    <Shield className="w-6 h-6 text-primary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <Shield className="w-7 h-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Better Risk Visibility</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <h3 className="text-lg font-semibold text-black mb-3">Better Risk Visibility</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">
                     Unified view of owner FICO + business credit scores. Detect risk signals earlier across your 3.3M SMB portfolio.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic mb-2">
+                  <p className="text-xs text-gray-600 italic mb-2">
                     Early warning detection 45–60 days sooner than traditional monitoring (TransUnion SMB credit study).
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic">
+                  <p className="text-xs text-gray-600 italic">
                     +18% improvement in risk tier accuracy.
                   </p>
                 </CardContent>
@@ -202,19 +202,19 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Card className="h-full border-l-4 border-primary">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                    <TrendingUp className="w-6 h-6 text-primary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <TrendingUp className="w-7 h-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Cross-Sell Opportunities</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <h3 className="text-lg font-semibold text-black mb-3">Cross-Sell Opportunities</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">
                     12% lift in qualified business card applications. Targeted product recommendations drive credit line expansions.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic mb-2">
+                  <p className="text-xs text-gray-600 italic mb-2">
                     Pilot cohorts showed 10–15% conversion lift when credit visibility was provided vs. control groups.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic">
+                  <p className="text-xs text-gray-600 italic">
                     3.3M SMB customers provide large recommendation accuracy feedback loops.
                   </p>
                 </CardContent>
@@ -227,19 +227,19 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Card className="h-full border-l-4 border-secondary">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
-                    <BarChart3 className="w-6 h-6 text-secondary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <BarChart3 className="w-7 h-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Portfolio Health Monitoring</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <h3 className="text-lg font-semibold text-black mb-3">Portfolio Health Monitoring</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">
                     Real-time early warning signals on credit deterioration. Proactive risk management across segments and industries.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic mb-2">
+                  <p className="text-xs text-gray-600 italic mb-2">
                     Institutions using unified monitoring reduced portfolio loss rates by 18–25% over 18-month periods.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic">
+                  <p className="text-xs text-gray-600 italic">
                     Early risk signals surface 45–60 days sooner vs. manual review.
                   </p>
                 </CardContent>
@@ -252,19 +252,19 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Card className="h-full border-l-4 border-secondary">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
-                    <FileCheck className="w-6 h-6 text-secondary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <FileCheck className="w-7 h-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Compliance Transparency</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <h3 className="text-lg font-semibold text-black mb-3">Compliance Transparency</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">
                     Full audit trail with explainable decisioning. ECOA, FCRA, GLBA-aligned with data lineage tracking.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic mb-2">
+                  <p className="text-xs text-gray-600 italic mb-2">
                     100% audit-ready documentation with real-time explainability for regulatory exams and adverse action reporting.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic">
+                  <p className="text-xs text-gray-600 italic">
                     Reduces adverse action turnaround time by 30–40%.
                   </p>
                 </CardContent>
@@ -277,19 +277,19 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <Card className="h-full border-l-4 border-secondary">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
-                    <Award className="w-6 h-6 text-secondary" />
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <Award className="w-7 h-7 text-black" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Revenue Growth</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <h3 className="text-lg font-semibold text-black mb-3">Revenue Growth</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">
                     Conservative $4M+ annual benefit from business card origination lift alone. Stage 2 expands to loans and LOCs.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic mb-2">
+                  <p className="text-xs text-gray-600 italic mb-2">
                     Based on 12% application lift × 3.3M customer base × 2% take-rate × $500 avg. annual revenue per card.
                   </p>
-                  <p className="text-xs text-muted-foreground/80 italic">
+                  <p className="text-xs text-gray-600 italic">
                     Expansion into LOCs and term loans increases revenue impact by 2–3×.
                   </p>
                 </CardContent>
@@ -304,15 +304,15 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-8 text-center"
           >
-            <p className="text-xs text-muted-foreground/70">
-              <span className="font-medium">Sources:</span> Regional bank pilot analysis (2024); TransUnion SMB Credit Study (2023); LUMIQ internal model testing; Industry-regulatory benchmarks (CFPB/ECOA/GLBA).
+            <p className="text-xs text-gray-700">
+              <span className="font-medium text-black">Sources:</span> Regional bank pilot analysis (2024); TransUnion SMB Credit Study (2023); LUMIQ internal model testing; Industry-regulatory benchmarks (CFPB/ECOA/GLBA).
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* ==================== WHY NOW SECTION ==================== */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-muted/30 via-background to-muted/20">
+      <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -322,13 +322,12 @@ function Index() {
             className="text-center mb-12"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6">
-              <AlertTriangle className="w-4 h-4" />
               Market Context
             </div>
-            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
+            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-black">
               Why This Matters Now
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-gray-800 max-w-3xl mx-auto">
               The competitive landscape, regulatory environment, and SMB expectations have fundamentally shifted.
             </p>
           </motion.div>
@@ -340,26 +339,26 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="h-full border-2 border-primary/30">
+              <Card className="h-full">
                 <CardHeader>
                   <CardTitle className="text-xl">Competitive Pressure</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                <CardContent className="p-6 sm:p-8 pt-0 space-y-3">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground">
+                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                    <p className="text-sm text-gray-700">
                       30% of SMBs now use fintech credit tools—digital-first lenders offer integrated business credit visibility as standard.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground">
+                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                    <p className="text-sm text-gray-700">
                       Regional banks and challengers are actively deploying similar capabilities—timing matters for first-mover advantage.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground">
+                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                    <p className="text-sm text-gray-700">
                       SMB customers expect consumer-grade UX with real-time credit insights—table stakes for retention.
                     </p>
                   </div>
@@ -373,26 +372,26 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="h-full border-2 border-secondary/30">
+              <Card className="h-full">
                 <CardHeader>
                   <CardTitle className="text-xl">Cost of Inaction</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                <CardContent className="p-6 sm:p-8 pt-0 space-y-3">
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
+                    <p className="text-sm text-gray-700">
                       Slower approvals mean lost business—SMBs choose lenders who move fast.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
+                    <p className="text-sm text-gray-700">
                       Blind risk exposure across portfolio—delayed detection of credit deterioration increases loss patterns.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
+                    <p className="text-sm text-gray-700">
                       Missed growth and cross-sell opportunities—every quarter without this capability is revenue left on the table.
                     </p>
                   </div>
@@ -408,10 +407,10 @@ function Index() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto"
           >
-            <Card className="border-2 border-primary/20 bg-muted/30">
-              <CardContent className="p-8 text-center">
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  <span className="font-semibold text-foreground">Market timing insight:</span> Regional competitors are evaluating similar solutions. SMB customers with access to integrated credit insights show 25-30% higher product engagement and lower attrition to fintech alternatives. Early deployment creates defensible competitive advantage.
+            <Card className="bg-white">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <p className="text-base text-gray-700 leading-relaxed">
+                  <span className="font-semibold text-black">Market timing insight:</span> Regional competitors are evaluating similar solutions. SMB customers with access to integrated credit insights show 25-30% higher product engagement and lower attrition to fintech alternatives. Early deployment creates defensible competitive advantage.
                 </p>
               </CardContent>
             </Card>
@@ -424,22 +423,22 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto mt-12"
           >
-            <Card className="border-2 border-primary/20 bg-primary/5">
-              <CardContent className="p-8">
-                <h3 className="text-lg font-bold text-foreground mb-3 text-center">
+            <Card className="bg-white">
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-lg font-bold text-black mb-3 text-center">
                   Proven consumer behavior shift—now ready for business credit.
                 </h3>
-                <div className="space-y-3 text-sm text-muted-foreground">
+                <div className="space-y-3 text-sm text-gray-700">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                     <p>71% behavior change rate using consumer Credit Close-Up tools (TransUnion study).</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                     <p>1 in 5 customers achieved 40+ point score improvements.</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                     <p>Wells Fargo can extend the same proven mechanics to its 3.3M+ SMB customers.</p>
                   </div>
                 </div>
@@ -450,7 +449,7 @@ function Index() {
       </section>
 
       {/* ==================== HOW IT WORKS (3-STEP) ==================== */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           {/* Header Section */}
           <motion.div
@@ -461,13 +460,13 @@ function Index() {
             className="text-center mb-12 md:mb-16"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6">
-              <Database className="w-4 h-4" />
+              <Database className="w-4 h-4" strokeWidth={2.5} />
               How It Works
             </div>
-            <h2 className="font-display text-[36px] md:text-[48px] lg:text-[56px] font-bold mb-4 text-foreground">
+            <h2 className="font-display text-[36px] md:text-[48px] lg:text-[56px] font-bold mb-4 text-black">
               Simple 3-step journey
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
               A seamless process from data ingestion to actionable insights—all within Wells Fargo's secure environment.
             </p>
           </motion.div>
@@ -484,7 +483,7 @@ function Index() {
                 className="relative flex flex-col items-center px-4"
               >
                 {/* Number Badge */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-xl shadow-lg">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/80 dark:from-primary dark:to-primary/90 text-white flex items-center justify-center font-bold text-xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
                   1
                 </div>
                 
@@ -507,10 +506,10 @@ function Index() {
 
                 {/* Content */}
                 <div className="text-center w-full px-2">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-black mb-3">
                     Data Ingestion & Consolidation
                   </h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                     Ingest card, deposit, and bureau data (owner FICO + business scores) → produce a unified SMB profile with full data lineage inside Wells Fargo's environment.
                   </p>
                 </div>
@@ -530,7 +529,7 @@ function Index() {
                 className="relative flex flex-col items-center px-4"
               >
                 {/* Number Badge */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-12 h-12 rounded-lg bg-secondary text-white flex items-center justify-center font-bold text-xl shadow-lg">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary to-secondary/80 dark:from-secondary dark:to-secondary/90 text-white flex items-center justify-center font-bold text-xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
                   2
                 </div>
                 
@@ -553,10 +552,10 @@ function Index() {
 
                 {/* Content */}
                 <div className="text-center w-full px-2">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-black mb-3">
                     Intelligent Scoring & Signal Generation
                   </h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                     AI-powered risk models analyze credit health, product fit, and early warning flags → generate explainable recommendations aligned with Wells Fargo policy overlays.
                   </p>
                 </div>
@@ -576,7 +575,7 @@ function Index() {
                 className="relative flex flex-col items-center px-4"
               >
                 {/* Number Badge */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-xl shadow-lg">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/80 dark:from-primary dark:to-primary/90 text-white flex items-center justify-center font-bold text-xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
                   3
                 </div>
                 
@@ -599,10 +598,10 @@ function Index() {
 
                 {/* Content */}
                 <div className="text-center w-full px-2">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-black mb-3">
                     Insights & Action
                   </h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                     Business owners see dual scores and pre-qualified offers in the banking app → Wells Fargo gets portfolio dashboards, underwriter queues, and compliance audit trails.
                   </p>
                 </div>
@@ -617,7 +616,7 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto mt-8 text-center"
           >
-            <p className="text-sm text-muted-foreground italic">
+            <p className="text-sm text-gray-600 italic">
               Integration can start in a read-only "shadow mode" before any production decisioning is changed.
             </p>
           </motion.div>
@@ -625,7 +624,7 @@ function Index() {
       </section>
 
       {/* ==================== TRUST, SECURITY & COMPLIANCE ==================== */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[#2B2B2B] via-[#1a1a1a] to-[#2B2B2B]">
+      <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -634,13 +633,13 @@ function Index() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-white">
+            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-black">
               Enterprise-Grade Security & Compliance
             </h2>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto mb-2">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-2">
               Built for banks—designed for audit readiness, data governance, and regulatory alignment.
             </p>
-            <p className="text-base text-white/70 max-w-3xl mx-auto">
+            <p className="text-base text-gray-700 max-w-3xl mx-auto">
               Designed so Wells Fargo's risk, compliance, and IT teams can say "yes" without rewriting existing controls.
             </p>
           </motion.div>
@@ -651,15 +650,18 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition-all"
             >
-              <div className="w-12 h-12 rounded-full bg-[#D22030]/20 flex items-center justify-center mb-4">
-                <Lock className="w-6 h-6 text-[#D22030]" />
-              </div>
-              <h3 className="font-bold text-lg mb-2 text-white">Data Security</h3>
-              <p className="text-sm text-white/70 leading-relaxed">
-                SOC 2-aligned infrastructure. Encryption at rest and in transit. Role-based access controls. PII minimization.
-              </p>
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <Lock className="w-7 h-7 text-primary" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-black">Data Security</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    SOC 2-aligned infrastructure. Encryption at rest and in transit. Role-based access controls. PII minimization.
+                  </p>
+                </CardContent>
+              </Card>
             </motion.div>
 
             <motion.div
@@ -667,15 +669,18 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition-all"
             >
-              <div className="w-12 h-12 rounded-full bg-[#FFB81C]/20 flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-[#FFB81C]" />
-              </div>
-              <h3 className="font-bold text-lg mb-2 text-white">Regulatory Alignment</h3>
-              <p className="text-sm text-white/70 leading-relaxed">
-                ECOA • FCRA • GLBA • UDAP compliant. PATRIOT Act KYC/KYB screening. Adverse action reporting.
-              </p>
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <Shield className="w-7 h-7 text-black" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-black">Regulatory Alignment</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    ECOA • FCRA • GLBA • UDAP compliant. PATRIOT Act KYC/KYB screening. Adverse action reporting.
+                  </p>
+                </CardContent>
+              </Card>
             </motion.div>
 
             <motion.div
@@ -683,15 +688,18 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition-all"
             >
-              <div className="w-12 h-12 rounded-full bg-[#D22030]/20 flex items-center justify-center mb-4">
-                <FileCheck className="w-6 h-6 text-[#D22030]" />
-              </div>
-              <h3 className="font-bold text-lg mb-2 text-white">Audit Readiness</h3>
-              <p className="text-sm text-white/70 leading-relaxed">
-                Full data lineage tracking. Explainable decisioning. Model governance with policy versioning. 100% decision traceability.
-              </p>
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                    <FileCheck className="w-7 h-7 text-black" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-black">Audit Readiness</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Full data lineage tracking. Explainable decisioning. Model governance with policy versioning. 100% decision traceability.
+                  </p>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
 
@@ -703,27 +711,27 @@ function Index() {
             className="flex flex-wrap justify-center items-center gap-8"
           >
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-[#FFB81C]" />
-              <span className="font-semibold text-white">SOC 2</span>
+              <Shield className="w-5 h-5 text-secondary" strokeWidth={2.5} />
+              <span className="font-semibold text-black">SOC 2</span>
             </div>
             <div className="flex items-center gap-2">
-              <Lock className="w-5 h-5 text-[#FFB81C]" />
-              <span className="font-semibold text-white">ISO 27001</span>
+              <Lock className="w-5 h-5 text-secondary" strokeWidth={2.5} />
+              <span className="font-semibold text-black">ISO 27001</span>
             </div>
             <div className="flex items-center gap-2">
-              <FileCheck className="w-5 h-5 text-[#FFB81C]" />
-              <span className="font-semibold text-white">FCRA-aligned</span>
+              <FileCheck className="w-5 h-5 text-secondary" strokeWidth={2.5} />
+              <span className="font-semibold text-black">FCRA-aligned</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-[#FFB81C]" />
-              <span className="font-semibold text-white">Data Lineage Verified</span>
+              <CheckCircle2 className="w-5 h-5 text-secondary" strokeWidth={2.5} />
+              <span className="font-semibold text-black">Data Lineage Verified</span>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ==================== IMPACT METRICS ==================== */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -732,10 +740,10 @@ function Index() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
+            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-black">
               Projected Impact
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-gray-800 max-w-3xl mx-auto">
               Conservative estimates based on controlled pilots and internal modeling.
             </p>
           </motion.div>
@@ -747,11 +755,11 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="h-full border-2 border-primary/30 hover:border-primary/50 transition-all">
-                <CardContent className="p-6 text-center">
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8 text-center">
                   <div className="text-4xl font-bold text-primary mb-2">+12%</div>
-                  <p className="text-sm font-semibold text-foreground mb-2">Card Application Lift</p>
-                  <p className="text-xs text-muted-foreground">~7,900 additional business card applications annually</p>
+                  <p className="text-sm font-semibold text-black mb-2">Card Application Lift</p>
+                  <p className="text-xs text-gray-600">~7,900 additional business card applications annually</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -762,11 +770,11 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Card className="h-full border-2 border-secondary/30 hover:border-secondary/50 transition-all">
-                <CardContent className="p-6 text-center">
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8 text-center">
                   <div className="text-4xl font-bold text-secondary mb-2">25%</div>
-                  <p className="text-sm font-semibold text-foreground mb-2">Faster Decisioning</p>
-                  <p className="text-xs text-muted-foreground">Automated scoring reduces time from days to minutes</p>
+                  <p className="text-sm font-semibold text-black mb-2">Faster Decisioning</p>
+                  <p className="text-xs text-gray-600">Automated scoring reduces time from days to minutes</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -777,11 +785,11 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Card className="h-full border-2 border-primary/30 hover:border-primary/50 transition-all">
-                <CardContent className="p-6 text-center">
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8 text-center">
                   <div className="text-4xl font-bold text-primary mb-2">–35%</div>
-                  <p className="text-sm font-semibold text-foreground mb-2">Manual Reviews</p>
-                  <p className="text-xs text-muted-foreground">AI-powered scoring eliminates low-value underwriting tasks</p>
+                  <p className="text-sm font-semibold text-black mb-2">Manual Reviews</p>
+                  <p className="text-xs text-gray-600">AI-powered scoring eliminates low-value underwriting tasks</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -792,12 +800,12 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Card className="h-full border-2 border-secondary/30 hover:border-secondary/50 transition-all">
-                <CardContent className="p-6 text-center">
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8 text-center">
                   <div className="text-4xl font-bold text-secondary mb-2">$4M+</div>
-                  <p className="text-sm font-semibold text-foreground mb-2">Annual Revenue</p>
-                  <p className="text-xs text-muted-foreground mb-1">First-year projection from card origination lift alone</p>
-                  <p className="text-xs text-muted-foreground/80 italic">Business cards only. LOC and term loans excluded from this estimate.</p>
+                  <p className="text-sm font-semibold text-black mb-2">Annual Revenue</p>
+                  <p className="text-xs text-gray-700 mb-1">First-year projection from card origination lift alone</p>
+                  <p className="text-xs text-gray-600 italic">Business cards only. LOC and term loans excluded from this estimate.</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -810,10 +818,10 @@ function Index() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto mt-12"
           >
-            <Card className="border-2 border-muted bg-muted/30">
-              <CardContent className="p-8">
-                <p className="text-sm text-muted-foreground text-center leading-relaxed">
-                  <span className="font-semibold text-foreground">Methodology:</span> Impact projections based on internal modeling and A/B pilot results from comparable financial institutions. Conservative assumptions applied. Stage 2 expansion to business loans and lines of credit expected to deliver additional uplift.
+            <Card className="bg-white">
+              <CardContent className="p-6 sm:p-8">
+                <p className="text-sm text-gray-700 text-center leading-relaxed">
+                  <span className="font-semibold text-black">Methodology:</span> Impact projections based on internal modeling and A/B pilot results from comparable financial institutions. Conservative assumptions applied. Stage 2 expansion to business loans and lines of credit expected to deliver additional uplift.
                 </p>
               </CardContent>
             </Card>
@@ -853,7 +861,7 @@ function Index() {
       </section>
 
       {/* ==================== FAQ / TECHNICAL DETAILS ==================== */}
-      <section className="py-16 bg-muted/30 border-t border-border">
+      <section className="py-16 bg-white border-t border-border">
         <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -862,7 +870,7 @@ function Index() {
             transition={{ duration: 0.6 }}
             className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] mx-auto"
           >
-            <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Technical Specifications & FAQ</h3>
+            <h3 className="text-2xl font-bold text-center mb-8 text-black">Technical Specifications & FAQ</h3>
             
             <div className="grid md:grid-cols-2 gap-6 mb-10">
               <Card>
@@ -870,7 +878,7 @@ function Index() {
                   <CardTitle className="text-base">Data Sources</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-gray-700">
                     Owner FICO® from Experian/Equifax/TransUnion. Business credit from FICO SBSS, Experian FSR, D&B Intelliscore. Wells Fargo internal relationship data.
                   </p>
                 </CardContent>
@@ -881,7 +889,7 @@ function Index() {
                   <CardTitle className="text-base">Integration Approach</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-gray-700">
                     RESTful API with sandbox testing environment. Zero workflow disruption. Wells-hosted or vendor VPC deployment options.
                   </p>
                 </CardContent>
@@ -892,7 +900,7 @@ function Index() {
                   <CardTitle className="text-base">Score Refresh</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-gray-700">
                     Real-time on login with monthly scheduled refreshes. Proactive alerts for material credit events.
                   </p>
                 </CardContent>
@@ -903,7 +911,7 @@ function Index() {
                   <CardTitle className="text-base">Deployment Timeline</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-gray-700">
                     6–8 weeks from kickoff to live pilot. Sandbox testing weeks 0-2, A/B pilot weeks 3-8, scale decision by week 12.
                   </p>
                 </CardContent>
@@ -914,7 +922,7 @@ function Index() {
                   <CardTitle className="text-base">Access Controls</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-gray-700">
                     Business owners see their dual scores. Bankers see segmentation dashboards and portfolio insights with proper authorization.
                   </p>
                 </CardContent>
@@ -925,7 +933,7 @@ function Index() {
                   <CardTitle className="text-base">Pilot Metrics</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-gray-700">
                     A/B testing with control groups. Tracks conversion lift, approval-rate delta, manual review reduction, loss patterns—full audit trail.
                   </p>
                 </CardContent>
@@ -933,14 +941,14 @@ function Index() {
             </div>
 
             <div className="mt-10 space-y-6">
-              <h4 className="text-lg font-bold text-center text-foreground mb-6">Frequently Asked Questions</h4>
+              <h4 className="text-lg font-bold text-center text-black mb-6">Frequently Asked Questions</h4>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-sm">Where does the data live?</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-gray-600">
                       All data remains within Wells Fargo-controlled infrastructure. LUMIQ AI models can be deployed into a Wells-hosted environment.
                     </p>
                   </CardContent>
@@ -951,7 +959,7 @@ function Index() {
                     <CardTitle className="text-sm">Does this change our existing credit policy?</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-gray-600">
                       No. Models are configured to reflect Wells Fargo's current policies; outputs appear as recommendations and can be rolled out in stages.
                     </p>
                   </CardContent>
@@ -962,7 +970,7 @@ function Index() {
                     <CardTitle className="text-sm">Who owns ongoing model governance?</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-gray-600">
                       Wells Fargo retains control over model approval, monitoring, and override thresholds. LUMIQ AI provides tools and documentation to support governance.
                     </p>
                   </CardContent>

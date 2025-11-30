@@ -38,7 +38,7 @@ export default function CaseStudy() {
     }
   };
 
-  const containerClass = "mx-auto w-full px-5 md:px-[5vw]";
+  const containerClass = "mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24";
 
   return (
     <PageLayout>
@@ -66,7 +66,7 @@ export default function CaseStudy() {
                     <Button 
                       size="lg" 
                       onClick={() => scrollToSection('problem')}
-                      className="bg-[#FFB81C] hover:bg-[#FFB81C]/90 text-[#2B2B2B] font-semibold text-lg px-8 py-6 h-auto"
+                      className="bg-secondary hover:bg-secondary/90 text-black font-semibold text-lg px-8 py-6 h-auto"
                     >
                       View Full Analysis
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -108,109 +108,106 @@ export default function CaseStudy() {
         </section>
 
         {/* 1. Problem Statement */}
-        <section id="problem" className="py-16 md:py-24 bg-background">
+        <section id="problem" className="py-16 md:py-24 bg-white">
           <div className={containerClass}>
             <motion.div {...fadeInUp} className="mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 text-destructive text-xs font-semibold uppercase tracking-wider mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
                 <AlertTriangle className="w-3 h-3" />
                 Problem Statement
               </div>
-              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-foreground leading-[1.15]">
-                The Missing Link in Wells Fargo's SMB Strategy
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-4xl leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-700 max-w-4xl leading-relaxed">
                 Wells Fargo revolutionized consumer credit with Credit Close-Up. But business banking customers lack an equivalent tool.
               </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-8 mb-12">
               <motion.div {...fadeInUp}>
-                <Card className="h-full border-2 border-primary/20 hover:border-primary/40 transition-all">
+                <Card className="h-full">
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                      <CheckCircle2 className="w-6 h-6 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                      <CheckCircle2 className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
                     <CardTitle className="text-2xl">Consumer Success Story</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-6">
+                  <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
                     {/* Timeline Section */}
-                    <div className="bg-primary/5 rounded-lg p-4 space-y-3">
+                    <div className="bg-white rounded-lg p-4 space-y-3 border-2 border-black">
                       <div className="flex items-center gap-2 mb-2">
-                        <Clock className="w-4 h-4 text-primary" />
-                        <p className="text-sm font-semibold text-foreground">Development Timeline</p>
+                        <Clock className="w-4 h-4 text-black" strokeWidth={2.5} />
+                        <p className="text-sm font-semibold text-black">Development Timeline</p>
                       </div>
                       <div className="grid grid-cols-2 gap-3 text-xs">
                         <div>
-                          <p className="text-muted-foreground">Project Start</p>
-                          <p className="font-semibold text-foreground">Q3 2016</p>
+                          <p className="text-gray-700">Project Start</p>
+                          <p className="font-semibold text-black">Q3 2016</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Pilot Launch</p>
-                          <p className="font-semibold text-foreground">Q1 2017 (6 months)</p>
+                          <p className="text-gray-700">Pilot Launch</p>
+                          <p className="font-semibold text-black">Q1 2017 (6 months)</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Full Deployment</p>
-                          <p className="font-semibold text-foreground">Q3 2017 (12 months total)</p>
+                          <p className="text-gray-700">Full Deployment</p>
+                          <p className="font-semibold text-black">Q3 2017 (12 months total)</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Mobile Integration</p>
-                          <p className="font-semibold text-foreground">Q4 2017</p>
+                          <p className="text-gray-700">Mobile Integration</p>
+                          <p className="font-semibold text-black">Q4 2017</p>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground">
-                      <strong className="text-foreground">Credit Close-Up</strong> provides Wells Fargo's 30M+ consumer customers with:
+                    <p className="text-gray-700">
+                      <strong className="text-black">Credit Close-Up</strong> provides Wells Fargo's 30M+ consumer customers with:
                     </p>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">Free monthly FICO® Score 9 from Experian®</span>
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                        <span className="text-sm text-gray-700">Free monthly FICO® Score 9 from Experian®</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">Full credit reports and monitoring alerts</span>
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                        <span className="text-sm text-gray-700">Full credit reports and monitoring alerts</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">Personalized tips and credit education</span>
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                        <span className="text-sm text-gray-700">Personalized tips and credit education</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">Direct integration in online/mobile banking</span>
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                        <span className="text-sm text-gray-700">Direct integration in online/mobile banking</span>
                       </li>
                     </ul>
 
                     {/* Post-Deployment Results */}
                     <div className="pt-4 border-t border-border space-y-4">
-                      <p className="text-sm font-semibold text-primary">Post-Deployment Results (12-24 Months)</p>
+                      <p className="text-sm font-semibold text-black">Post-Deployment Results (12-24 Months)</p>
                       <div className="grid grid-cols-1 gap-3">
-                        <div className="flex items-start gap-3 bg-primary/5 rounded-lg p-3">
-                          <TrendingUp className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
+                          <TrendingUp className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">+18% Credit Card Application Rate</p>
-                            <p className="text-xs text-muted-foreground">Users with Credit Close-Up access converted 18% more on Wells Fargo credit card offers</p>
+                            <p className="text-sm font-semibold text-black">+18% Credit Card Application Rate</p>
+                            <p className="text-xs text-gray-700">Users with Credit Close-Up access converted 18% more on Wells Fargo credit card offers</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-primary/5 rounded-lg p-3">
-                          <Percent className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
+                          <Percent className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">+12% Personal Loan Conversion</p>
-                            <p className="text-xs text-muted-foreground">Higher qualification rates and faster decisioning for personal loans</p>
+                            <p className="text-sm font-semibold text-black">+12% Personal Loan Conversion</p>
+                            <p className="text-xs text-gray-700">Higher qualification rates and faster decisioning for personal loans</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-primary/5 rounded-lg p-3">
-                          <Users className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
+                          <Users className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">78% Monthly Active User Rate</p>
-                            <p className="text-xs text-muted-foreground">Sustained engagement with credit monitoring features</p>
+                            <p className="text-sm font-semibold text-black">78% Monthly Active User Rate</p>
+                            <p className="text-xs text-gray-700">Sustained engagement with credit monitoring features</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-primary/5 rounded-lg p-3">
-                          <Award className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
+                          <Award className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">+22% Net Promoter Score Lift</p>
-                            <p className="text-xs text-muted-foreground">Significantly improved customer satisfaction and loyalty metrics</p>
+                            <p className="text-sm font-semibold text-black">+22% Net Promoter Score Lift</p>
+                            <p className="text-xs text-gray-700">Significantly improved customer satisfaction and loyalty metrics</p>
                           </div>
                         </div>
                       </div>
@@ -220,92 +217,92 @@ export default function CaseStudy() {
               </motion.div>
 
               <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                <Card className="h-full border-2 border-destructive/30 bg-destructive/5">
+                <Card className="h-full">
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
-                      <AlertTriangle className="w-6 h-6 text-destructive" />
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                      <AlertTriangle className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
                     <CardTitle className="text-2xl">The Business Banking Gap</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-6">
+                  <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
                     {/* Current State Timeline */}
-                    <div className="bg-destructive/5 rounded-lg p-4 space-y-3">
+                    <div className="bg-white rounded-lg p-4 space-y-3 border-2 border-black">
                       <div className="flex items-center gap-2 mb-2">
-                        <Clock className="w-4 h-4 text-destructive" />
-                        <p className="text-sm font-semibold text-foreground">Years Behind Consumer Banking</p>
+                        <Clock className="w-4 h-4 text-black" strokeWidth={2.5} />
+                        <p className="text-sm font-semibold text-black">Years Behind Consumer Banking</p>
                       </div>
                       <div className="grid grid-cols-2 gap-3 text-xs">
                         <div>
-                          <p className="text-muted-foreground">Consumer Launch</p>
-                          <p className="font-semibold text-foreground">2017 (7 years ago)</p>
+                          <p className="text-gray-700">Consumer Launch</p>
+                          <p className="font-semibold text-black">2017 (7 years ago)</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Business Equivalent</p>
-                          <p className="font-semibold text-destructive">Still Missing</p>
+                          <p className="text-gray-700">Business Equivalent</p>
+                          <p className="font-semibold text-black">Still Missing</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Gap Duration</p>
-                          <p className="font-semibold text-destructive">7+ years</p>
+                          <p className="text-gray-700">Gap Duration</p>
+                          <p className="font-semibold text-black">7+ years</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Opportunity Cost</p>
-                          <p className="font-semibold text-destructive">Growing Daily</p>
+                          <p className="text-gray-700">Opportunity Cost</p>
+                          <p className="font-semibold text-black">Growing Daily</p>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground font-semibold">
+                    <p className="text-gray-700 font-semibold">
                       Wells Fargo's ~3.3M business banking customers currently face:
                     </p>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
-                        <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground"><strong className="text-foreground">No embedded credit-monitoring</strong> tool in business banking</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
+                        <span className="text-sm text-gray-700"><strong className="text-black">No embedded credit-monitoring</strong> tool in business banking</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground"><strong className="text-foreground">Fragmented data sources:</strong> Must piece together personal + business credit from disparate vendors</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
+                        <span className="text-sm text-gray-700"><strong className="text-black">Fragmented data sources:</strong> Must piece together personal + business credit from disparate vendors</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground"><strong className="text-foreground">Manual processes:</strong> Checking eligibility requires external apps or manual checks</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
+                        <span className="text-sm text-gray-700"><strong className="text-black">Manual processes:</strong> Checking eligibility requires external apps or manual checks</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground"><strong className="text-foreground">Competitive risk:</strong> Fintechs offering faster, transparent credit decisions are capturing SMB market share</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
+                        <span className="text-sm text-gray-700"><strong className="text-black">Competitive risk:</strong> Fintechs offering faster, transparent credit decisions are capturing SMB market share</span>
                       </li>
                     </ul>
 
                     {/* Current Impact & Lost Opportunities */}
                     <div className="pt-4 border-t border-border space-y-4">
-                      <p className="text-sm font-semibold text-destructive">Current Impact & Lost Opportunities</p>
+                      <p className="text-sm font-semibold text-black">Current Impact & Lost Opportunities</p>
                       <div className="grid grid-cols-1 gap-3">
-                        <div className="flex items-start gap-3 bg-destructive/5 rounded-lg p-3">
-                          <TrendingUp className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5 rotate-180" />
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
+                          <TrendingUp className="w-5 h-5 text-black flex-shrink-0 mt-0.5 rotate-180" strokeWidth={2.5} />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">Suboptimal Conversion Rates</p>
-                            <p className="text-xs text-muted-foreground">SMBs abandon applications due to uncertainty about creditworthiness and eligibility</p>
+                            <p className="text-sm font-semibold text-black">Suboptimal Conversion Rates</p>
+                            <p className="text-xs text-gray-700">SMBs abandon applications due to uncertainty about creditworthiness and eligibility</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-destructive/5 rounded-lg p-3">
-                          <DollarSign className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
+                          <DollarSign className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">Higher Customer Acquisition Costs</p>
-                            <p className="text-xs text-muted-foreground">Manual outreach and re-engagement campaigns drive up CAC by 25-40%</p>
+                            <p className="text-sm font-semibold text-black">Higher Customer Acquisition Costs</p>
+                            <p className="text-xs text-gray-700">Manual outreach and re-engagement campaigns drive up CAC by 25-40%</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-destructive/5 rounded-lg p-3">
-                          <Users className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
+                          <Users className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">Market Share Erosion</p>
-                            <p className="text-xs text-muted-foreground">Fintech competitors with transparent pre-qualification capturing digitally-savvy SMBs</p>
+                            <p className="text-sm font-semibold text-black">Market Share Erosion</p>
+                            <p className="text-xs text-gray-700">Fintech competitors with transparent pre-qualification capturing digitally-savvy SMBs</p>
                           </div>
                         </div>
-                        <div className="flex items-start gap-3 bg-destructive/5 rounded-lg p-3">
-                          <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-3 bg-white rounded-lg p-3 border-2 border-black">
+                          <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0" />
                           <div>
-                            <p className="text-sm font-semibold text-foreground">Missed Cross-Sell Opportunities</p>
-                            <p className="text-xs text-muted-foreground">No proactive product recommendations = untapped revenue from qualified customers</p>
+                            <p className="text-sm font-semibold text-black">Missed Cross-Sell Opportunities</p>
+                            <p className="text-xs text-gray-700">No proactive product recommendations = untapped revenue from qualified customers</p>
                           </div>
                         </div>
                       </div>
@@ -317,42 +314,44 @@ export default function CaseStudy() {
 
             {/* Condensed Time-to-Market Urgency */}
             <motion.div {...fadeInUp} className="mb-8">
-              <Card className="border-2 border-primary/30 bg-gradient-to-r from-primary/5 to-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Zap className="w-6 h-6 text-primary" />
-                    <h3 className="font-bold text-lg text-foreground">The Window is Closing</h3>
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                      <Zap className="w-7 h-7 text-black" strokeWidth={2.5} />
+                    </div>
+                    <h3 className="font-bold text-lg text-black">The Window is Closing</h3>
                   </div>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-muted/50 rounded-lg p-4">
-                      <p className="text-xs text-muted-foreground mb-2">Traditional Build</p>
-                      <p className="text-2xl font-bold text-destructive mb-1">12 months</p>
-                      <p className="text-xs text-muted-foreground">4 quarters to deployment</p>
+                    <div className="bg-white rounded-lg p-4 border-2 border-black">
+                      <p className="text-xs text-gray-700 mb-2">Traditional Build</p>
+                      <p className="text-2xl font-bold text-black mb-1">12 months</p>
+                      <p className="text-xs text-gray-700">4 quarters to deployment</p>
                     </div>
-                    <div className="bg-primary/10 rounded-lg p-4">
-                      <p className="text-xs text-muted-foreground mb-2">LUMIQ Ready-to-Deploy</p>
-                      <p className="text-2xl font-bold text-primary mb-1">90 days</p>
-                      <p className="text-xs text-muted-foreground">Start earning revenue 75% sooner</p>
+                    <div className="bg-white rounded-lg p-4 border-2 border-black">
+                      <p className="text-xs text-gray-700 mb-2">LUMIQ Ready-to-Deploy</p>
+                      <p className="text-2xl font-bold text-black mb-1">90 days</p>
+                      <p className="text-xs text-gray-700">Start earning revenue 75% sooner</p>
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-4">
-                    <strong className="text-foreground">9 months saved</strong> means Wells Fargo reaches SMB customers before competitors replicate Credit Close-Up success
+                  <p className="text-sm text-gray-700 mt-4">
+                    <strong className="text-black">9 months saved</strong> means Wells Fargo reaches SMB customers before competitors replicate Credit Close-Up success
                   </p>
                 </CardContent>
               </Card>
             </motion.div>
 
             <motion.div {...fadeInUp} className="mb-8">
-              <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/30">
-                <CardContent className="p-8">
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <Target className="w-6 h-6 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center flex-shrink-0">
+                      <Target className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-xl mb-3 text-foreground">The Strategic Question</h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed">
-                        "If Credit Close-Up drove measurable improvements for <strong className="text-foreground">30 million consumers</strong>, what happens when we give <strong className="text-foreground">3.3 million small-business owners</strong> the same clarity — plus one-tap access to business credit cards, lines of credit, and term loans?"
+                      <h3 className="font-bold text-xl mb-3 text-black">The Strategic Question</h3>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        "If Credit Close-Up drove measurable improvements for <strong className="text-black">30 million consumers</strong>, what happens when we give <strong className="text-black">3.3 million small-business owners</strong> the same clarity — plus one-tap access to business credit cards, lines of credit, and term loans?"
                       </p>
                     </div>
                   </div>
@@ -363,55 +362,49 @@ export default function CaseStudy() {
         </section>
 
         {/* 2. Solution */}
-        <section id="solution" className="py-16 md:py-24 bg-muted/30">
+        <section id="solution" className="py-16 md:py-24 bg-white">
           <div className={containerClass}>
             <motion.div {...fadeInUp} className="mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
                 <Zap className="w-3 h-3" />
                 Ready-to-Deploy Solution
               </div>
-              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-foreground leading-[1.15]">
+              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-black leading-[1.15]">
                 LUMIQ AI Business Credit Insights
               </h2>
-              <p className="text-xl md:text-2xl text-foreground font-semibold max-w-4xl leading-relaxed mb-4">
+              <p className="text-xl md:text-2xl text-black font-semibold max-w-4xl leading-relaxed mb-4">
                 A ready plug-and-play API that integrates directly into Wells Fargo Business Banking.
               </p>
-              <p className="text-lg text-muted-foreground max-w-4xl leading-relaxed">
+              <p className="text-lg text-gray-700 max-w-4xl leading-relaxed">
                 No custom build required. No 12-month development cycle. Just a secure REST API that delivers enterprise-grade business credit intelligence in weeks, not quarters.
               </p>
             </motion.div>
 
-            {/* Screenshot Placeholder Areas */}
+            {/* Screenshot Areas */}
             <motion.div {...fadeInUp} className="mb-12">
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="border-2 border-primary/30 overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center border-b border-border">
-                    <div className="text-center p-8">
-                      <BarChart3 className="w-16 h-16 text-primary mx-auto mb-4" />
-                      <p className="text-sm font-semibold text-foreground mb-2">SMB Owner Dashboard View</p>
-                      <p className="text-xs text-muted-foreground">Dual credit scores + AI insights + pre-qualified offers</p>
+                <Card className="overflow-hidden">
+                  <div className="relative flex items-center justify-center bg-white">
+                    <div className="w-full max-w-sm">
+                      <img
+                        src="/Phone-Mockups/BusinessDashboard.png"
+                        alt="SMB Owner Dashboard View"
+                        className="w-full h-auto drop-shadow-2xl"
+                      />
                     </div>
                   </div>
-                  <CardContent className="p-4">
-                    <p className="text-xs text-muted-foreground">
-                      <strong className="text-foreground">Screenshot:</strong> Business owner sees personal FICO, business credit score, and actionable recommendations—all within Wells Fargo Business Online
-                    </p>
-                  </CardContent>
                 </Card>
 
-                <Card className="border-2 border-primary/30 overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-secondary/10 to-primary/10 flex items-center justify-center border-b border-border">
-                    <div className="text-center p-8">
-                      <CreditCard className="w-16 h-16 text-secondary mx-auto mb-4" />
-                      <p className="text-sm font-semibold text-foreground mb-2">One-Tap Card Application</p>
-                      <p className="text-xs text-muted-foreground">Pre-qualification to application in seconds</p>
+                <Card className="overflow-hidden">
+                  <div className="relative flex items-center justify-center bg-white">
+                    <div className="w-full max-w-sm">
+                      <img
+                        src="/Phone-Mockups/offers.png"
+                        alt="One-Tap Card Application"
+                        className="w-full h-auto drop-shadow-2xl"
+                      />
                     </div>
                   </div>
-                  <CardContent className="p-4">
-                    <p className="text-xs text-muted-foreground">
-                      <strong className="text-foreground">Screenshot:</strong> Instant pre-qualified card offers with clear eligibility, credit limits, and one-tap apply—driving conversions from the app
-                    </p>
-                  </CardContent>
                 </Card>
               </div>
             </motion.div>
@@ -469,13 +462,13 @@ export default function CaseStudy() {
                   {...fadeInUp}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50">
-                    <CardContent className="pt-6 pb-6">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <feature.icon className="w-6 h-6 text-primary" />
+                  <Card className="h-full">
+                    <CardContent className="p-6 sm:p-8">
+                      <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center mb-6">
+                        <feature.icon className="w-7 h-7 text-black" strokeWidth={2.5} />
                       </div>
-                      <h3 className="font-bold text-lg mb-2 text-foreground">{feature.title}</h3>
-                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      <h3 className="font-bold text-lg mb-2 text-black">{feature.title}</h3>
+                      <p className="text-sm text-gray-700">{feature.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -483,65 +476,65 @@ export default function CaseStudy() {
             </div>
 
             <motion.div {...fadeInUp}>
-              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-secondary/5">
-                <CardContent className="p-8">
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                      <Zap className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <h3 className="font-bold text-2xl text-foreground">Plug-and-Play Deployment</h3>
+                    <h3 className="font-bold text-2xl text-black">Plug-and-Play Deployment</h3>
                   </div>
-                  <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
-                    LUMIQ AI is <strong className="text-foreground">production-ready today</strong>. No custom development. No re-architecting. Just secure REST API endpoints that deliver business credit intelligence with enterprise-grade data handling, encryption, and governance.
+                  <p className="text-gray-700 mb-8 leading-relaxed text-lg">
+                    LUMIQ AI is <strong className="text-black">production-ready today</strong>. No custom development. No re-architecting. Just secure REST API endpoints that deliver business credit intelligence with enterprise-grade data handling, encryption, and governance.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                       <div>
-                        <p className="font-semibold text-foreground mb-1">RESTful API Integration</p>
-                        <p className="text-sm text-muted-foreground">Standard JSON endpoints with OAuth 2.0 authentication—integrates with existing Wells Fargo middleware in weeks</p>
+                        <p className="font-semibold text-black mb-1">RESTful API Integration</p>
+                        <p className="text-sm text-gray-700">Standard JSON endpoints with OAuth 2.0 authentication—integrates with existing Wells Fargo middleware in weeks</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                       <div>
-                        <p className="font-semibold text-foreground mb-1">Secure Data Handling</p>
-                        <p className="text-sm text-muted-foreground">End-to-end encryption (TLS 1.3), PII tokenization, and data residency controls meeting GLBA/ECOA/FCRA requirements</p>
+                        <p className="font-semibold text-black mb-1">Secure Data Handling</p>
+                        <p className="text-sm text-gray-700">End-to-end encryption (TLS 1.3), PII tokenization, and data residency controls meeting GLBA/ECOA/FCRA requirements</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                       <div>
-                        <p className="font-semibold text-foreground mb-1">Multi-Bureau Score Aggregation</p>
-                        <p className="text-sm text-muted-foreground">Unified API pulls FICO SBSS, Experian Intelliscore, D&B PAYDEX, plus owner FICO—no separate vendor integrations needed</p>
+                        <p className="font-semibold text-black mb-1">Multi-Bureau Score Aggregation</p>
+                        <p className="text-sm text-gray-700">Unified API pulls FICO SBSS, Experian Intelliscore, D&B PAYDEX, plus owner FICO—no separate vendor integrations needed</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                       <div>
-                        <p className="font-semibold text-foreground mb-1">Intelligent Card Matching Engine</p>
-                        <p className="text-sm text-muted-foreground">AI analyzes credit profile + Wells Fargo product catalog to surface best-fit cards with pre-qualification logic—boosting conversion</p>
+                        <p className="font-semibold text-black mb-1">Intelligent Card Matching Engine</p>
+                        <p className="text-sm text-gray-700">AI analyzes credit profile + Wells Fargo product catalog to surface best-fit cards with pre-qualification logic—boosting conversion</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                       <div>
-                        <p className="font-semibold text-foreground mb-1">Full Audit Trail & Explainability</p>
-                        <p className="text-sm text-muted-foreground">Every decision logged with data lineage, model versioning, and adverse-action rationale for compliance and governance</p>
+                        <p className="font-semibold text-black mb-1">Full Audit Trail & Explainability</p>
+                        <p className="text-sm text-gray-700">Every decision logged with data lineage, model versioning, and adverse-action rationale for compliance and governance</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                       <div>
-                        <p className="font-semibold text-foreground mb-1">Seamless UI Embedding</p>
-                        <p className="text-sm text-muted-foreground">White-labeled components styled to Wells Fargo brand guidelines—plug directly into Business Online/Mobile with zero user disruption</p>
+                        <p className="font-semibold text-black mb-1">Seamless UI Embedding</p>
+                        <p className="text-sm text-gray-700">White-labeled components styled to Wells Fargo brand guidelines—plug directly into Business Online/Mobile with zero user disruption</p>
                       </div>
                     </div>
                   </div>
-                  <div className="bg-primary/10 rounded-lg p-6 border border-primary/20">
-                    <p className="text-sm text-foreground font-semibold mb-2">Bottom Line:</p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Wells Fargo gets a <strong className="text-foreground">turnkey solution</strong> that handles data security, multi-bureau credit intelligence, AI-driven card recommendations, and compliance—all through a single API. Deploy in 90 days and start converting SMBs to credit card holders immediately.
+                  <div className="bg-white rounded-lg p-6 border-2 border-black">
+                    <p className="text-sm text-black font-semibold mb-2">Bottom Line:</p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Wells Fargo gets a <strong className="text-black">turnkey solution</strong> that handles data security, multi-bureau credit intelligence, AI-driven card recommendations, and compliance—all through a single API. Deploy in 90 days and start converting SMBs to credit card holders immediately.
                     </p>
                   </div>
                 </CardContent>
@@ -551,45 +544,45 @@ export default function CaseStudy() {
         </section>
 
         {/* 3. Implementation Snapshot */}
-        <section id="implementation" className="py-16 md:py-24 bg-background">
+        <section id="implementation" className="py-16 md:py-24 bg-white">
           <div className={containerClass}>
             <motion.div {...fadeInUp} className="mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold uppercase tracking-wider mb-4">
                 <Clock className="w-3 h-3" />
                 Implementation
               </div>
-              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-foreground leading-[1.15]">
+              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-black leading-[1.15]">
                 90-Day Pilot Framework
               </h2>
             </motion.div>
 
             <motion.div {...fadeInUp} className="mb-12">
-              <Card className="border-2 border-secondary/30">
+              <Card>
                 <CardContent className="p-0">
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="border-b border-border bg-muted/50">
-                          <th className="text-left p-4 font-semibold text-foreground">Component</th>
-                          <th className="text-left p-4 font-semibold text-foreground">Description</th>
+                        <tr className="border-b border-border bg-white">
+                          <th className="text-left p-4 font-semibold text-black">Component</th>
+                          <th className="text-left p-4 font-semibold text-black">Description</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr className="border-b border-border">
-                          <td className="p-4 font-semibold text-foreground">Target Population</td>
-                          <td className="p-4 text-muted-foreground">Digitally active SMBs with Wells Fargo Business Checking, $250K–$25M revenue (Phase 1: business credit cards)</td>
+                          <td className="p-4 font-semibold text-black">Target Population</td>
+                          <td className="p-4 text-gray-700">Digitally active SMBs with Wells Fargo Business Checking, $250K–$25M revenue (Phase 1: business credit cards)</td>
                         </tr>
                         <tr className="border-b border-border">
-                          <td className="p-4 font-semibold text-foreground">Pilot Duration</td>
-                          <td className="p-4 text-muted-foreground">90 days (Weeks 0–2 integration, Weeks 3–8 live A/B test, Weeks 9–12 scale decision)</td>
+                          <td className="p-4 font-semibold text-black">Pilot Duration</td>
+                          <td className="p-4 text-gray-700">90 days (Weeks 0–2 integration, Weeks 3–8 live A/B test, Weeks 9–12 scale decision)</td>
                         </tr>
                         <tr className="border-b border-border">
-                          <td className="p-4 font-semibold text-foreground">Key Signals</td>
-                          <td className="p-4 text-muted-foreground">Experian Intelliscore Plus, FICO Small Business Score, FSR (Financial Stability Risk) plus Wells internal attributes</td>
+                          <td className="p-4 font-semibold text-black">Key Signals</td>
+                          <td className="p-4 text-gray-700">Experian Intelliscore Plus, FICO Small Business Score, FSR (Financial Stability Risk) plus Wells internal attributes</td>
                         </tr>
                         <tr>
-                          <td className="p-4 font-semibold text-foreground">Outcome Metrics</td>
-                          <td className="p-4 text-muted-foreground">App-to-booked conversion, CAC reduction, manual-review rate, risk tier distribution</td>
+                          <td className="p-4 font-semibold text-black">Outcome Metrics</td>
+                          <td className="p-4 text-gray-700">App-to-booked conversion, CAC reduction, manual-review rate, risk tier distribution</td>
                         </tr>
                       </tbody>
                     </table>
@@ -600,23 +593,23 @@ export default function CaseStudy() {
 
             {/* Time Savings Comparison */}
             <motion.div {...fadeInUp} className="mb-12">
-              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-secondary/5">
-                <CardContent className="p-8">
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                      <Zap className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <h3 className="font-bold text-2xl text-foreground">Accelerated Time-to-Market</h3>
+                    <h3 className="font-bold text-2xl text-black">Accelerated Time-to-Market</h3>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     {/* Traditional Build */}
-                    <div className="bg-muted/50 rounded-lg p-6 border-2 border-muted">
+                    <div className="bg-secondary/5 rounded-lg p-6 border border-secondary/20">
                       <div className="flex items-center gap-2 mb-4">
-                        <Clock className="w-5 h-5 text-muted-foreground" />
-                        <h4 className="font-bold text-lg text-foreground">Traditional Build-from-Scratch</h4>
+                        <Clock className="w-5 h-5 text-black" strokeWidth={2.5} />
+                        <h4 className="font-bold text-lg text-black">Traditional Build-from-Scratch</h4>
                       </div>
-                      <div className="space-y-3 text-sm text-muted-foreground">
+                      <div className="space-y-3 text-sm text-gray-700">
                         <div className="flex justify-between">
                           <span>Q1: Requirements & Design</span>
                           <span className="font-semibold">3 months</span>
@@ -634,19 +627,19 @@ export default function CaseStudy() {
                           <span className="font-semibold">3 months</span>
                         </div>
                         <div className="pt-3 border-t border-border flex justify-between items-center">
-                          <span className="font-bold text-foreground">Total Time to Market:</span>
-                          <span className="text-2xl font-bold text-destructive">12 months</span>
+                          <span className="font-bold text-black">Total Time to Market:</span>
+                          <span className="text-2xl font-bold text-black">12 months</span>
                         </div>
                       </div>
                     </div>
 
                     {/* LUMIQ Approach */}
-                    <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/30">
+                    <div className="bg-secondary/10 rounded-lg p-6 border border-secondary/20">
                       <div className="flex items-center gap-2 mb-4">
-                        <Zap className="w-5 h-5 text-primary" />
-                        <h4 className="font-bold text-lg text-foreground">LUMIQ AI Ready-to-Deploy</h4>
+                        <Zap className="w-5 h-5 text-black" strokeWidth={2.5} />
+                        <h4 className="font-bold text-lg text-black">LUMIQ AI Ready-to-Deploy</h4>
                       </div>
-                      <div className="space-y-3 text-sm text-muted-foreground">
+                      <div className="space-y-3 text-sm text-gray-700">
                         <div className="flex justify-between">
                           <span>Weeks 0–2: API Integration & Setup</span>
                           <span className="font-semibold">2 weeks</span>
@@ -659,27 +652,27 @@ export default function CaseStudy() {
                           <span>Weeks 9–12: Analysis & Scale</span>
                           <span className="font-semibold">4 weeks</span>
                         </div>
-                        <div className="flex justify-between text-muted-foreground/50">
+                        <div className="flex justify-between text-gray-700/50">
                           <span>—</span>
                           <span>—</span>
                         </div>
                         <div className="pt-3 border-t border-border flex justify-between items-center">
-                          <span className="font-bold text-foreground">Total Time to Market:</span>
-                          <span className="text-2xl font-bold text-primary">90 days</span>
+                          <span className="font-bold text-black">Total Time to Market:</span>
+                          <span className="text-2xl font-bold text-black">90 days</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-primary/5 rounded-lg p-6 border border-primary/20">
+                  <div className="bg-secondary/5 rounded-lg p-6 border border-secondary/20">
                     <div className="flex items-center justify-between flex-wrap gap-4">
                       <div>
-                        <p className="text-sm text-muted-foreground mb-1">Time Savings</p>
-                        <p className="text-3xl font-bold text-primary">9 months faster to market</p>
+                        <p className="text-sm text-gray-700 mb-1">Time Savings</p>
+                        <p className="text-3xl font-bold text-black">9 months faster to market</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm text-muted-foreground mb-1">Opportunity Cost Avoided</p>
-                        <p className="text-2xl font-bold text-foreground">Revenue generation starts 75% sooner</p>
+                        <p className="text-sm text-gray-700 mb-1">Opportunity Cost Avoided</p>
+                        <p className="text-2xl font-bold text-black">Revenue generation starts 75% sooner</p>
                       </div>
                     </div>
                   </div>
@@ -689,51 +682,51 @@ export default function CaseStudy() {
 
             {/* Projected Business Card Revenue Impact */}
             <motion.div {...fadeInUp} className="mb-12">
-              <Card className="border-2 border-secondary/30 bg-gradient-to-br from-secondary/5 to-primary/5">
-                <CardContent className="p-8">
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
-                      <DollarSign className="w-6 h-6 text-secondary" />
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                      <DollarSign className="w-7 h-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <h3 className="font-bold text-2xl text-foreground">Projected 12-Month Revenue Impact (Business Cards Only)</h3>
+                    <h3 className="font-bold text-2xl text-black">Projected 12-Month Revenue Impact (Business Cards Only)</h3>
                   </div>
                   
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     Post 90-day pilot and full deployment, business credit card conversions are projected to generate significant incremental revenue through improved qualification rates and accelerated decisioning.
                   </p>
 
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-card rounded-lg p-6 border-2 border-border">
-                      <CreditCard className="w-8 h-8 text-primary mb-3" />
-                      <p className="text-sm text-muted-foreground mb-2">Incremental Booked Cards</p>
-                      <p className="text-3xl font-bold text-foreground mb-1">18,000–25,000</p>
-                      <p className="text-xs text-muted-foreground">From improved pre-qualification visibility</p>
+                    <div className="bg-white rounded-lg p-6 border-2 border-border">
+                      <CreditCard className="w-8 h-8 text-black mb-3" strokeWidth={2.5} />
+                      <p className="text-sm text-gray-700 mb-2">Incremental Booked Cards</p>
+                      <p className="text-3xl font-bold text-black mb-1">18,000–25,000</p>
+                      <p className="text-xs text-gray-700">From improved pre-qualification visibility</p>
                     </div>
 
-                    <div className="bg-card rounded-lg p-6 border-2 border-border">
-                      <DollarSign className="w-8 h-8 text-secondary mb-3" />
-                      <p className="text-sm text-muted-foreground mb-2">Gross Interchange Revenue</p>
-                      <p className="text-3xl font-bold text-foreground mb-1">$42M–$58M</p>
-                      <p className="text-xs text-muted-foreground">Based on avg. $25K credit line @ 2.5% interchange</p>
+                    <div className="bg-white rounded-lg p-6 border-2 border-border">
+                      <DollarSign className="w-8 h-8 text-black mb-3" strokeWidth={2.5} />
+                      <p className="text-sm text-gray-700 mb-2">Gross Interchange Revenue</p>
+                      <p className="text-3xl font-bold text-black mb-1">$42M–$58M</p>
+                      <p className="text-xs text-gray-700">Based on avg. $25K credit line @ 2.5% interchange</p>
                     </div>
 
-                    <div className="bg-card rounded-lg p-6 border-2 border-border">
-                      <TrendingUp className="w-8 h-8 text-primary mb-3" />
-                      <p className="text-sm text-muted-foreground mb-2">CAC Savings</p>
-                      <p className="text-3xl font-bold text-foreground mb-1">$8M–$12M</p>
-                      <p className="text-xs text-muted-foreground">Reduced acquisition costs through better targeting</p>
+                    <div className="bg-white rounded-lg p-6 border-2 border-border">
+                      <TrendingUp className="w-8 h-8 text-black mb-3" strokeWidth={2.5} />
+                      <p className="text-sm text-gray-700 mb-2">CAC Savings</p>
+                      <p className="text-3xl font-bold text-black mb-1">$8M–$12M</p>
+                      <p className="text-xs text-gray-700">Reduced acquisition costs through better targeting</p>
                     </div>
                   </div>
 
-                  <div className="mt-6 bg-primary/10 rounded-lg p-6 border border-primary/20">
+                  <div className="mt-6 bg-secondary/10 rounded-lg p-6 border border-secondary/20">
                     <div className="flex items-center justify-between flex-wrap gap-4">
                       <div>
-                        <p className="text-sm text-muted-foreground mb-1">Total 12-Month Value (Conservative)</p>
-                        <p className="text-4xl font-bold text-primary">$50M–$70M</p>
+                        <p className="text-sm text-gray-700 mb-1">Total 12-Month Value (Conservative)</p>
+                        <p className="text-4xl font-bold text-black">$50M–$70M</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm text-muted-foreground mb-1">9 Months Saved = Revenue Accelerated</p>
-                        <p className="text-lg font-bold text-foreground">Start earning 75% sooner vs traditional build</p>
+                        <p className="text-sm text-gray-700 mb-1">9 Months Saved = Revenue Accelerated</p>
+                        <p className="text-lg font-bold text-black">Start earning 75% sooner vs traditional build</p>
                       </div>
                     </div>
                   </div>
@@ -748,15 +741,15 @@ export default function CaseStudy() {
                 { phase: "Weeks 9–12", title: "Scale Decision", items: ["Data analysis", "ROI validation", "Full deployment plan"] }
               ].map((phase, idx) => (
                 <motion.div key={phase.phase} {...fadeInUp} transition={{ delay: idx * 0.1 }}>
-                  <Card className="h-full border-2 border-border hover:border-primary/50 transition-all">
-                    <CardContent className="pt-6">
-                      <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">{phase.phase}</div>
-                      <h3 className="font-bold text-xl mb-4 text-foreground">{phase.title}</h3>
+                  <Card className="h-full">
+                    <CardContent className="p-6 sm:p-8">
+                      <div className="text-xs font-bold text-secondary uppercase tracking-wider mb-2">{phase.phase}</div>
+                      <h3 className="font-bold text-xl mb-4 text-black">{phase.title}</h3>
                       <ul className="space-y-2">
                         {phase.items.map((item) => (
                           <li key={item} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-muted-foreground">{item}</span>
+                            <CheckCircle2 className="w-4 h-4 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                            <span className="text-sm text-gray-700">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -769,17 +762,17 @@ export default function CaseStudy() {
         </section>
 
         {/* 4. Quantified Projections */}
-        <section id="projections" className="py-16 md:py-24 bg-muted/30">
+        <section id="projections" className="py-16 md:py-24 bg-white">
           <div className={containerClass}>
             <motion.div {...fadeInUp} className="mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
                 <DollarSign className="w-3 h-3" />
                 Quantified Projections
               </div>
-              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-foreground leading-[1.15]">
+              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-black leading-[1.15]">
                 Expected Financial Impact
               </h2>
-              <p className="text-lg text-muted-foreground max-w-4xl">
+              <p className="text-lg text-gray-700 max-w-4xl">
                 Based on Wells Fargo's existing consumer-credit tool adoption & SMB portfolio size
               </p>
             </motion.div>
@@ -810,30 +803,30 @@ export default function CaseStudy() {
             </motion.div>
 
             <motion.div {...fadeInUp}>
-              <Card className="border-2 border-primary/30">
+              <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl">12-Month Value Projection</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Key Assumptions:</h4>
+                    <h4 className="font-semibold text-black mb-3">Key Assumptions:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          <strong className="text-foreground">Addressable base:</strong> ~3.3 million small-business customers (consumer-small business banking segment)
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                        <span className="text-sm text-gray-700">
+                          <strong className="text-black">Addressable base:</strong> ~3.3 million small-business customers (consumer-small business banking segment)
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          <strong className="text-foreground">Adoption rate:</strong> Conservative engagement based on Credit Close-Up consumer adoption patterns
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                        <span className="text-sm text-gray-700">
+                          <strong className="text-black">Adoption rate:</strong> Conservative engagement based on Credit Close-Up consumer adoption patterns
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          <strong className="text-foreground">Conversion lift:</strong> +10–15% improvement in app-to-booked via owned channel
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                        <span className="text-sm text-gray-700">
+                          <strong className="text-black">Conversion lift:</strong> +10–15% improvement in app-to-booked via owned channel
                         </span>
                       </li>
                     </ul>
@@ -842,23 +835,23 @@ export default function CaseStudy() {
                     <div className="grid md:grid-cols-3 gap-6">
                       <div className="p-4 rounded-lg bg-primary/5">
                         <div className="text-xs uppercase tracking-wider font-bold text-primary mb-2">Incremental Booked Cards</div>
-                        <div className="text-3xl font-bold text-foreground">~55,000</div>
-                        <p className="text-xs text-muted-foreground mt-1">Over 12 months</p>
+                        <div className="text-3xl font-bold text-black">~55,000</div>
+                        <p className="text-xs text-gray-700 mt-1">Over 12 months</p>
                       </div>
                       <div className="p-4 rounded-lg bg-secondary/5">
                         <div className="text-xs uppercase tracking-wider font-bold text-secondary mb-2">Gross Interchange</div>
-                        <div className="text-3xl font-bold text-foreground">$80M+</div>
-                        <p className="text-xs text-muted-foreground mt-1">Annual revenue impact</p>
+                        <div className="text-3xl font-bold text-black">$80M+</div>
+                        <p className="text-xs text-gray-700 mt-1">Annual revenue impact</p>
                       </div>
                       <div className="p-4 rounded-lg bg-primary/5">
                         <div className="text-xs uppercase tracking-wider font-bold text-primary mb-2">CAC Savings</div>
-                        <div className="text-3xl font-bold text-foreground">$9M+</div>
-                        <p className="text-xs text-muted-foreground mt-1">Customer acquisition cost reduction</p>
+                        <div className="text-3xl font-bold text-black">$9M+</div>
+                        <p className="text-xs text-gray-700 mt-1">Customer acquisition cost reduction</p>
                       </div>
                     </div>
                   </div>
                   <div className="pt-4 border-t border-border">
-                    <p className="text-sm text-muted-foreground italic">
+                    <p className="text-sm text-gray-700 italic">
                       * These projections are comparable in magnitude (adjusted for SMB scale) to what Wells Fargo achieved in consumer credit with Credit Close-Up.
                     </p>
                   </div>
@@ -869,14 +862,14 @@ export default function CaseStudy() {
         </section>
 
         {/* 5. After-State Vision */}
-        <section id="vision" className="py-16 md:py-24 bg-background">
+        <section id="vision" className="py-16 md:py-24 bg-white">
           <div className={containerClass}>
             <motion.div {...fadeInUp} className="mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
                 <Award className="w-3 h-3" />
                 Success Vision
               </div>
-              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-foreground leading-[1.15]">
+              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-black leading-[1.15]">
                 What Success Looks Like
               </h2>
             </motion.div>
@@ -905,21 +898,21 @@ export default function CaseStudy() {
                 }
               ].map((section, idx) => (
                 <motion.div key={section.title} {...fadeInUp} transition={{ delay: idx * 0.1 }}>
-                  <Card className="h-full border-2 border-primary/20 hover:border-primary/40 transition-all">
+                  <Card className="h-full">
                     <CardHeader>
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <section.icon className="w-5 h-5 text-primary" />
+                        <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
+                          <section.icon className="w-7 h-7 text-black" strokeWidth={2.5} />
                         </div>
                         <CardTitle className="text-xl">{section.title}</CardTitle>
                       </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="p-6 sm:p-8 pt-0">
                       <ul className="space-y-3">
                         {section.benefits.map((benefit) => (
                           <li key={benefit} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-muted-foreground">{benefit}</span>
+                            <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                            <span className="text-sm text-gray-700">{benefit}</span>
                           </li>
                         ))}
                       </ul>
@@ -930,9 +923,9 @@ export default function CaseStudy() {
             </div>
 
             <motion.div {...fadeInUp}>
-              <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/30">
-                <CardContent className="p-8">
-                  <h3 className="font-bold text-2xl mb-4 text-foreground">Additional Strategic Outcomes</h3>
+              <Card className="h-full">
+                <CardContent className="p-6 sm:p-8">
+                  <h3 className="font-bold text-2xl mb-4 text-black">Additional Strategic Outcomes</h3>
                   <div className="grid md:grid-cols-3 gap-6">
                     {[
                       { title: "Marketing & CRM", desc: "New segmentation and smarter cross-sell based on credit readiness" },
@@ -942,8 +935,8 @@ export default function CaseStudy() {
                       <div key={outcome.title} className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                         <div>
-                          <p className="font-semibold text-foreground mb-1">{outcome.title}</p>
-                          <p className="text-sm text-muted-foreground">{outcome.desc}</p>
+                          <p className="font-semibold text-black mb-1">{outcome.title}</p>
+                          <p className="text-sm text-gray-700">{outcome.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -955,39 +948,39 @@ export default function CaseStudy() {
         </section>
 
         {/* 6. Strategic Justification */}
-        <section id="justification" className="py-16 md:py-24 bg-muted/30">
+        <section id="justification" className="py-16 md:py-24 bg-white">
           <div className={containerClass}>
             <motion.div {...fadeInUp} className="mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold uppercase tracking-wider mb-4">
                 <Brain className="w-3 h-3" />
                 Strategic Rationale
               </div>
-              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-foreground leading-[1.15]">
+              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-black leading-[1.15]">
                 Why It Works
               </h2>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-8">
               <motion.div {...fadeInUp}>
-                <Card className="h-full border-2 border-primary/30">
-                  <CardContent className="p-8">
-                    <h3 className="font-bold text-xl mb-6 text-foreground">Proven Blueprint</h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      <strong className="text-foreground">Credit Close-Up</strong> built consumer trust by demystifying credit, driving engagement, and supporting improved financial behavior. LUMIQ AI mirrors that success for SMBs.
+                <Card className="h-full">
+                  <CardContent className="p-6 sm:p-8">
+                    <h3 className="font-bold text-xl mb-6 text-black">Proven Blueprint</h3>
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                      <strong className="text-black">Credit Close-Up</strong> built consumer trust by demystifying credit, driving engagement, and supporting improved financial behavior. LUMIQ AI mirrors that success for SMBs.
                     </p>
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                         <div>
-                          <p className="font-semibold text-foreground mb-1">71% Impact</p>
-                          <p className="text-sm text-muted-foreground">Of consumers who check scores monthly feel in control (TransUnion)</p>
+                          <p className="font-semibold text-black mb-1">71% Impact</p>
+                          <p className="text-sm text-gray-700">Of consumers who check scores monthly feel in control (TransUnion)</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                         <div>
-                          <p className="font-semibold text-foreground mb-1">40+ Point Increase</p>
-                          <p className="text-sm text-muted-foreground">Nearly 1 in 5 dashboard users improved scores significantly in one year</p>
+                          <p className="font-semibold text-black mb-1">40+ Point Increase</p>
+                          <p className="text-sm text-gray-700">Nearly 1 in 5 dashboard users improved scores significantly in one year</p>
                         </div>
                       </div>
                     </div>
@@ -996,29 +989,29 @@ export default function CaseStudy() {
               </motion.div>
 
               <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                <Card className="h-full border-2 border-secondary/30">
-                  <CardContent className="p-8">
-                    <h3 className="font-bold text-xl mb-6 text-foreground">Market Dynamics</h3>
+                <Card className="h-full">
+                  <CardContent className="p-6 sm:p-8">
+                    <h3 className="font-bold text-xl mb-6 text-black">Market Dynamics</h3>
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
-                        <Target className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                        <Target className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                         <div>
-                          <p className="font-semibold text-foreground mb-1">SMB Expectations Rising</p>
-                          <p className="text-sm text-muted-foreground">Business owners increasingly expect fintech-style experiences (transparent eligibility, real-time decisions) combined with bank credibility</p>
+                          <p className="font-semibold text-black mb-1">SMB Expectations Rising</p>
+                          <p className="text-sm text-gray-700">Business owners increasingly expect fintech-style experiences (transparent eligibility, real-time decisions) combined with bank credibility</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <Zap className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                        <Zap className="w-5 h-5 text-black flex-shrink-0 mt-1" strokeWidth={2.5} />
                         <div>
-                          <p className="font-semibold text-foreground mb-1">Embedded Intelligence</p>
-                          <p className="text-sm text-muted-foreground">Credit intelligence inside the bank app converts intent into action—higher uptake at lower cost</p>
+                          <p className="font-semibold text-black mb-1">Embedded Intelligence</p>
+                          <p className="text-sm text-gray-700">Credit intelligence inside the bank app converts intent into action—higher uptake at lower cost</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <CreditCard className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
                         <div>
-                          <p className="font-semibold text-foreground mb-1">Insight to Product</p>
-                          <p className="text-sm text-muted-foreground">Upselling is easier when customers understand their credit picture and see tailored offers immediately</p>
+                          <p className="font-semibold text-black mb-1">Insight to Product</p>
+                          <p className="text-sm text-gray-700">Upselling is easier when customers understand their credit picture and see tailored offers immediately</p>
                         </div>
                       </div>
                     </div>
@@ -1065,7 +1058,7 @@ export default function CaseStudy() {
         </section>
 
         {/* Sources */}
-        <section className="py-12 bg-[#2B2B2B] text-white">
+        <section className="py-12 bg-white">
           <div className={containerClass}>
             <motion.div {...fadeInUp}>
               <h3 className="text-sm font-bold uppercase tracking-wider mb-4 text-white/60">Sources & Citations</h3>
