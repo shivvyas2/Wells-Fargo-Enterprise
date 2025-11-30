@@ -133,6 +133,15 @@ export default function CaseStudy() {
                     <CardTitle className="text-2xl">Consumer Success Story</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
+                    <div className="flex items-center justify-center mb-6">
+                      <div className="relative max-w-[200px] w-full">
+                        <img
+                          src="/Phone-Mockups/Consumer Success Story.png"
+                          alt="Consumer Success Story"
+                          className="w-full h-auto drop-shadow-xl rounded-lg"
+                        />
+                      </div>
+                    </div>
                     {/* Timeline Section */}
                     <div className="bg-white rounded-lg p-4 space-y-3 border-2 border-black">
                       <div className="flex items-center gap-2 mb-2">
@@ -228,6 +237,15 @@ export default function CaseStudy() {
                     <CardTitle className="text-2xl">The Business Banking Gap</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
+                    <div className="flex items-center justify-center mb-6">
+                      <div className="relative max-w-[200px] w-full">
+                        <img
+                          src="/Phone-Mockups/Business Banking Gap.png"
+                          alt="Business Banking Gap"
+                          className="w-full h-auto drop-shadow-xl rounded-lg"
+                        />
+                      </div>
+                    </div>
                     {/* Current State Timeline */}
                     <div className="bg-white rounded-lg p-4 space-y-3 border-2 border-black">
                       <div className="flex items-center gap-2 mb-2">
