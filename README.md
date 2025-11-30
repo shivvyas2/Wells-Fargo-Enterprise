@@ -1,73 +1,78 @@
-# Welcome to your Lovable project
+# Wells Fargo Business Credit Close-Up
 
-## Project info
+Enterprise-grade business credit visibility platform powered by LUMIQ AI.
 
-**URL**: https://lovable.dev/projects/7a5133fe-aba0-4fdc-ae43-f2e7a8016938
+## Project Info
 
-## How can I edit this code?
+**Live URL**: https://wells-fargo.futeur.futeurcredx.com
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7a5133fe-aba0-4fdc-ae43-f2e7a8016938) and start prompting.
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd Wells-Fargo-Enterprise
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The development server will start on `http://localhost:8080` with hot-reload enabled.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Build tool and dev server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI library
+- **shadcn-ui** - Component library
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Router** - Client-side routing
+- **Framer Motion** - Animation library
 
-## How can I deploy this project?
+## Project Structure
 
-Simply open [Lovable](https://lovable.dev/projects/7a5133fe-aba0-4fdc-ae43-f2e7a8016938) and click on Share -> Publish.
+```
+├── public/          # Static assets
+├── src/
+│   ├── components/  # Reusable UI components
+│   ├── pages/       # Page components
+│   ├── hooks/       # Custom React hooks
+│   ├── lib/         # Utility functions
+│   └── context/     # React context providers
+└── index.html       # HTML entry point
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Development
 
-Yes, you can!
+- **Development server**: `npm run dev`
+- **Build for production**: `npm run build`
+- **Preview production build**: `npm run preview`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The project is deployed at: **https://wells-fargo.futeur.futeurcredx.com**
+
+## Features
+
+- Business credit score visibility
+- Pre-qualified product recommendations
+- Real-time credit insights and alerts
+- Mobile-responsive design
+- Dark mode support
+
+## License
+
+© 2024 Wells Fargo Business Credit Close-Up. All rights reserved.
