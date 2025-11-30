@@ -113,8 +113,8 @@ function Contact() {
       </HeroBackground>
 
       {/* Contact Methods */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="mx-auto w-full px-5 md:px-[5vw]">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -122,10 +122,10 @@ function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
+            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-black">
               Ignite the Conversation
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Let's start a journey together. Connect with the right team for your specific needs.
             </p>
           </motion.div>
@@ -137,13 +137,13 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="h-full border-2 border-primary/30 hover:border-primary/50 transition-all">
+              <Card className="h-full border-2 border-black hover:border-black/80 transition-all">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 border border-black/20 flex items-center justify-center mx-auto mb-4">
                     <Briefcase className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">Business Inquiries</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Pilot programs, partnerships, and enterprise solutions</p>
+                  <h3 className="text-lg font-semibold text-black mb-2">Business Inquiries</h3>
+                  <p className="text-sm text-gray-700 mb-4">Pilot programs, partnerships, and enterprise solutions</p>
                   <a href="mailto:business@futeurcredx.com" className="text-sm font-medium text-primary hover:underline">
                     business@futeurcredx.com
                   </a>
@@ -157,13 +157,13 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Card className="h-full border-2 border-secondary/30 hover:border-secondary/50 transition-all">
+              <Card className="h-full border-2 border-black hover:border-black/80 transition-all">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-secondary/20 border border-black/20 flex items-center justify-center mx-auto mb-4">
                     <Scale className="w-8 h-8 text-secondary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">Legal Inquiries</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Compliance, contracts, and legal matters</p>
+                  <h3 className="text-lg font-semibold text-black mb-2">Legal Inquiries</h3>
+                  <p className="text-sm text-gray-700 mb-4">Compliance, contracts, and legal matters</p>
                   <a href="mailto:legal@futeurcredx.com" className="text-sm font-medium text-secondary hover:underline">
                     legal@futeurcredx.com
                   </a>
@@ -177,13 +177,13 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Card className="h-full border-2 border-primary/30 hover:border-primary/50 transition-all">
+              <Card className="h-full border-2 border-black hover:border-black/80 transition-all">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 border border-black/20 flex items-center justify-center mx-auto mb-4">
                     <Headphones className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">Technical Support</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Integration assistance and technical questions</p>
+                  <h3 className="text-lg font-semibold text-black mb-2">Technical Support</h3>
+                  <p className="text-sm text-gray-700 mb-4">Integration assistance and technical questions</p>
                   <a href="mailto:support@futeurcredx.com" className="text-sm font-medium text-primary hover:underline">
                     support@futeurcredx.com
                   </a>
@@ -195,8 +195,8 @@ function Contact() {
       </section>
 
       {/* Office Location */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-muted/30 via-background to-muted/20">
-        <div className="mx-auto w-full px-5 md:px-[5vw]">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -204,26 +204,26 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="border-2 border-primary/30 overflow-hidden">
+              <Card className="border-2 border-border overflow-hidden bg-white">
                 <div className="grid md:grid-cols-2">
-                  <div className="p-8 md:p-12 bg-gradient-to-br from-primary/5 to-secondary/5">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6">
+                  <div className="p-8 md:p-12 bg-white">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 border border-black/20 flex items-center justify-center mb-6">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">NEW YORK OFFICE</h3>
-                    <p className="text-muted-foreground mb-6">Where Opportunity Never Sleeps.<br />Welcome to the Heart of It All.</p>
+                    <h3 className="text-2xl font-bold text-black mb-2">NEW YORK OFFICE</h3>
+                    <p className="text-gray-700 mb-6">Where Opportunity Never Sleeps.<br />Welcome to the Heart of It All.</p>
                     
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="text-sm font-medium text-foreground">17 State Street, Floor 40</p>
-                          <p className="text-sm text-muted-foreground">New York, NY 10004</p>
+                          <p className="text-sm font-medium text-black">17 State Street, Floor 40</p>
+                          <p className="text-sm text-gray-700">New York, NY 10004</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                        <a href="tel:+12129374610" className="text-sm text-foreground hover:text-primary transition">
+                        <a href="tel:+12129374610" className="text-sm text-black hover:text-primary transition">
                           212-937-4610
                         </a>
                       </div>
@@ -236,8 +236,12 @@ function Contact() {
                     </Button>
                   </div>
 
-                  <div className="h-64 md:h-auto bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <MapPin className="w-24 h-24 text-primary/40" />
+                  <div className="h-64 md:h-auto relative overflow-hidden">
+                    <img
+                      src="/newyork.jpg"
+                      alt="New York City Skyline"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </Card>
@@ -247,8 +251,8 @@ function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="mx-auto w-full px-5 md:px-[5vw]">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto w-full px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -256,10 +260,10 @@ function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
+            <h2 className="font-display text-[36px] md:text-[48px] font-bold mb-4 text-black">
               Get in Touch With Us
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               We're here to help! Whether you have questions about our services, need assistance, or want to provide feedback, our team is ready to assist you.
             </p>
           </motion.div>
@@ -271,12 +275,12 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="border-2 border-muted">
+              <Card className="border-2 border-border bg-white">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
                     <Mail className="w-6 h-6 text-primary" />
                     <div>
-                      <a href="mailto:support@futeurcredx.com" className="text-lg font-semibold text-foreground hover:text-primary transition">
+                      <a href="mailto:support@futeurcredx.com" className="text-lg font-semibold text-black hover:text-primary transition">
                         support@futeurcredx.com
                       </a>
                     </div>
@@ -284,12 +288,12 @@ function Contact() {
                   <div className="flex items-center gap-4 mb-4">
                     <Phone className="w-6 h-6 text-primary" />
                     <div>
-                      <a href="tel:+18003967295" className="text-lg font-semibold text-foreground hover:text-primary transition">
+                      <a href="tel:+18003967295" className="text-lg font-semibold text-black hover:text-primary transition">
                         +1 800-396-7295
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-4 text-sm text-gray-700">
                     <Clock className="w-5 h-5" />
                     <p>Available Monday to Friday, 9 AM - 6 PM EST</p>
                   </div>
@@ -299,14 +303,14 @@ function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name *</Label>
+                        <Label htmlFor="firstName" className="text-black">First Name *</Label>
                         <Input
                           id="firstName"
                           name="firstName"
                           value={formData.firstName}
                           onChange={handleChange}
                           placeholder="John"
-                          className={errors.firstName ? "border-destructive" : ""}
+                          className={`bg-white text-black border-border ${errors.firstName ? "border-destructive" : ""}`}
                         />
                         {errors.firstName && (
                           <p className="text-xs text-destructive">{errors.firstName}</p>
@@ -314,14 +318,14 @@ function Contact() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name *</Label>
+                        <Label htmlFor="lastName" className="text-black">Last Name *</Label>
                         <Input
                           id="lastName"
                           name="lastName"
                           value={formData.lastName}
                           onChange={handleChange}
                           placeholder="Doe"
-                          className={errors.lastName ? "border-destructive" : ""}
+                          className={`bg-white text-black border-border ${errors.lastName ? "border-destructive" : ""}`}
                         />
                         {errors.lastName && (
                           <p className="text-xs text-destructive">{errors.lastName}</p>
@@ -330,7 +334,7 @@ function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
+                      <Label htmlFor="email" className="text-black">Email *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -338,7 +342,7 @@ function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john.doe@example.com"
-                        className={errors.email ? "border-destructive" : ""}
+                        className={`bg-white text-black border-border ${errors.email ? "border-destructive" : ""}`}
                       />
                       {errors.email && (
                         <p className="text-xs text-destructive">{errors.email}</p>
@@ -346,7 +350,7 @@ function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">How can we help you? *</Label>
+                      <Label htmlFor="message" className="text-black">How can we help you? *</Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -354,7 +358,7 @@ function Contact() {
                         onChange={handleChange}
                         placeholder="Tell us about your inquiry..."
                         rows={6}
-                        className={errors.message ? "border-destructive" : ""}
+                        className={`bg-white text-black border-border ${errors.message ? "border-destructive" : ""}`}
                       />
                       {errors.message && (
                         <p className="text-xs text-destructive">{errors.message}</p>

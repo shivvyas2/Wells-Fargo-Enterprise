@@ -115,6 +115,9 @@ export default function CaseStudy() {
                 <AlertTriangle className="w-3 h-3" />
                 Problem Statement
               </div>
+              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-4 text-black leading-[1.15]">
+                The Missing Link
+              </h2>
               <p className="text-lg md:text-xl text-gray-700 max-w-4xl leading-relaxed">
                 Wells Fargo revolutionized consumer credit with Credit Close-Up. But business banking customers lack an equivalent tool.
               </p>
@@ -761,106 +764,6 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* 4. Quantified Projections */}
-        <section id="projections" className="py-16 md:py-24 bg-white">
-          <div className={containerClass}>
-            <motion.div {...fadeInUp} className="mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
-                <DollarSign className="w-3 h-3" />
-                Quantified Projections
-              </div>
-              <h2 className="font-display text-[36px] md:text-[52px] font-bold mb-6 text-black leading-[1.15]">
-                Expected Financial Impact
-              </h2>
-              <p className="text-lg text-gray-700 max-w-4xl">
-                Based on Wells Fargo's existing consumer-credit tool adoption & SMB portfolio size
-              </p>
-            </motion.div>
-
-            <motion.div {...fadeInUp} className="mb-12">
-              <Card className="bg-gradient-to-br from-primary via-primary to-secondary text-white border-0">
-                <CardContent className="p-8 md:p-12">
-                  <div className="grid md:grid-cols-4 gap-8">
-                    <div className="text-center">
-                      <div className="text-5xl md:text-6xl font-bold mb-2">+10–15%</div>
-                      <p className="text-white/90 text-sm">Lift in approved business-card applications</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-5xl md:text-6xl font-bold mb-2">20–35%</div>
-                      <p className="text-white/90 text-sm">Faster time-to-decision</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-5xl md:text-6xl font-bold mb-2">30–40%</div>
-                      <p className="text-white/90 text-sm">Reduction in manual review</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-5xl md:text-6xl font-bold mb-2">$100M+</div>
-                      <p className="text-white/90 text-sm">Annual value (12-month horizon)</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div {...fadeInUp}>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">12-Month Value Projection</CardTitle>
-                </CardHeader>
-                <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-black mb-3">Key Assumptions:</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                        <span className="text-sm text-gray-700">
-                          <strong className="text-black">Addressable base:</strong> ~3.3 million small-business customers (consumer-small business banking segment)
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                        <span className="text-sm text-gray-700">
-                          <strong className="text-black">Adoption rate:</strong> Conservative engagement based on Credit Close-Up consumer adoption patterns
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-black flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                        <span className="text-sm text-gray-700">
-                          <strong className="text-black">Conversion lift:</strong> +10–15% improvement in app-to-booked via owned channel
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-6 border-t border-border">
-                    <div className="grid md:grid-cols-3 gap-6">
-                      <div className="p-4 rounded-lg bg-primary/5">
-                        <div className="text-xs uppercase tracking-wider font-bold text-primary mb-2">Incremental Booked Cards</div>
-                        <div className="text-3xl font-bold text-black">~55,000</div>
-                        <p className="text-xs text-gray-700 mt-1">Over 12 months</p>
-                      </div>
-                      <div className="p-4 rounded-lg bg-secondary/5">
-                        <div className="text-xs uppercase tracking-wider font-bold text-secondary mb-2">Gross Interchange</div>
-                        <div className="text-3xl font-bold text-black">$80M+</div>
-                        <p className="text-xs text-gray-700 mt-1">Annual revenue impact</p>
-                      </div>
-                      <div className="p-4 rounded-lg bg-primary/5">
-                        <div className="text-xs uppercase tracking-wider font-bold text-primary mb-2">CAC Savings</div>
-                        <div className="text-3xl font-bold text-black">$9M+</div>
-                        <p className="text-xs text-gray-700 mt-1">Customer acquisition cost reduction</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="pt-4 border-t border-border">
-                    <p className="text-sm text-gray-700 italic">
-                      * These projections are comparable in magnitude (adjusted for SMB scale) to what Wells Fargo achieved in consumer credit with Credit Close-Up.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </section>
-
         {/* 5. After-State Vision */}
         <section id="vision" className="py-16 md:py-24 bg-white">
           <div className={containerClass}>
@@ -1061,8 +964,8 @@ export default function CaseStudy() {
         <section className="py-12 bg-white">
           <div className={containerClass}>
             <motion.div {...fadeInUp}>
-              <h3 className="text-sm font-bold uppercase tracking-wider mb-4 text-white/60">Sources & Citations</h3>
-              <div className="text-xs text-white/70 space-y-2">
+              <h3 className="text-sm font-bold uppercase tracking-wider mb-4 text-black/60">Sources & Citations</h3>
+              <div className="text-xs text-gray-700 space-y-2">
                 <p>• Wells Fargo Credit Close-Up: Free monthly FICO® Score 9 from Experian®</p>
                 <p>• Wells Fargo Financial Health Tools and Credit Close-Up consumer adoption data</p>
                 <p>• Wells Fargo Consumer, Small & Business Banking segment (~3.3M business customers)</p>

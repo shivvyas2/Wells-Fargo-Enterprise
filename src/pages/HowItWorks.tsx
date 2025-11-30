@@ -152,7 +152,7 @@ export default function HowItWorks() {
                 {[
                   {
                     title: "Credit Dashboard View",
-                    image: "/Phone-Mockups/Credit-Dashboard.png",
+                    image: "/Phone-Mockups/seehow1.png",
                     label: "Dual-score visibility: Personal FICO + Business Credit"
                   },
                   {
