@@ -1,0 +1,14 @@
+# Nginx configuration example
+# Place this in your Nginx server configuration
+
+server {
+    listen 80;
+    server_name wells-fargo.futeurcredx.com;
+    root /path/to/your/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
