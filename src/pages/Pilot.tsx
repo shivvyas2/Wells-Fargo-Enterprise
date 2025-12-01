@@ -248,16 +248,22 @@ function Pilot() {
                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-black" />
                   </div>
                 </Button>
-                <Link to="/contact" className="w-full sm:w-auto">
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-white text-white hover:bg-white/10 w-full sm:w-auto text-sm sm:text-base"
-                  >
-                    <Download className="mr-2 w-4 h-4 md:w-5 md:h-5" />
-                    Download Pilot Brief
-                  </Button>
-                </Link>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-white text-white hover:bg-white/10 w-full sm:w-auto text-sm sm:text-base"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/Pilot%20Summary%20Wells%20Fargo.pdf';
+                    link.download = 'Pilot Summary Wells Fargo.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
+                  <Download className="mr-2 w-4 h-4 md:w-5 md:h-5" />
+                  Download Pilot Brief
+                </Button>
               </div>
 
               <div className="flex flex-wrap gap-2 md:gap-4 text-xs md:text-sm text-white/80">
