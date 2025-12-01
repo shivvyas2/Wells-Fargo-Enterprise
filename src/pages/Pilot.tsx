@@ -191,86 +191,86 @@ function Pilot() {
               className="w-full"
             >
               {/* Urgent scarcity banner */}
-              <div className="mb-6 inline-flex items-center gap-3 px-6 py-3 border border-white text-white rounded-full font-medium text-sm">
-                <AlertCircle className="w-4 h-4" />
-                <span>Only 3 Pilot Slots Left for Q1 2026 • First-Come Basis</span>
+              <div className="mb-4 md:mb-6 flex flex-wrap items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 border border-white text-white rounded-full font-medium text-xs md:text-sm">
+                <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                <span className="text-center md:text-left">Only 3 Pilot Slots Left for Q1 2026 • First-Come Basis</span>
               </div>
 
-              <div className="mb-6 inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white text-white text-sm font-medium">
-                <Shield className="w-4 h-4" />
-                Designed for Institutional Finance & Model-Risk Governance
+              <div className="mb-4 md:mb-6 flex flex-wrap items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-full border border-white text-white text-xs md:text-sm font-medium">
+                <Shield className="w-4 h-4 flex-shrink-0" />
+                <span className="text-center md:text-left">Designed for Institutional Finance & Model-Risk Governance</span>
               </div>
 
-              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-                <div className="flex items-center gap-2">
-                  <span className="text-5xl font-bold text-white">90</span>
-                  <span className="text-lg text-white/90">DAYS</span>
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 md:gap-3 px-4 md:px-5 py-3 md:py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <span className="text-3xl md:text-5xl font-bold text-white">90</span>
+                  <span className="text-sm md:text-lg text-white/90">DAYS</span>
                 </div>
-                <div className="h-8 w-px bg-white/30"></div>
-                <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-white">9</span>
-                  <span className="text-sm text-white/90">months saved</span>
+                <div className="h-6 md:h-8 w-px bg-white/30"></div>
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <span className="text-2xl md:text-3xl font-bold text-white">9</span>
+                  <span className="text-xs md:text-sm text-white/90">months saved</span>
                 </div>
-                <div className="h-8 w-px bg-white/30"></div>
-                <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-white">$50M+</span>
-                  <span className="text-sm text-white/90">potential revenue</span>
+                <div className="h-6 md:h-8 w-px bg-white/30"></div>
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <span className="text-2xl md:text-3xl font-bold text-white">$50M+</span>
+                  <span className="text-xs md:text-sm text-white/90">potential revenue</span>
                 </div>
               </div>
 
-              <h1 className="text-[40px] md:text-[52px] lg:text-[72px] font-semibold mb-6 leading-[52px] md:leading-[64px] lg:leading-[85px] tracking-[-1.2px] md:tracking-[-2.16px] text-white">
+              <h1 className="text-[32px] sm:text-[40px] md:text-[52px] lg:text-[72px] font-semibold mb-4 md:mb-6 leading-[1.1] md:leading-[64px] lg:leading-[85px] tracking-tight md:tracking-[-2.16px] text-white">
                 Accelerate to Market: <span className="text-secondary">$50M–$70M</span> Revenue Opportunity
               </h1>
 
-              <p className="text-xl md:text-2xl text-white mb-4 max-w-3xl leading-relaxed font-medium">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-3 md:mb-4 max-w-3xl leading-relaxed font-medium">
                 Strategic deployment in 90 days vs. traditional 12-month development cycles.
               </p>
 
-              <p className="text-lg text-white/80 mb-6 max-w-2xl leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 md:mb-6 max-w-2xl leading-relaxed">
                 Each quarter of delay represents $12M-$17M in unrealized revenue opportunity as market dynamics shift.
               </p>
 
               {/* Social proof ticker */}
-              <div className="mb-8 flex items-center gap-2 text-white/70 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
-                <Users className="w-5 h-5" />
-                <span className="text-sm">143 institutions expressed interest • 12 in due diligence • 3 slots remaining</span>
+              <div className="mb-6 md:mb-8 flex flex-wrap items-center gap-2 text-white/70 px-3 md:px-4 py-2 bg-white/5 rounded-lg border border-white/10">
+                <Users className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                <span className="text-xs md:text-sm text-center md:text-left">143 institutions expressed interest • 12 in due diligence • 3 slots remaining</span>
               </div>
 
-              <div className="flex flex-wrap gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 mb-6 md:mb-10">
                 <Button 
                   size="lg" 
                   variant="solver"
-                  className="text-base md:text-lg gap-6"
+                  className="text-sm sm:text-base md:text-lg gap-4 md:gap-6 w-full sm:w-auto"
                   onClick={() => document.getElementById('pilot-form')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Secure Your Pilot Slot
-                  <div className="w-10 h-10 p-2.5 rounded-full bg-white flex items-center justify-center">
-                    <ArrowRight className="w-5 h-5 text-black" />
+                  <div className="w-8 h-8 md:w-10 md:h-10 p-2 md:p-2.5 rounded-full bg-white flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-black" />
                   </div>
                 </Button>
-                <Link to="/contact">
+                <Link to="/contact" className="w-full sm:w-auto">
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="border-white text-white hover:bg-white/10"
+                    className="border-white text-white hover:bg-white/10 w-full sm:w-auto text-sm sm:text-base"
                   >
-                    <Download className="mr-2 w-5 h-5" />
+                    <Download className="mr-2 w-4 h-4 md:w-5 md:h-5" />
                     Download Pilot Brief
                   </Button>
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-4 text-sm text-white/80">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5">
-                  <TrendingUp className="w-4 h-4 text-white" />
+              <div className="flex flex-wrap gap-2 md:gap-4 text-xs md:text-sm text-white/80">
+                <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/20 bg-white/5">
+                  <TrendingUp className="w-3 h-3 md:w-4 md:h-4 text-white flex-shrink-0" />
                   <span>+15–25% app-to-booked lift</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5">
-                  <Shield className="w-4 h-4 text-white" />
+                <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/20 bg-white/5">
+                  <Shield className="w-3 h-3 md:w-4 md:h-4 text-white flex-shrink-0" />
                   <span>100% audit trail coverage</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5">
-                  <Lock className="w-4 h-4 text-white" />
+                <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/20 bg-white/5">
+                  <Lock className="w-3 h-3 md:w-4 md:h-4 text-white flex-shrink-0" />
                   <span>ECOA/FCRA/GLBA compliant</span>
                 </div>
               </div>
@@ -405,7 +405,7 @@ function Pilot() {
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
               <Card className="h-full">
                 <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center justify-center gap-3 mb-6">
                     <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
                       <Plug className="h-7 w-7 text-black" strokeWidth={2.5} />
                     </div>
@@ -441,7 +441,7 @@ function Pilot() {
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Card className="h-full">
                 <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center justify-center gap-3 mb-6">
                     <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
                       <BarChart3 className="h-7 w-7 text-black" strokeWidth={2.5} />
                     </div>
@@ -477,7 +477,7 @@ function Pilot() {
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
               <Card className="h-full">
                 <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center justify-center gap-3 mb-6">
                     <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.6)] flex items-center justify-center">
                       <Layers className="h-7 w-7 text-black" strokeWidth={2.5} />
                     </div>
@@ -530,17 +530,17 @@ function Pilot() {
                   </div>
                 </div>
                 
-                <div className="grid md:grid-cols-4 gap-6 mb-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-6">
                   {[
                     { label: "Pilot Duration", value: "94 days", icon: Clock },
                     { label: "Accounts Tested", value: "68,000", icon: Users },
                     { label: "Conversion Lift", value: "+14.2%", icon: TrendingUp },
                     { label: "Revenue Impact", value: "$52M/year", icon: DollarSign },
                   ].map((metric, i) => (
-                    <div key={i} className="p-4 rounded-xl bg-white border-2 border-black">
-                      <metric.icon className="w-5 h-5 text-black mb-2" strokeWidth={2.5} />
-                      <div className="text-2xl font-bold text-black mb-1">{metric.value}</div>
-                      <div className="text-sm text-gray-700">{metric.label}</div>
+                    <div key={i} className="p-3 md:p-4 rounded-xl bg-white border-2 border-black">
+                      <metric.icon className="w-4 h-4 md:w-5 md:h-5 text-black mb-1.5 md:mb-2" strokeWidth={2.5} />
+                      <div className="text-lg md:text-2xl font-bold text-black mb-1">{metric.value}</div>
+                      <div className="text-xs md:text-sm text-gray-700">{metric.label}</div>
                     </div>
                   ))}
                 </div>
@@ -731,17 +731,17 @@ function Pilot() {
       <section id="pilot-form" className="py-12 md:py-24 bg-white scroll-mt-32">
         <div className={containerClass}>
           <motion.div {...fadeInUp} className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-[32px] md:text-[48px] font-bold mb-4 text-black leading-[41.6px] md:leading-[56px]">Apply for the 90-Day Pilot Program</h2>
-              <p className="text-lg text-gray-700">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[48px] font-bold mb-3 md:mb-4 text-black leading-tight md:leading-[56px]">Apply for the 90-Day Pilot Program</h2>
+              <p className="text-base md:text-lg text-gray-700 px-4 md:px-0">
                 Join leading financial institutions in transforming SMB credit experiences
               </p>
             </div>
 
             {!isSubmitted ? (
               <Card>
-                <CardContent className="p-8 md:p-12">
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                <CardContent className="p-4 sm:p-6 md:p-8 lg:p-12">
+                  <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name" className="text-black">Full Name *</Label>
@@ -904,23 +904,23 @@ function Pilot() {
       <section className="py-12 md:py-16 bg-white border-t border-border">
         <div className={containerClass}>
           <motion.div {...fadeInUp} className="text-center">
-            <p className="text-sm text-gray-700 mb-8">Trusted by forward-thinking financial institutions</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-              <div className="flex items-center gap-2">
-                <Shield className="h-8 w-8 text-black" />
-                <span className="font-semibold text-black">SOC 2 Type II</span>
+            <p className="text-xs md:text-sm text-gray-700 mb-6 md:mb-8">Trusted by forward-thinking financial institutions</p>
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-12 opacity-60">
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <Shield className="h-6 w-6 md:h-8 md:w-8 text-black flex-shrink-0" />
+                <span className="font-semibold text-black text-xs md:text-sm lg:text-base">SOC 2 Type II</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Lock className="h-8 w-8 text-black" />
-                <span className="font-semibold text-black">ISO 27001</span>
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <Lock className="h-6 w-6 md:h-8 md:w-8 text-black flex-shrink-0" />
+                <span className="font-semibold text-black text-xs md:text-sm lg:text-base">ISO 27001</span>
               </div>
-              <div className="flex items-center gap-2">
-                <FileCheck className="h-8 w-8 text-black" />
-                <span className="font-semibold text-black">ECOA Compliant</span>
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <FileCheck className="h-6 w-6 md:h-8 md:w-8 text-black flex-shrink-0" />
+                <span className="font-semibold text-black text-xs md:text-sm lg:text-base">ECOA Compliant</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-8 w-8 text-black" />
-                <span className="font-semibold text-black">Model Risk Ready</span>
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <CheckCircle2 className="h-6 w-6 md:h-8 md:w-8 text-black flex-shrink-0" />
+                <span className="font-semibold text-black text-xs md:text-sm lg:text-base">Model Risk Ready</span>
               </div>
             </div>
           </motion.div>
@@ -928,18 +928,18 @@ function Pilot() {
       </section>
 
       {/* CTA Repeat - Enhanced with Urgency */}
-      <section className="py-12 md:py-16 sticky top-20 z-10 backdrop-blur-sm border-b-2 bg-gradient-to-br from-primary via-primary to-secondary shadow-2xl">
+      <section className="py-8 md:py-12 lg:py-16 sticky top-20 z-10 backdrop-blur-sm border-b-2 bg-gradient-to-br from-primary via-primary to-secondary shadow-2xl">
         <div className={containerClass}>
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
             <div className="text-center md:text-left flex-1">
               <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
-                <AlertCircle className="w-5 h-5 text-white animate-pulse" />
-                <div className="text-base font-bold text-white">Only 3 Q1 2026 Pilot Slots Remaining</div>
+                <AlertCircle className="w-4 h-4 md:w-5 md:h-5 text-white animate-pulse flex-shrink-0" />
+                <div className="text-sm md:text-base font-bold text-white">Only 3 Q1 2026 Pilot Slots Remaining</div>
               </div>
-              <div className="text-2xl font-bold text-white mb-1">Secure Your Spot Before Competitors Do</div>
-              <div className="text-sm text-white/80">Next available slot: Q2 2026 (4-month wait)</div>
+              <div className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-1">Secure Your Spot Before Competitors Do</div>
+              <div className="text-xs md:text-sm text-white/80">Next available slot: Q2 2026 (4-month wait)</div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full md:w-auto">
               <div className="hidden md:block text-right">
                 <div className="text-xs text-white/80">Typical pilot-to-production</div>
                 <div className="text-sm font-bold text-white">97 days | $50M+ revenue</div>
@@ -947,11 +947,11 @@ function Pilot() {
               <Button 
                 size="lg"
                 variant="solver"
-                className="bg-white text-black hover:bg-white/90 shadow-xl hover:scale-105 transition-all"
+                className="bg-white text-black hover:bg-white/90 shadow-xl hover:scale-105 transition-all w-full sm:w-auto text-sm md:text-base"
                 onClick={() => document.getElementById('pilot-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Claim Your Pilot Slot
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
               </Button>
             </div>
           </div>
