@@ -53,32 +53,32 @@ function Index() {
     <PageLayout>
       {/* ==================== HERO SECTION ==================== */}
       <HeroBackground>
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16 xl:gap-20 2xl:gap-24 w-full mx-auto">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 sm:gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 w-full mx-auto pt-2 sm:pt-4 md:pt-6 lg:pt-8">
           {/* Left Column - Text Content */}
           <div className="flex flex-col items-start flex-1 lg:flex-[0.55] xl:flex-[0.5] w-full lg:w-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white text-xs sm:text-sm font-medium mb-5 sm:mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white text-xs sm:text-sm font-medium mb-3 sm:mb-4"
             >
               <Shield className="w-3 h-3 sm:w-4 sm:h-4" strokeWidth={2.5} />
               Enterprise Credit Intelligence • Powered by LUMIQ AI
             </motion.div>
 
-            <div className="text-white/80 text-[10px] sm:text-xs font-bold tracking-wider mb-4 sm:mb-5 uppercase">
+            <div className="text-white/80 text-[10px] sm:text-xs font-bold tracking-wider mb-3 sm:mb-4 uppercase">
               PILOT-READY FOR WELLS FARGO'S 3.3M+ SMB CUSTOMERS
             </div>
 
-            <h1 className="font-display text-[32px] sm:text-[40px] md:text-[44px] lg:text-[52px] xl:text-[68px] 2xl:text-[76px] font-bold mb-6 sm:mb-8 leading-[1.1] text-white">
+            <h1 className="font-display text-[28px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[52px] 2xl:text-[60px] font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.1] text-white">
               Real-Time Business Credit Intelligence for Wells Fargo
             </h1>
 
-            <p className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-2xl text-white/95 mb-4 sm:mb-5 leading-relaxed font-semibold max-w-2xl">
+            <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-xl text-white/95 mb-3 sm:mb-4 leading-relaxed font-semibold max-w-2xl">
               Unify card, deposit, and bureau data into <span className="font-bold text-white">a single business credit view</span>—with risk scoring, pre-qualification, and portfolio intelligence securely integrated into Wells Fargo's underwriting workflow.
             </p>
 
-            <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg text-white/80 mb-8 sm:mb-12 leading-relaxed max-w-2xl">
+            <p className="text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-white/80 mb-4 sm:mb-6 md:mb-8 leading-relaxed max-w-2xl">
               Data stays inside Wells Fargo's environment—no new workflows, no external data movement.
             </p>
 
@@ -87,12 +87,12 @@ function Index() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-8 sm:mb-10"
+              className="mb-4 sm:mb-6 md:mb-8 w-full sm:w-auto"
             >
-              <Link to="/contact">
-                <Button size="lg" className="bg-[#FFB81C] hover:bg-[#FFB81C]/90 text-[#2B2B2B] font-semibold text-base sm:text-lg px-6 py-5 sm:px-10 sm:py-7 h-auto shadow-xl hover:shadow-2xl transition-all duration-300">
+              <Link to="/contact" className="w-full sm:w-auto">
+                <Button size="lg" className="bg-[#FFB81C] hover:bg-[#FFB81C]/90 text-[#2B2B2B] font-semibold text-xs sm:text-sm md:text-base lg:text-lg px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 lg:px-10 lg:py-6 h-auto shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto">
                   See Your Portfolio Through LUMIQ AI
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                  <ArrowRight className="ml-1.5 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                 </Button>
               </Link>
             </motion.div>
@@ -102,7 +102,7 @@ function Index() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 w-full max-w-2xl"
+              className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5 w-full max-w-2xl mb-6 sm:mb-8 md:mb-10"
             >
               <MetricCard value={25} label="Faster underwriting decisions" suffix="%" delay={0.5} />
               <MetricCard value={35} label="Reduction in manual reviews" suffix="%" delay={0.6} />
@@ -115,13 +115,13 @@ function Index() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-shrink-0 w-full lg:w-auto lg:flex-[0.45] xl:flex-[0.5] flex items-center justify-center lg:justify-end"
+            className="flex-shrink-0 w-full lg:w-auto lg:flex-[0.45] xl:flex-[0.5] flex items-center justify-center lg:justify-end mt-4 sm:mt-6 lg:mt-0"
           >
             <div className="relative">
               <img
                 src="/Phone-Mockups/Hero_mockup.png"
                 alt="Wells Fargo Business Credit Intelligence Mobile App"
-                className="w-full h-auto max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl object-contain drop-shadow-2xl"
+                className="w-full h-auto max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl object-contain drop-shadow-2xl"
               />
             </div>
           </motion.div>
