@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
@@ -170,14 +171,16 @@ function Pilot() {
                     <ArrowRight className="w-5 h-5 text-black" />
                   </div>
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10"
-                >
-                  <Download className="mr-2 w-5 h-5" />
-                  Download Pilot Brief
-                </Button>
+                <Link to="/contact">
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10"
+                  >
+                    <Download className="mr-2 w-5 h-5" />
+                    Download Pilot Brief
+                  </Button>
+                </Link>
               </div>
 
               <div className="flex flex-wrap gap-4 text-sm text-white/80">

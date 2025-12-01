@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -958,13 +959,15 @@ export default function CaseStudy() {
                 Define success criteria. Run a limited rollout. Deliver measurable results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Button 
-                  size="lg" 
-                  className="bg-white hover:bg-white/90 text-primary font-bold text-xl px-12 py-8 h-auto"
-                >
-                  Book Executive Review – 30 Minutes
-                  <ArrowRight className="ml-3 w-6 h-6" />
-                </Button>
+                <Link to="/contact">
+                  <Button 
+                    size="lg" 
+                    className="bg-white hover:bg-white/90 text-primary font-bold text-xl px-12 py-8 h-auto"
+                  >
+                    Book Executive Review – 30 Minutes
+                    <ArrowRight className="ml-3 w-6 h-6" />
+                  </Button>
+                </Link>
               </div>
               <div className="grid md:grid-cols-3 gap-6 text-white">
                 {[

@@ -10,12 +10,24 @@ import { Mail, Phone, MapPin, Clock, Send, Briefcase, Scale, Headphones } from "
 import { useToast } from "@/hooks/use-toast";
 import HeroBackground from "@/components/HeroBackground";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 
 const contactSchema = z.object({
   firstName: z.string().trim().min(1, { message: "First name is required" }).max(50, { message: "First name must be less than 50 characters" }),
   lastName: z.string().trim().min(1, { message: "Last name is required" }).max(50, { message: "Last name must be less than 50 characters" }),
   email: z.string().trim().email({ message: "Invalid email address" }).max(255, { message: "Email must be less than 255 characters" }),
   message: z.string().trim().min(10, { message: "Message must be at least 10 characters" }).max(2000, { message: "Message must be less than 2000 characters" }),
+});
+
+// EmailJS configuration
+const EMAILJS_SERVICE_ID = "service_xfyl449";
+const EMAILJS_PUBLIC_KEY = "3sQt_CDIT_J4t7dTm";
+const EMAILJS_AUTO_REPLY_TEMPLATE = "template_vzc8nwp";
+const EMAILJS_BUSINESS_TEMPLATE = "template_xtof4cg";
+
+// Initialize EmailJS
+emailjs.init({
+  publicKey: EMAILJS_PUBLIC_KEY,
 });
 
 function Contact() {
@@ -47,13 +59,67 @@ function Contact() {
       // Validate form data
       const validatedData = contactSchema.parse(formData);
 
-      // For now, just show success message
-      // In production, this would send to an email service or backend
-      console.log("Form submitted:", validatedData);
+      // Prepare template parameters for auto-reply (to user)
+      // Template variables: {{name}} and {{title}}
+      const autoReplyParams = {
+        name: `${validatedData.firstName} ${validatedData.lastName}`,
+        title: validatedData.message,
+      };
+
+      // Prepare template parameters for business notification (to you)
+      // Template uses: {{name}}, {{email}}, {{message}}, {{time}}
+      const currentTime = new Date().toLocaleString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+
+      const businessParams = {
+        name: `${validatedData.firstName} ${validatedData.lastName}`,
+        email: validatedData.email,
+        message: validatedData.message,
+        time: currentTime,
+        // Also include title for subject line
+        title: `Contact Form Submission from ${validatedData.firstName} ${validatedData.lastName}`,
+      };
+
+      // Log parameters being sent for debugging
+      console.log("Sending auto-reply with params:", autoReplyParams);
+      console.log("Sending business notification with params:", businessParams);
+
+      // Send auto-reply email to user
+      try {
+        const autoReplyResponse = await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_AUTO_REPLY_TEMPLATE,
+          autoReplyParams
+        );
+        console.log("Auto-reply sent successfully:", autoReplyResponse);
+      } catch (autoReplyError: any) {
+        console.error("Auto-reply email error:", autoReplyError);
+        console.error("Auto-reply error details:", {
+          status: autoReplyError?.status,
+          text: autoReplyError?.text,
+          response: autoReplyError?.response,
+        });
+        // Continue to send business notification even if auto-reply fails
+      }
+
+      // Send notification email to business
+      const businessResponse = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_BUSINESS_TEMPLATE,
+        businessParams
+      );
+      console.log("Business notification sent successfully:", businessResponse);
 
       toast({
         title: "Message Sent Successfully",
-        description: "Thank you for contacting us. We'll get back to you within 24-48 hours.",
+        description: "Thank you for contacting us. We've received your message and will get back to you within 24-48 hours. Please check your email for confirmation.",
       });
 
       // Reset form
@@ -63,7 +129,14 @@ function Contact() {
         email: "",
         message: "",
       });
-    } catch (error) {
+    } catch (error: any) {
+      console.error("EmailJS Error:", error);
+      console.error("Error details:", {
+        status: error?.status,
+        text: error?.text,
+        response: error?.response,
+      });
+      
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
         error.errors.forEach((err) => {
@@ -75,6 +148,13 @@ function Contact() {
         toast({
           title: "Validation Error",
           description: "Please check the form and try again.",
+          variant: "destructive",
+        });
+      } else {
+        const errorMessage = error?.text || error?.message || "Unknown error";
+        toast({
+          title: "Error Sending Message",
+          description: `There was an error sending your message: ${errorMessage}. Please try again later or contact us directly at support@futeurcredx.com`,
           variant: "destructive",
         });
       }

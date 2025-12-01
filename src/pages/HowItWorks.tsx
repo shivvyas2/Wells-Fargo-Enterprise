@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -59,13 +60,15 @@ export default function HowItWorks() {
                   </div>
                 </div>
 
-                <Button 
-                  size="lg"
-                  className="bg-secondary text-black hover:bg-secondary/90 rounded-full font-semibold text-lg px-8 mt-4"
-                >
-                  Request a 20-minute Pilot Review
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <Link to="/contact">
+                  <Button 
+                    size="lg"
+                    className="bg-secondary text-black hover:bg-secondary/90 rounded-full font-semibold text-lg px-8 mt-4"
+                  >
+                    Request a 20-minute Pilot Review
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </section>
@@ -833,21 +836,25 @@ export default function HowItWorks() {
                 Measurable lift. Controlled experiment. Explainable models. Policy-aligned.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <Button 
-                  size="lg"
-                  className="bg-white text-primary hover:bg-white/90 rounded-full font-semibold text-lg px-8"
-                >
-                  Request Pilot Review
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent text-white border-white hover:bg-white hover:text-primary rounded-full font-semibold text-lg px-8"
-                >
-                  Download Model Governance Framework
-                  <FileText className="ml-2 h-5 w-5" />
-                </Button>
+                <Link to="/contact">
+                  <Button 
+                    size="lg"
+                    className="bg-white text-primary hover:bg-white/90 rounded-full font-semibold text-lg px-8"
+                  >
+                    Request Pilot Review
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button 
+                    size="lg"
+                    variant="outline"
+                    className="bg-transparent text-white border-white hover:bg-white hover:text-primary rounded-full font-semibold text-lg px-8"
+                  >
+                    Download Model Governance Framework
+                    <FileText className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </div>
