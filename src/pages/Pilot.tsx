@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useToast } from "@/hooks/use-toast";
 import HeroBackground from "@/components/HeroBackground";
+import emailjs from "@emailjs/browser";
 import { 
   TrendingUp, 
   DollarSign, 
@@ -53,6 +54,17 @@ const pilotFormSchema = z.object({
 
 type PilotFormData = z.infer<typeof pilotFormSchema>;
 
+// EmailJS configuration
+const EMAILJS_SERVICE_ID = "service_xfyl449";
+const EMAILJS_PUBLIC_KEY = "3sQt_CDIT_J4t7dTm";
+const EMAILJS_AUTO_REPLY_TEMPLATE = "template_vzc8nwp"; // Same auto-reply template
+const EMAILJS_PILOT_TEMPLATE = "template_1ioi23i"; // Pilot application notification template
+
+// Initialize EmailJS
+emailjs.init({
+  publicKey: EMAILJS_PUBLIC_KEY,
+});
+
 function Pilot() {
   const { toast } = useToast();
   const [formData, setFormData] = useState<PilotFormData>({
@@ -71,22 +83,87 @@ function Pilot() {
     e.preventDefault();
     
     try {
-      pilotFormSchema.parse(formData);
+      const validatedData = pilotFormSchema.parse(formData);
       setIsSubmitting(true);
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Format SMB count for display
+      const smbCountLabels: Record<string, string> = {
+        "less-than-100k": "Less than 100K",
+        "100k-500k": "100K - 500K",
+        "500k-1m": "500K - 1M",
+        "1m-5m": "1M - 5M",
+        "more-than-5m": "More than 5M"
+      };
+      const smbCountDisplay = validatedData.smbCount ? smbCountLabels[validatedData.smbCount] || validatedData.smbCount : "Not specified";
+
+      // Prepare template parameters for auto-reply (to user)
+      const autoReplyParams = {
+        name: validatedData.name,
+        title: `Pilot Program Application - ${validatedData.company}`,
+      };
+
+      // Prepare template parameters for business notification (to you)
+      const currentTime = new Date().toLocaleString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+
+      // Send all individual fields so they can be displayed separately in the template
+      const pilotNotificationParams = {
+        name: validatedData.name,
+        title: validatedData.title,
+        company: validatedData.company,
+        email: validatedData.email,
+        phone: validatedData.phone || "Not provided",
+        smb_count: smbCountDisplay,
+        time: currentTime,
+        // Also include formatted message for backward compatibility
+        message: `Pilot Program Application Details:\n\nName: ${validatedData.name}\nTitle: ${validatedData.title}\nCompany: ${validatedData.company}\nEmail: ${validatedData.email}\nPhone: ${validatedData.phone || 'Not provided'}\nSMB Count: ${smbCountDisplay}\n\nConsent Given: Yes`,
+      };
+
+      // Send auto-reply email to user
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_AUTO_REPLY_TEMPLATE,
+          autoReplyParams
+        );
+        console.log("Auto-reply sent successfully");
+      } catch (autoReplyError: any) {
+        console.error("Auto-reply email error:", autoReplyError);
+        // Continue even if auto-reply fails
+      }
+
+      // Send notification email to business
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_PILOT_TEMPLATE,
+        pilotNotificationParams
+      );
+      console.log("Pilot notification sent successfully");
       
       setIsSubmitted(true);
       toast({
         title: "Application Submitted",
-        description: "We'll contact you within 24 hours to schedule your pilot review.",
+        description: "We've received your pilot application and will contact you within 24 hours to schedule your review session. Please check your email for confirmation.",
       });
     } catch (error) {
+      console.error("Pilot form error:", error);
       if (error instanceof z.ZodError) {
         toast({
           title: "Validation Error",
           description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error Submitting Application",
+          description: "There was an error submitting your application. Please try again later or contact us directly.",
           variant: "destructive",
         });
       }
@@ -673,7 +750,7 @@ function Pilot() {
                           value={formData.name}
                           onChange={(e) => handleInputChange('name', e.target.value)}
                           placeholder="John Smith"
-                          className="bg-white border-border"
+                          className="bg-white text-black border-border"
                           required
                         />
                       </div>
@@ -685,7 +762,7 @@ function Pilot() {
                           value={formData.title}
                           onChange={(e) => handleInputChange('title', e.target.value)}
                           placeholder="VP of Digital Banking"
-                          className="bg-white border-border"
+                          className="bg-white text-black border-border"
                           required
                         />
                       </div>
@@ -698,7 +775,7 @@ function Pilot() {
                         value={formData.company}
                         onChange={(e) => handleInputChange('company', e.target.value)}
                         placeholder="Your Financial Institution"
-                        className="bg-white border-border"
+                        className="bg-white text-black border-border"
                         required
                       />
                     </div>
@@ -712,7 +789,7 @@ function Pilot() {
                           value={formData.email}
                           onChange={(e) => handleInputChange('email', e.target.value)}
                           placeholder="john@bank.com"
-                          className="bg-white border-border"
+                          className="bg-white text-black border-border"
                           required
                         />
                       </div>
@@ -725,7 +802,7 @@ function Pilot() {
                           value={formData.phone}
                           onChange={(e) => handleInputChange('phone', e.target.value)}
                           placeholder="+1 (555) 000-0000"
-                          className="bg-white border-border"
+                          className="bg-white text-black border-border"
                         />
                       </div>
                     </div>
@@ -736,7 +813,7 @@ function Pilot() {
                         value={formData.smbCount} 
                         onValueChange={(value) => handleInputChange('smbCount', value)}
                       >
-                        <SelectTrigger className="bg-white bg-[#0F0F0F] border-[#E4E7EC] border-[#1C1C1C]">
+                        <SelectTrigger className="bg-white text-black border-border">
                           <SelectValue placeholder="Select range" />
                         </SelectTrigger>
                         <SelectContent>
@@ -784,35 +861,35 @@ function Pilot() {
                 </CardContent>
               </Card>
             ) : (
-              <Card className="rounded-[32px]">
+              <Card className="rounded-[32px] bg-white">
                 <CardContent className="p-12 text-center">
-                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-secondary/10 mb-6">
-                    <CheckCircle2 className="h-7 w-7 text-black" />
+                  <div className="inline-flex items-center justify-center h-16 w-16 rounded-xl bg-secondary/10 border border-secondary/20 mb-6">
+                    <CheckCircle2 className="h-8 w-8 text-black" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-black">Application Received!</h3>
-                  <p className="text-black/70 text-white/70 mb-8 max-w-md mx-auto">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">Application Received!</h3>
+                  <p className="text-base text-gray-700 mb-8 max-w-md mx-auto leading-relaxed">
                     Thank you for your interest. Our team will review your application and contact you within 24 hours to schedule your pilot review session.
                   </p>
-                  <div className="space-y-4">
-                    <p className="text-sm font-medium text-black">Next Steps:</p>
-                    <div className="grid gap-3 text-left max-w-md mx-auto">
-                      <div className="flex items-start gap-3 text-sm">
-                        <div className="h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-black">1</span>
+                  <div className="space-y-6">
+                    <p className="text-base font-semibold text-black">Next Steps:</p>
+                    <div className="grid gap-4 text-left max-w-md mx-auto">
+                      <div className="flex items-start gap-4 text-base">
+                        <div className="h-8 w-8 rounded-full bg-secondary/20 border-2 border-secondary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-sm font-bold text-black">1</span>
                         </div>
-                        <p className="text-black/70 text-white/70">Pilot kickoff call within 3 business days</p>
+                        <p className="text-gray-700 leading-relaxed pt-1">Pilot kickoff call within 3 business days</p>
                       </div>
-                      <div className="flex items-start gap-3 text-sm">
-                        <div className="h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-black">2</span>
+                      <div className="flex items-start gap-4 text-base">
+                        <div className="h-8 w-8 rounded-full bg-secondary/20 border-2 border-secondary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-sm font-bold text-black">2</span>
                         </div>
-                        <p className="text-black/70 text-white/70">Technical integration review & sandbox setup</p>
+                        <p className="text-gray-700 leading-relaxed pt-1">Technical integration review & sandbox setup</p>
                       </div>
-                      <div className="flex items-start gap-3 text-sm">
-                        <div className="h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-black">3</span>
+                      <div className="flex items-start gap-4 text-base">
+                        <div className="h-8 w-8 rounded-full bg-secondary/20 border-2 border-secondary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-sm font-bold text-black">3</span>
                         </div>
-                        <p className="text-black/70 text-white/70">90-day pilot launch with dedicated support</p>
+                        <p className="text-gray-700 leading-relaxed pt-1">90-day pilot launch with dedicated support</p>
                       </div>
                     </div>
                   </div>
