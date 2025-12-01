@@ -63,20 +63,20 @@ export default function CaseStudy() {
                   <p className="text-lg text-white/85 mb-10 max-w-3xl leading-relaxed">
                     A strategic initiative to mirror the proven success of Credit Close-Up in the small business segment, unlocking ~$100M+ annual value through improved conversion, reduced CAC, and deeper SMB relationships.
                   </p>
-                  <div className="flex flex-wrap gap-4 mb-10">
+                  <div className="flex flex-wrap gap-3 md:gap-4 mb-10">
                     <Button 
                       size="lg" 
                       onClick={() => scrollToSection('problem')}
-                      className="bg-secondary hover:bg-secondary/90 text-black font-semibold text-lg px-8 py-6 h-auto"
+                      className="bg-secondary hover:bg-secondary/90 text-black font-semibold text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 h-auto w-full sm:w-auto"
                     >
                       View Full Analysis
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                     </Button>
                     <Button 
                       size="lg" 
                       variant="outline"
                       onClick={() => scrollToSection('pilot')}
-                      className="border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-6 h-auto"
+                      className="border-2 border-white text-white hover:bg-white/10 font-semibold text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 h-auto w-full sm:w-auto"
                     >
                       Discuss 90-Day Pilot
                     </Button>
@@ -958,14 +958,14 @@ export default function CaseStudy() {
               <p className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed">
                 Define success criteria. Run a limited rollout. Deliver measurable results.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Link to="/contact">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12">
+                <Link to="/contact" className="w-full sm:w-auto">
                   <Button 
                     size="lg" 
-                    className="bg-white hover:bg-white/90 text-primary font-bold text-xl px-12 py-8 h-auto"
+                    className="bg-white hover:bg-white/90 text-primary font-bold text-xs sm:text-sm md:text-base lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-6 lg:py-8 h-auto w-full sm:w-auto"
                   >
-                    Book Executive Review – 30 Minutes
-                    <ArrowRight className="ml-3 w-6 h-6" />
+                    <span className="whitespace-normal sm:whitespace-nowrap text-center">Book Executive Review – 30 Minutes</span>
+                    <ArrowRight className="ml-1.5 sm:ml-2 md:ml-3 w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 flex-shrink-0" />
                   </Button>
                 </Link>
               </div>

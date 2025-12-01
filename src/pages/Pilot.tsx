@@ -201,20 +201,20 @@ function Pilot() {
                 <span className="text-center md:text-left">Designed for Institutional Finance & Model-Risk Governance</span>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 md:gap-3 px-4 md:px-5 py-3 md:py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-                <div className="flex items-center gap-1.5 md:gap-2">
-                  <span className="text-3xl md:text-5xl font-bold text-white">90</span>
-                  <span className="text-sm md:text-lg text-white/90">DAYS</span>
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-3 px-4 md:px-5 py-3 md:py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 w-full">
+                <div className="flex items-center gap-2 md:gap-2 flex-shrink-0">
+                  <span className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">90</span>
+                  <span className="text-xs sm:text-sm md:text-lg text-white/90 whitespace-nowrap">DAYS</span>
                 </div>
-                <div className="h-6 md:h-8 w-px bg-white/30"></div>
-                <div className="flex items-center gap-1.5 md:gap-2">
-                  <span className="text-2xl md:text-3xl font-bold text-white">9</span>
-                  <span className="text-xs md:text-sm text-white/90">months saved</span>
+                <div className="h-6 md:h-8 w-px bg-white/30 flex-shrink-0"></div>
+                <div className="flex items-center gap-1.5 md:gap-2 flex-shrink-0">
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">9</span>
+                  <span className="text-xs md:text-sm text-white/90 whitespace-nowrap">months saved</span>
                 </div>
-                <div className="h-6 md:h-8 w-px bg-white/30"></div>
-                <div className="flex items-center gap-1.5 md:gap-2">
-                  <span className="text-2xl md:text-3xl font-bold text-white">$50M+</span>
-                  <span className="text-xs md:text-sm text-white/90">potential revenue</span>
+                <div className="h-6 md:h-8 w-px bg-white/30 flex-shrink-0"></div>
+                <div className="flex items-center gap-1.5 md:gap-2 flex-shrink-0">
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">$50M+</span>
+                  <span className="text-xs md:text-sm text-white/90 whitespace-nowrap">potential revenue</span>
                 </div>
               </div>
 
